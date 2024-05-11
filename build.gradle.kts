@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "1.9.23"
+    id("java")
+    id("com.google.protobuf") version "0.9.4"
 }
 
 group = "org.matrix"
@@ -17,12 +19,30 @@ repositories {
 
 dependencies {
     implementation("io.netty:netty-all:4.1.109.Final")
+    implementation("com.google.protobuf:protobuf-java:3.21.7")
+    //implementation("com.google.protobuf:protobuf-kotlin:3.21.7")
     testImplementation(kotlin("test"))
+
+    // protobuf(files("proto/"))
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.21.7"
+    }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.builtins {
+                java {}
+            }
+        }
+    }
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(21)
 }
