@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
     implementation("io.netty:netty-all:4.1.109.Final")
-    implementation("com.google.protobuf:protobuf-java:3.21.7")
+    implementation("com.google.protobuf:protobuf-javalite:3.21.7")
     //implementation("com.google.protobuf:protobuf-kotlin:3.21.7")
     testImplementation(kotlin("test"))
 
@@ -32,8 +32,14 @@ protobuf {
     }
     generateProtoTasks {
         all().forEach { task ->
+
+            println("outputBaseDir=${task.outputBaseDir}")
+            println("outputBaseDir=${task.sourceSet}")
+
             task.builtins {
-                java {}
+                getByName("java") {
+                    option("lite")
+                }
             }
         }
     }
