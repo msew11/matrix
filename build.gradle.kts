@@ -4,7 +4,7 @@ plugins {
     id("com.google.protobuf") version "0.9.4"
 }
 
-group = "org.matrix"
+group = "org.matrix.game"
 version = "1.0-SNAPSHOT"
 
 repositories {
