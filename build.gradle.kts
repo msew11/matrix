@@ -1,7 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
     id("java")
+    kotlin("jvm") version "1.9.23"
     id("com.google.protobuf") version "0.9.4"
+    id("org.springframework.boot") version "3.2.5"
 }
 
 group = "org.matrix.game"
