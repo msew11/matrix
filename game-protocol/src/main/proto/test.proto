@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "org.matrix.proto";
+option java_package = "org.matrix.game.proto";
 option java_outer_classname = "MessagePojo";
 
 message Message {

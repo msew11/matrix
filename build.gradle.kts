@@ -1,55 +1,51 @@
 plugins {
-    id("java")
-    kotlin("jvm") version "1.9.23"
-    id("com.google.protobuf") version "0.9.4"
-    id("org.springframework.boot") version "3.2.5"
+    java
+    kotlin("jvm") version "1.9.23" apply false
 }
 
-group = "org.matrix.game"
-version = "1.0-SNAPSHOT"
+allprojects {
 
-repositories {
-    maven { setUrl("https://maven.aliyun.com/repository/google") }
-    maven { setUrl("https://maven.aliyun.com/repository/public") }
-    maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+    group = "org.matrix.game"
+    version = "1.0-SNAPSHOT"
 
-    google()
-    mavenCentral()
-    gradlePluginPortal()
-}
+    apply(plugin = "java")
+    apply(plugin = "kotlin")
 
-dependencies {
-    implementation("io.netty:netty-all:4.1.109.Final")
-    implementation("com.google.protobuf:protobuf-javalite:3.21.7")
-    //implementation("com.google.protobuf:protobuf-kotlin:3.21.7")
-    testImplementation(kotlin("test"))
+    repositories {
+        maven { setUrl("https://maven.aliyun.com/repository/google") }
+        maven { setUrl("https://maven.aliyun.com/repository/public") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
 
-    // protobuf(files("proto/"))
-}
-
-protobuf {
-    protoc {
-        artifact = "com.google.protobuf:protoc:3.21.7"
+        google()
+        mavenCentral()
+        gradlePluginPortal()
     }
-    generateProtoTasks {
-        all().forEach { task ->
 
-            println("outputBaseDir=${task.outputBaseDir}")
-            println("outputBaseDir=${task.sourceSet}")
+    tasks {
+        withType<JavaCompile>() {
+            // 启用在单独的daemon进程中编译
+            options.encoding = "UTF-8"
+            options.isFork = true
+            options.forkOptions.jvmArgs = listOf("-Xmx3g")
+        }
 
-            task.builtins {
-                getByName("java") {
-                    option("lite")
-                }
-            }
+        withType<Javadoc> {
+            options.encoding = "UTF-8"
         }
     }
+
+    /*dependencies {
+        implementation("org.springframework.boot:spring-boot-starter")
+        implementation("io.netty:netty-all:4.1.109.Final")
+        //implementation("com.google.protobuf:protobuf-kotlin:3.21.7")
+
+        testImplementation(kotlin("test"))
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+        // protobuf(files("proto/"))
+    }*/
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-kotlin {
-    jvmToolchain(21)
-}
+//tasks.test {
+//    useJUnitPlatform()
+//}

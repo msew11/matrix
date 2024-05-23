@@ -1,4 +1,5 @@
-package org.matrix.server
+/*
+package org.matrix.game.server
 
 import io.netty.bootstrap.ServerBootstrap
 import io.netty.channel.ChannelInitializer
@@ -40,4 +41,4 @@ class MyServer {
             workerGroup.shutdownGracefully()
         }
     }
-}
+}*/

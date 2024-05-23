@@ -1,4 +1,5 @@
-package org.matrix.server
+/*
+package org.matrix.game.server
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
@@ -24,4 +25,4 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
         val byteBuf = msg as ByteBuf
         println("收到服务端${ctx.channel().remoteAddress()}的消息：${byteBuf.toString(CharsetUtil.UTF_8)}")
     }
-}
+}*/

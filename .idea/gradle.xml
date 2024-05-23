@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/game-gateway-server" />
+            <option value="$PROJECT_DIR$/game-protocol" />
           </set>
         </option>
       </GradleProjectSettings>
