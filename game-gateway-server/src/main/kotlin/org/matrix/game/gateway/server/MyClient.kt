@@ -7,9 +7,9 @@ import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioSocketChannel
 
 
-fun main() {
+/*fun main() {
     MyClient().start()
-}
+}*/
 
 class MyClient {
     fun start() {
