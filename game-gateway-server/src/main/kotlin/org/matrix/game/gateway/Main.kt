@@ -1,4 +1,4 @@
-package org.matrix.game
+package org.matrix.game.gateway.org.matrix.game.gateway
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

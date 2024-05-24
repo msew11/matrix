@@ -1,24 +1,18 @@
 plugins {
-    id("java")
-    kotlin("jvm") version "1.9.23"
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.5" apply false
-}
-
-group = "org.matrix.game"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
+    java
+    `java-library`
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    api(project(":game-protocol"))
+
+    //implementation("org.springframework.boot:spring-boot-starter")
+    implementation("io.netty:netty-all:4.1.109.Final")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(21)
-}
+//tasks.test {
+//    useJUnitPlatform()
+//}
+//kotlin {
+//    jvmToolchain(21)
+//}

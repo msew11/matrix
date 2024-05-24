@@ -1,8 +1,9 @@
 syntax = "proto3";
 option java_package = "org.matrix.game.proto";
-option java_outer_classname = "MessagePojo";
+option java_outer_classname = "TestMessage";
+option java_multiple_files = true;
 
-message Message {
+message HelloMatrix {
   int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
   string content = 2;//Message类的一个属性，属性名称是content，序号为2
 }

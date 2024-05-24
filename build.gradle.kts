@@ -1,5 +1,7 @@
 plugins {
+    idea
     java
+    `java-library`
     kotlin("jvm") version "1.9.23" apply false
 }
 
@@ -8,6 +10,7 @@ allprojects {
     group = "org.matrix.game"
     version = "1.0-SNAPSHOT"
 
+    apply(plugin = "idea")
     apply(plugin = "java")
     apply(plugin = "kotlin")
 

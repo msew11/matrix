@@ -1,14 +1,10 @@
-/*
-package org.matrix.game.server
+package org.matrix.game.gateway.server
 
 import io.netty.bootstrap.Bootstrap
 import io.netty.channel.ChannelInitializer
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioSocketChannel
-import io.netty.handler.codec.string.LineEncoder
-import io.netty.handler.codec.string.LineSeparator
-import io.netty.util.CharsetUtil
 
 
 fun main() {
@@ -39,4 +35,4 @@ class MyClient {
             eventExecutors.shutdownGracefully();
         }
     }
-}*/
+}

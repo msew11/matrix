@@ -2,12 +2,15 @@ import com.google.protobuf.gradle.id
 
 // https://github.com/google/protobuf-gradle-plugin/blob/master/examples/exampleProject/build.gradle
 plugins {
-    id("java")
+    java
+    `java-library`
     id("com.google.protobuf") version "0.9.4"
 }
 
 dependencies {
-    implementation("com.google.protobuf:protobuf-java:3.6.1")
+    api("com.google.protobuf:protobuf-java:3.6.1")
+
+    // implementation("io.grpc:grpc-netty:1.15.1")
     implementation("io.grpc:grpc-stub:1.15.1")
     implementation("io.grpc:grpc-protobuf:1.15.1")
 }
@@ -49,7 +52,8 @@ tasks {
     }
 }
 
-/*val sourcesJar by tasks.registering(Jar::class) {
+/*
+val sourcesJar by tasks.registering(Jar::class) {
     archiveClassifier.set("sources")
     from(sourceSets.main.get().allSource)
 }
