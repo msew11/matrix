@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     java
     `java-library`
@@ -11,15 +9,17 @@ plugins {
 
 dependencies {
     api(project(":game-protocol"))
+    api(project(":game-common"))
 
-    implementation("io.netty:netty-all:4.1.109.Final")
     implementation("org.springframework.boot:spring-boot-starter")
+    //implementation("org.springframework.boot:spring-boot-starter-logging")
+    // implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = "21"
-    }
+tasks.test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(21)
 }

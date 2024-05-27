@@ -1,4 +1,4 @@
-package org.matrix.game.gateway.server
+package org.matrix.game.common.network.netty.handler
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
@@ -20,4 +20,6 @@ class MyServerHandler : ChannelInboundHandlerAdapter() {
         println(cause.message)
         ctx.close()
     }
+
+
 }

@@ -1,4 +1,4 @@
-package org.matrix.game.gateway.server
+package org.matrix.game.common.network.netty.handler
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
@@ -6,7 +6,6 @@ import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
 import io.netty.util.CharsetUtil
 import io.netty.util.internal.StringUtil
-import org.matrix.game.proto.HelloMatrix
 import java.nio.charset.Charset
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
@@ -20,7 +19,7 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
             ctx.writeAndFlush(byteBuf)
 
             // TestMessage.HelloMatrix.newBuilder()
-            HelloMatrix.newBuilder()
+            // HelloMatrix.newBuilder()
         }
     }
 

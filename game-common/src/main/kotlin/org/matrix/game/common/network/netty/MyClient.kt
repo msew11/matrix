@@ -1,10 +1,11 @@
-package org.matrix.game.gateway.server
+package org.matrix.game.common.network.netty
 
 import io.netty.bootstrap.Bootstrap
 import io.netty.channel.ChannelInitializer
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioSocketChannel
+import org.matrix.game.common.network.netty.handler.MyClientHandler
 
 
 /*fun main() {
