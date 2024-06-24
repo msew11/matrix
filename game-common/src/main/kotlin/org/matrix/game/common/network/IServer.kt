@@ -1,6 +1,6 @@
 package org.matrix.game.common.network
 
-interface ServerNode {
+interface IServer {
 
     fun start()
 

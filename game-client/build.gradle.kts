@@ -8,7 +8,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":game-protocol"))
     api(project(":game-common"))
 
     implementation("io.netty:netty-all:4.1.109.Final")

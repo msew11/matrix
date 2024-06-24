@@ -12,8 +12,8 @@ dependencies {
     api("com.google.protobuf:protobuf-java:${Versions.PROTOBUF_VERSION}")
 
     // implementation("io.grpc:grpc-netty:1.15.1")
-    implementation("io.grpc:grpc-stub:1.15.1")
-    implementation("io.grpc:grpc-protobuf:1.15.1")
+    implementation("io.grpc:grpc-stub:${Versions.GRPC_VERSION}")
+    implementation("io.grpc:grpc-protobuf:${Versions.GRPC_VERSION}")
 }
 
 protobuf {
@@ -22,7 +22,7 @@ protobuf {
     }
     plugins {
         id("grpc") {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.15.1"
+            artifact = "io.grpc:protoc-gen-grpc-java:${Versions.GRPC_VERSION}"
         }
     }
 

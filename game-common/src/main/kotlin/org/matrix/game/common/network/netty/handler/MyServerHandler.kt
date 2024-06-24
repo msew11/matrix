@@ -1,15 +1,32 @@
 package org.matrix.game.common.network.netty.handler
 
-import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
 import io.netty.channel.ChannelHandlerContext
-import io.netty.channel.ChannelInboundHandlerAdapter
+import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.util.CharsetUtil
+import org.matrix.game.proto.HelloMatrix
+import org.matrix.game.proto.Test
+import org.matrix.game.proto.Test2
 
-class MyServerHandler : ChannelInboundHandlerAdapter() {
-    override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
-        val byteBuf = msg as ByteBuf
-        println("收到客户端" + ctx.channel().remoteAddress() + "发送的消息：" + byteBuf.toString(CharsetUtil.UTF_8))
+class MyServerHandler : SimpleChannelInboundHandler<HelloMatrix>() {
+
+    override fun channelRead0(ctx: ChannelHandlerContext, msg: HelloMatrix) {
+
+
+        when(msg.payloadCase) {
+            HelloMatrix.PayloadCase.TEST ->{
+                val payload = msg.getField(HelloMatrix.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as Test
+                println("收到客户端[${ctx.channel().remoteAddress()}]发送的[${msg.payloadCase}]：${payload.content}")
+            }
+            HelloMatrix.PayloadCase.TEST2 ->{
+                val payload = msg.getField(HelloMatrix.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as Test2
+                println("收到客户端[${ctx.channel().remoteAddress()}]发送的[${msg.payloadCase}]：${payload.content}")
+            }
+            else -> {
+
+            }
+        }
+
     }
 
     override fun channelReadComplete(ctx: ChannelHandlerContext) {
@@ -20,6 +37,11 @@ class MyServerHandler : ChannelInboundHandlerAdapter() {
         println(cause.message)
         ctx.close()
     }
+
+    /*override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
+    }
+
+    */
 
 
 }

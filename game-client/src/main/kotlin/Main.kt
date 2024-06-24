@@ -1,6 +1,7 @@
 package org.matrix.game.client
 
-import org.matrix.game.common.manager.CoreManager
+import org.matrix.game.client.org.matix.game.client.manager.ClientComponent
+import org.matrix.game.common.component.ComponentManager
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.event.ApplicationReadyEvent
@@ -17,7 +18,5 @@ fun main(args: Array<String>) {
 
 class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        val coreManager = CoreManager.getInstance()
-        coreManager.init()
     }
 }

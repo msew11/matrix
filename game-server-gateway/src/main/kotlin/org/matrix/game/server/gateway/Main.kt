@@ -1,13 +1,13 @@
 package org.matrix.game.server.gateway
 
-import org.matrix.game.common.manager.CoreManager
-import org.matrix.game.server.gateway.manager.ServerNodeManager
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.ApplicationListener
+import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
+@EnableScheduling
 class GameServerGatewayApplication
 
 fun main(args: Array<String>) {
@@ -17,9 +17,13 @@ fun main(args: Array<String>) {
 }
 
 class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
+
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        val coreManager = CoreManager.getInstance()
-        coreManager.regManager(ServerNodeManager())
-        coreManager.init()
+        gateway = Gateway()
+        gateway.boot()
+
+        Runtime.getRuntime().addShutdownHook(Thread({
+            gateway.shutdown()
+        }, "shutdown-hook"))
     }
 }

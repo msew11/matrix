@@ -4,6 +4,34 @@ option java_outer_classname = "TestMessage";
 option java_multiple_files = true;
 
 message HelloMatrix {
+  oneof payload {
+      Test test = 3;
+      Test2 test2 = 4;
+  }
+}
+
+message HelloMatrixRt {
+  oneof payload {
+    TestRt testRt = 1;
+  }
+}
+
+message Test {
+  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
+  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+}
+
+message TestRt {
+  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
+  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+}
+
+message Test2 {
+  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
+  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+}
+
+message Test2Rt {
   int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
   string content = 2;//Message类的一个属性，属性名称是content，序号为2
 }

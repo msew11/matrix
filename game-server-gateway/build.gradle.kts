@@ -8,7 +8,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":game-protocol"))
     api(project(":game-common"))
 
     implementation("org.springframework.boot:spring-boot-starter")
