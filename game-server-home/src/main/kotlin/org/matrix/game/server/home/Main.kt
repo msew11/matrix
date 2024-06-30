@@ -1,4 +1,4 @@
-package org.matrix.game.server.gateway
+package org.matrix.game.server.home
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -17,11 +17,11 @@ fun main(args: Array<String>) {
 class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
 
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        gateway = Gateway()
-        gateway.boot()
+        home = Home()
+        home.boot()
 
         Runtime.getRuntime().addShutdownHook(Thread({
-            gateway.shutdown()
+            home.shutdown()
         }, "shutdown-hook"))
     }
 }
