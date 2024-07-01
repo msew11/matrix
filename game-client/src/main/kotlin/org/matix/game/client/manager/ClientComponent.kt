@@ -8,7 +8,11 @@ class ClientComponent : IComponent {
 
     private lateinit var client: IClient
 
-    override fun init() {
+    override fun isInitialized(): Boolean {
+        return this::client.isInitialized
+    }
+
+    override fun doInit() {
         val client = NettyClient()
         client.start()
 
@@ -17,7 +21,7 @@ class ClientComponent : IComponent {
 
     }
 
-    override fun close() {
+    override fun doClose() {
         client.shutdown()
     }
 }

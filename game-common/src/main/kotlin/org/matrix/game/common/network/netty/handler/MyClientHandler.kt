@@ -4,9 +4,9 @@ import io.netty.buffer.ByteBuf
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
 import io.netty.util.CharsetUtil
-import org.matrix.game.proto.HelloMatrix
-import org.matrix.game.proto.Test
-import org.matrix.game.proto.Test2
+import org.matrix.game.proto.c2s.GameReq
+import org.matrix.game.proto.c2s.Test
+import org.matrix.game.proto.c2s.Test2
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
     override fun channelActive(ctx: ChannelHandlerContext) {
@@ -18,7 +18,7 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
                 .setId(i)
                 .setContent("Test")
 
-            val req = HelloMatrix.newBuilder()
+            val req = GameReq.newBuilder()
                 .setTest2(test2)
                 .setTest(test)
                 .build()

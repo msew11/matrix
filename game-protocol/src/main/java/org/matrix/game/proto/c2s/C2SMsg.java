@@ -2,10 +2,10 @@
 // source: test.proto
 
 // Protobuf Java Version: 3.25.1
-package org.matrix.game.proto;
+package org.matrix.game.proto.c2s;
 
-public final class TestMessage {
-  private TestMessage() {}
+public final class C2SMsg {
+  private C2SMsg() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -16,15 +16,15 @@ public final class TestMessage {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloMatrix_descriptor;
+    internal_static_GameReq_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloMatrix_fieldAccessorTable;
+      internal_static_GameReq_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloMatrixRt_descriptor;
+    internal_static_GameResp_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloMatrixRt_fieldAccessorTable;
+      internal_static_GameResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Test_descriptor;
   static final 
@@ -54,31 +54,31 @@ public final class TestMessage {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ntest.proto\"H\n\013HelloMatrix\022\025\n\004test\030\003 \001(" +
-      "\0132\005.TestH\000\022\027\n\005test2\030\004 \001(\0132\006.Test2H\000B\t\n\007p" +
-      "ayload\"5\n\rHelloMatrixRt\022\031\n\006testRt\030\001 \001(\0132" +
-      "\007.TestRtH\000B\t\n\007payload\"#\n\004Test\022\n\n\002id\030\001 \001(" +
-      "\005\022\017\n\007content\030\002 \001(\t\"%\n\006TestRt\022\n\n\002id\030\001 \001(\005" +
-      "\022\017\n\007content\030\002 \001(\t\"$\n\005Test2\022\n\n\002id\030\001 \001(\005\022\017" +
-      "\n\007content\030\002 \001(\t\"&\n\007Test2Rt\022\n\n\002id\030\001 \001(\005\022\017" +
-      "\n\007content\030\002 \001(\tB&\n\025org.matrix.game.proto" +
-      "B\013TestMessageP\001b\006proto3"
+      "\n\ntest.proto\"D\n\007GameReq\022\025\n\004test\030\003 \001(\0132\005." +
+      "TestH\000\022\027\n\005test2\030\004 \001(\0132\006.Test2H\000B\t\n\007paylo" +
+      "ad\"0\n\010GameResp\022\031\n\006testRt\030\001 \001(\0132\007.TestRtH" +
+      "\000B\t\n\007payload\"#\n\004Test\022\n\n\002id\030\001 \001(\005\022\017\n\007cont" +
+      "ent\030\002 \001(\t\"%\n\006TestRt\022\n\n\002id\030\001 \001(\005\022\017\n\007conte" +
+      "nt\030\002 \001(\t\"$\n\005Test2\022\n\n\002id\030\001 \001(\005\022\017\n\007content" +
+      "\030\002 \001(\t\"&\n\007Test2Rt\022\n\n\002id\030\001 \001(\005\022\017\n\007content" +
+      "\030\002 \001(\tB%\n\031org.matrix.game.proto.c2sB\006C2S" +
+      "MsgP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_HelloMatrix_descriptor =
+    internal_static_GameReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HelloMatrix_fieldAccessorTable = new
+    internal_static_GameReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloMatrix_descriptor,
+        internal_static_GameReq_descriptor,
         new java.lang.String[] { "Test", "Test2", "Payload", });
-    internal_static_HelloMatrixRt_descriptor =
+    internal_static_GameResp_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_HelloMatrixRt_fieldAccessorTable = new
+    internal_static_GameResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloMatrixRt_descriptor,
+        internal_static_GameResp_descriptor,
         new java.lang.String[] { "TestRt", "Payload", });
     internal_static_Test_descriptor =
       getDescriptor().getMessageTypes().get(2);

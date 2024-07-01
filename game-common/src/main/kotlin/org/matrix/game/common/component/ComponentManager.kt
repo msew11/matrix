@@ -1,16 +1,16 @@
 package org.matrix.game.common.component
 
-class ComponentManager: IComponent {
+class ComponentManager {
 
     private val allComponents = ArrayList<IComponent>()
 
-    override fun init() {
+    fun init() {
         for (component in allComponents) {
             component.init()
         }
     }
 
-    override fun close() {
+    fun close() {
         for (component in allComponents) {
             component.close()
         }

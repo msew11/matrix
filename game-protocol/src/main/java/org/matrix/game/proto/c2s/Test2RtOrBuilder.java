@@ -2,10 +2,10 @@
 // source: test.proto
 
 // Protobuf Java Version: 3.25.1
-package org.matrix.game.proto;
+package org.matrix.game.proto.c2s;
 
-public interface TestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Test)
+public interface Test2RtOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:Test2Rt)
     com.google.protobuf.MessageOrBuilder {
 
   /**

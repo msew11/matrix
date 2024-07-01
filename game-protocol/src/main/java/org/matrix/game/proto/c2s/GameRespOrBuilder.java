@@ -2,10 +2,10 @@
 // source: test.proto
 
 // Protobuf Java Version: 3.25.1
-package org.matrix.game.proto;
+package org.matrix.game.proto.c2s;
 
-public interface HelloMatrixRtOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:HelloMatrixRt)
+public interface GameRespOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:GameResp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -17,11 +17,11 @@ public interface HelloMatrixRtOrBuilder extends
    * <code>.TestRt testRt = 1;</code>
    * @return The testRt.
    */
-  org.matrix.game.proto.TestRt getTestRt();
+  org.matrix.game.proto.c2s.TestRt getTestRt();
   /**
    * <code>.TestRt testRt = 1;</code>
    */
-  org.matrix.game.proto.TestRtOrBuilder getTestRtOrBuilder();
+  org.matrix.game.proto.c2s.TestRtOrBuilder getTestRtOrBuilder();
 
-  org.matrix.game.proto.HelloMatrixRt.PayloadCase getPayloadCase();
+  org.matrix.game.proto.c2s.GameResp.PayloadCase getPayloadCase();
 }

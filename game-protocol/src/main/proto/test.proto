@@ -1,16 +1,16 @@
 syntax = "proto3";
-option java_package = "org.matrix.game.proto";
-option java_outer_classname = "TestMessage";
+option java_package = "org.matrix.game.proto.c2s";
+option java_outer_classname = "C2SMsg";
 option java_multiple_files = true;
 
-message HelloMatrix {
+message GameReq {
   oneof payload {
       Test test = 3;
       Test2 test2 = 4;
   }
 }
 
-message HelloMatrixRt {
+message GameResp {
   oneof payload {
     TestRt testRt = 1;
   }

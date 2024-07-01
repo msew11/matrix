@@ -7,15 +7,14 @@ import io.netty.channel.ChannelOption
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioServerSocketChannel
-import io.netty.handler.codec.protobuf.ProtobufDecoder
-import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder
 import org.matrix.game.common.log.logError
 import org.matrix.game.common.log.logInfo
 import org.matrix.game.common.network.IServer
-import org.matrix.game.common.network.netty.handler.MyServerHandler
-import org.matrix.game.proto.HelloMatrix
 
-class NettyServer : IServer {
+class NettyServer(
+    private val port: Int,
+    private val initializer: ChannelInitializer<SocketChannel>
+) : IServer {
 
     lateinit var bossGroup: NioEventLoopGroup
     lateinit var workerGroup: NioEventLoopGroup
@@ -36,15 +35,9 @@ class NettyServer : IServer {
             .childOption(ChannelOption.SO_KEEPALIVE, true)
             // `true`表示禁用 Nagle 算法，降低延迟
             .childOption(ChannelOption.TCP_NODELAY, true)
-            .childHandler(object : ChannelInitializer<SocketChannel>() {
-                override fun initChannel(ch: SocketChannel) {
-                    ch.pipeline().addLast(ProtobufVarint32FrameDecoder());
-                    ch.pipeline().addLast(ProtobufDecoder(HelloMatrix.getDefaultInstance()));
-                    ch.pipeline().addLast(MyServerHandler())
-                }
-            })
+            .childHandler(initializer)
 
-        val bindFuture = bootstrap.bind(6666)
+        val bindFuture = bootstrap.bind(port)
 
         closeThread = Thread({
             try {

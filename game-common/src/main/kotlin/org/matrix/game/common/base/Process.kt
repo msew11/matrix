@@ -2,9 +2,10 @@ package org.matrix.game.common.base
 
 import org.matrix.game.common.component.ComponentManager
 import org.matrix.game.common.component.IComponent
+import org.matrix.game.common.constg.EProcessType
 import org.matrix.game.common.log.logInfo
 
-abstract class Process(private val name: String) {
+abstract class Process(private val processType: EProcessType) {
 
     private val componentManager: ComponentManager = ComponentManager()
     private val holdProcessor: HoldProcessor = HoldProcessor()
@@ -14,12 +15,12 @@ abstract class Process(private val name: String) {
     open fun boot() {
         prepare()
         componentManager.init()
-        logInfo { "$name STARTED" }
+        logInfo { "${processType.name} STARTED" }
         holdProcessor.startAwait()
     }
 
     open fun shutdown() {
-        logInfo { "$name STOP ..." }
+        logInfo { "${processType.name} STOP ..." }
         componentManager.close()
         // TimeUnit.SECONDS.sleep(10)
         holdProcessor.stopAwait()

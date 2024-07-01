@@ -6,11 +6,11 @@ plugins {
 
 dependencies {
     api(project(":game-protocol"))
-    implementation("io.netty:netty-all:${Versions.NETTY_VERSION}")
+    api("io.netty:netty-all:${Versions.NETTY_VERSION}")
     testImplementation(kotlin("test"))
 
-    implementation(platform("com.typesafe.akka:akka-bom_${Versions.SCALA_BINARY}:${Versions.AKKA_VERSION}"))
-    implementation("com.typesafe.akka:akka-actor-typed_${Versions.SCALA_BINARY}")
+    api(platform("com.typesafe.akka:akka-bom_${Versions.SCALA_BINARY}:${Versions.AKKA_VERSION}"))
+    api("com.typesafe.akka:akka-actor-typed_${Versions.SCALA_BINARY}")
     testImplementation("com.typesafe.akka:akka-actor-testkit-typed_${Versions.SCALA_BINARY}")
 }
 

@@ -1,11 +1,11 @@
-import org.matrix.game.proto.HelloMatrix
+import org.matrix.game.proto.c2s.GameReq
 
 fun main() {
 
 
 
-    val a = HelloMatrix.getDescriptor().findFieldByNumber(HelloMatrix.PayloadCase.TEST.number)
+    val a = GameReq.getDescriptor().findFieldByNumber(GameReq.PayloadCase.TEST.number)
     println(a)
-    val b = HelloMatrix.getDescriptor().findFieldByNumber(HelloMatrix.PayloadCase.TEST2.number)
+    val b = GameReq.getDescriptor().findFieldByNumber(GameReq.PayloadCase.TEST2.number)
     println(b)
 }

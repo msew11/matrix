@@ -8,7 +8,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":game-common"))
+    implementation(project(":game-common"))
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-starter")

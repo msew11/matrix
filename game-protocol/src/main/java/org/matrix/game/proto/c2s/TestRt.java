@@ -2,21 +2,21 @@
 // source: test.proto
 
 // Protobuf Java Version: 3.25.1
-package org.matrix.game.proto;
+package org.matrix.game.proto.c2s;
 
 /**
- * Protobuf type {@code Test2}
+ * Protobuf type {@code TestRt}
  */
-public final class Test2 extends
+public final class TestRt extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Test2)
-    Test2OrBuilder {
+    // @@protoc_insertion_point(message_implements:TestRt)
+    TestRtOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use Test2.newBuilder() to construct.
-  private Test2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TestRt.newBuilder() to construct.
+  private TestRt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Test2() {
+  private TestRt() {
     content_ = "";
   }
 
@@ -24,20 +24,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new Test2();
+    return new TestRt();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.matrix.game.proto.TestMessage.internal_static_Test2_descriptor;
+    return org.matrix.game.proto.c2s.C2SMsg.internal_static_TestRt_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.matrix.game.proto.TestMessage.internal_static_Test2_fieldAccessorTable
+    return org.matrix.game.proto.c2s.C2SMsg.internal_static_TestRt_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.matrix.game.proto.Test2.class, org.matrix.game.proto.Test2.Builder.class);
+            org.matrix.game.proto.c2s.TestRt.class, org.matrix.game.proto.c2s.TestRt.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -148,10 +148,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.matrix.game.proto.Test2)) {
+    if (!(obj instanceof org.matrix.game.proto.c2s.TestRt)) {
       return super.equals(obj);
     }
-    org.matrix.game.proto.Test2 other = (org.matrix.game.proto.Test2) obj;
+    org.matrix.game.proto.c2s.TestRt other = (org.matrix.game.proto.c2s.TestRt) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -177,44 +177,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(byte[] data)
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(java.io.InputStream input)
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -222,26 +222,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static org.matrix.game.proto.Test2 parseDelimitedFrom(java.io.InputStream input)
+  public static org.matrix.game.proto.c2s.TestRt parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static org.matrix.game.proto.Test2 parseDelimitedFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.matrix.game.proto.Test2 parseFrom(
+  public static org.matrix.game.proto.c2s.TestRt parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.matrix.game.proto.Test2 prototype) {
+  public static Builder newBuilder(org.matrix.game.proto.c2s.TestRt prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -270,26 +270,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Test2}
+   * Protobuf type {@code TestRt}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Test2)
-      org.matrix.game.proto.Test2OrBuilder {
+      // @@protoc_insertion_point(builder_implements:TestRt)
+      org.matrix.game.proto.c2s.TestRtOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.matrix.game.proto.TestMessage.internal_static_Test2_descriptor;
+      return org.matrix.game.proto.c2s.C2SMsg.internal_static_TestRt_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.matrix.game.proto.TestMessage.internal_static_Test2_fieldAccessorTable
+      return org.matrix.game.proto.c2s.C2SMsg.internal_static_TestRt_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.matrix.game.proto.Test2.class, org.matrix.game.proto.Test2.Builder.class);
+              org.matrix.game.proto.c2s.TestRt.class, org.matrix.game.proto.c2s.TestRt.Builder.class);
     }
 
-    // Construct using org.matrix.game.proto.Test2.newBuilder()
+    // Construct using org.matrix.game.proto.c2s.TestRt.newBuilder()
     private Builder() {
 
     }
@@ -311,17 +311,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.matrix.game.proto.TestMessage.internal_static_Test2_descriptor;
+      return org.matrix.game.proto.c2s.C2SMsg.internal_static_TestRt_descriptor;
     }
 
     @java.lang.Override
-    public org.matrix.game.proto.Test2 getDefaultInstanceForType() {
-      return org.matrix.game.proto.Test2.getDefaultInstance();
+    public org.matrix.game.proto.c2s.TestRt getDefaultInstanceForType() {
+      return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.matrix.game.proto.Test2 build() {
-      org.matrix.game.proto.Test2 result = buildPartial();
+    public org.matrix.game.proto.c2s.TestRt build() {
+      org.matrix.game.proto.c2s.TestRt result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -329,14 +329,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.matrix.game.proto.Test2 buildPartial() {
-      org.matrix.game.proto.Test2 result = new org.matrix.game.proto.Test2(this);
+    public org.matrix.game.proto.c2s.TestRt buildPartial() {
+      org.matrix.game.proto.c2s.TestRt result = new org.matrix.game.proto.c2s.TestRt(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(org.matrix.game.proto.Test2 result) {
+    private void buildPartial0(org.matrix.game.proto.c2s.TestRt result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.id_ = id_;
@@ -380,16 +380,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.matrix.game.proto.Test2) {
-        return mergeFrom((org.matrix.game.proto.Test2)other);
+      if (other instanceof org.matrix.game.proto.c2s.TestRt) {
+        return mergeFrom((org.matrix.game.proto.c2s.TestRt)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.matrix.game.proto.Test2 other) {
-      if (other == org.matrix.game.proto.Test2.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.matrix.game.proto.c2s.TestRt other) {
+      if (other == org.matrix.game.proto.c2s.TestRt.getDefaultInstance()) return this;
       if (other.getId() != 0) {
         setId(other.getId());
       }
@@ -599,23 +599,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Test2)
+    // @@protoc_insertion_point(builder_scope:TestRt)
   }
 
-  // @@protoc_insertion_point(class_scope:Test2)
-  private static final org.matrix.game.proto.Test2 DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:TestRt)
+  private static final org.matrix.game.proto.c2s.TestRt DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.matrix.game.proto.Test2();
+    DEFAULT_INSTANCE = new org.matrix.game.proto.c2s.TestRt();
   }
 
-  public static org.matrix.game.proto.Test2 getDefaultInstance() {
+  public static org.matrix.game.proto.c2s.TestRt getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Test2>
-      PARSER = new com.google.protobuf.AbstractParser<Test2>() {
+  private static final com.google.protobuf.Parser<TestRt>
+      PARSER = new com.google.protobuf.AbstractParser<TestRt>() {
     @java.lang.Override
-    public Test2 parsePartialFrom(
+    public TestRt parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -634,17 +634,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<Test2> parser() {
+  public static com.google.protobuf.Parser<TestRt> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Test2> getParserForType() {
+  public com.google.protobuf.Parser<TestRt> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.matrix.game.proto.Test2 getDefaultInstanceForType() {
+  public org.matrix.game.proto.c2s.TestRt getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

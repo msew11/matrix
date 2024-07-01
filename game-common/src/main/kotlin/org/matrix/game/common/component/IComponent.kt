@@ -2,7 +2,23 @@ package org.matrix.game.common.component
 
 interface IComponent {
 
-    fun init()
+    fun isInitialized(): Boolean
 
-    fun close()
+    fun init() {
+        if (isInitialized()) {
+            return
+        }
+
+        doInit()
+    }
+
+    fun close() {
+        if (isInitialized()) {
+            doClose()
+        }
+    }
+
+    fun doInit()
+
+    fun doClose()
 }
