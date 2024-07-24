@@ -1,0 +1,17 @@
+package org.matrix.game.client
+
+import org.matix.game.client.component.CompClient
+import org.matrix.game.common.base.Process
+import org.matrix.game.common.constg.ProcessType
+
+class Client : Process(ProcessType.CLIENT) {
+
+    lateinit var compClient: CompClient
+
+    override fun prepare() {
+        compClient = regComponent(CompClient())
+    }
+
+}
+
+lateinit var client: Client

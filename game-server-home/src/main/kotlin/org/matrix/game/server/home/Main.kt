@@ -6,10 +6,10 @@ import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.ApplicationListener
 
 @SpringBootApplication
-class GameServerGatewayApplication
+class GameServerHomeApplication
 
 fun main(args: Array<String>) {
-    val application = SpringApplication(GameServerGatewayApplication::class.java)
+    val application = SpringApplication(GameServerHomeApplication::class.java)
     application.addListeners(ApplicationReadyEventListener())
     application.run(*args)
 }

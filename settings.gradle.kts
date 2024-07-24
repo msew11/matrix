@@ -4,6 +4,6 @@ plugins {
 rootProject.name = "ReBorn"
 include("game-protocol")
 include("game-common")
-include("game-server-gateway")
+include("game-server-gate")
 include("game-client")
 include("game-server-home")

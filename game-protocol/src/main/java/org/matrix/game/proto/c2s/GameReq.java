@@ -45,8 +45,9 @@ private static final long serialVersionUID = 0L;
   public enum PayloadCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    TEST(3),
-    TEST2(4),
+    ENTERGAME(1001),
+    STRINGMSG(2001),
+    NUMBERMSG(2002),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -64,8 +65,9 @@ private static final long serialVersionUID = 0L;
 
     public static PayloadCase forNumber(int value) {
       switch (value) {
-        case 3: return TEST;
-        case 4: return TEST2;
+        case 1001: return ENTERGAME;
+        case 2001: return STRINGMSG;
+        case 2002: return NUMBERMSG;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -81,66 +83,121 @@ private static final long serialVersionUID = 0L;
         payloadCase_);
   }
 
-  public static final int TEST_FIELD_NUMBER = 3;
+  public static final int ENTERGAME_FIELD_NUMBER = 1001;
   /**
-   * <code>.Test test = 3;</code>
-   * @return Whether the test field is set.
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
+   * @return Whether the enterGame field is set.
    */
   @java.lang.Override
-  public boolean hasTest() {
-    return payloadCase_ == 3;
+  public boolean hasEnterGame() {
+    return payloadCase_ == 1001;
   }
   /**
-   * <code>.Test test = 3;</code>
-   * @return The test.
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
+   * @return The enterGame.
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.Test getTest() {
-    if (payloadCase_ == 3) {
-       return (org.matrix.game.proto.c2s.Test) payload_;
+  public org.matrix.game.proto.c2s.EnterGame getEnterGame() {
+    if (payloadCase_ == 1001) {
+       return (org.matrix.game.proto.c2s.EnterGame) payload_;
     }
-    return org.matrix.game.proto.c2s.Test.getDefaultInstance();
+    return org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
   }
   /**
-   * <code>.Test test = 3;</code>
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.TestOrBuilder getTestOrBuilder() {
-    if (payloadCase_ == 3) {
-       return (org.matrix.game.proto.c2s.Test) payload_;
+  public org.matrix.game.proto.c2s.EnterGameOrBuilder getEnterGameOrBuilder() {
+    if (payloadCase_ == 1001) {
+       return (org.matrix.game.proto.c2s.EnterGame) payload_;
     }
-    return org.matrix.game.proto.c2s.Test.getDefaultInstance();
+    return org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
   }
 
-  public static final int TEST2_FIELD_NUMBER = 4;
+  public static final int STRINGMSG_FIELD_NUMBER = 2001;
   /**
-   * <code>.Test2 test2 = 4;</code>
-   * @return Whether the test2 field is set.
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
+   * @return Whether the stringMsg field is set.
    */
   @java.lang.Override
-  public boolean hasTest2() {
-    return payloadCase_ == 4;
+  public boolean hasStringMsg() {
+    return payloadCase_ == 2001;
   }
   /**
-   * <code>.Test2 test2 = 4;</code>
-   * @return The test2.
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
+   * @return The stringMsg.
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.Test2 getTest2() {
-    if (payloadCase_ == 4) {
-       return (org.matrix.game.proto.c2s.Test2) payload_;
+  public org.matrix.game.proto.c2s.StringMsg getStringMsg() {
+    if (payloadCase_ == 2001) {
+       return (org.matrix.game.proto.c2s.StringMsg) payload_;
     }
-    return org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+    return org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
   }
   /**
-   * <code>.Test2 test2 = 4;</code>
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.Test2OrBuilder getTest2OrBuilder() {
-    if (payloadCase_ == 4) {
-       return (org.matrix.game.proto.c2s.Test2) payload_;
+  public org.matrix.game.proto.c2s.StringMsgOrBuilder getStringMsgOrBuilder() {
+    if (payloadCase_ == 2001) {
+       return (org.matrix.game.proto.c2s.StringMsg) payload_;
     }
-    return org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+    return org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
+  }
+
+  public static final int NUMBERMSG_FIELD_NUMBER = 2002;
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   * @return Whether the numberMsg field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumberMsg() {
+    return payloadCase_ == 2002;
+  }
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   * @return The numberMsg.
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.NumberMsg getNumberMsg() {
+    if (payloadCase_ == 2002) {
+       return (org.matrix.game.proto.c2s.NumberMsg) payload_;
+    }
+    return org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
+  }
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.NumberMsgOrBuilder getNumberMsgOrBuilder() {
+    if (payloadCase_ == 2002) {
+       return (org.matrix.game.proto.c2s.NumberMsg) payload_;
+    }
+    return org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -157,11 +214,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (payloadCase_ == 3) {
-      output.writeMessage(3, (org.matrix.game.proto.c2s.Test) payload_);
+    if (payloadCase_ == 1001) {
+      output.writeMessage(1001, (org.matrix.game.proto.c2s.EnterGame) payload_);
     }
-    if (payloadCase_ == 4) {
-      output.writeMessage(4, (org.matrix.game.proto.c2s.Test2) payload_);
+    if (payloadCase_ == 2001) {
+      output.writeMessage(2001, (org.matrix.game.proto.c2s.StringMsg) payload_);
+    }
+    if (payloadCase_ == 2002) {
+      output.writeMessage(2002, (org.matrix.game.proto.c2s.NumberMsg) payload_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -172,13 +232,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (payloadCase_ == 3) {
+    if (payloadCase_ == 1001) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (org.matrix.game.proto.c2s.Test) payload_);
+        .computeMessageSize(1001, (org.matrix.game.proto.c2s.EnterGame) payload_);
     }
-    if (payloadCase_ == 4) {
+    if (payloadCase_ == 2001) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (org.matrix.game.proto.c2s.Test2) payload_);
+        .computeMessageSize(2001, (org.matrix.game.proto.c2s.StringMsg) payload_);
+    }
+    if (payloadCase_ == 2002) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2002, (org.matrix.game.proto.c2s.NumberMsg) payload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -197,13 +261,17 @@ private static final long serialVersionUID = 0L;
 
     if (!getPayloadCase().equals(other.getPayloadCase())) return false;
     switch (payloadCase_) {
-      case 3:
-        if (!getTest()
-            .equals(other.getTest())) return false;
+      case 1001:
+        if (!getEnterGame()
+            .equals(other.getEnterGame())) return false;
         break;
-      case 4:
-        if (!getTest2()
-            .equals(other.getTest2())) return false;
+      case 2001:
+        if (!getStringMsg()
+            .equals(other.getStringMsg())) return false;
+        break;
+      case 2002:
+        if (!getNumberMsg()
+            .equals(other.getNumberMsg())) return false;
         break;
       case 0:
       default:
@@ -220,13 +288,17 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (payloadCase_) {
-      case 3:
-        hash = (37 * hash) + TEST_FIELD_NUMBER;
-        hash = (53 * hash) + getTest().hashCode();
+      case 1001:
+        hash = (37 * hash) + ENTERGAME_FIELD_NUMBER;
+        hash = (53 * hash) + getEnterGame().hashCode();
         break;
-      case 4:
-        hash = (37 * hash) + TEST2_FIELD_NUMBER;
-        hash = (53 * hash) + getTest2().hashCode();
+      case 2001:
+        hash = (37 * hash) + STRINGMSG_FIELD_NUMBER;
+        hash = (53 * hash) + getStringMsg().hashCode();
+        break;
+      case 2002:
+        hash = (37 * hash) + NUMBERMSG_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberMsg().hashCode();
         break;
       case 0:
       default:
@@ -362,11 +434,14 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (testBuilder_ != null) {
-        testBuilder_.clear();
+      if (enterGameBuilder_ != null) {
+        enterGameBuilder_.clear();
       }
-      if (test2Builder_ != null) {
-        test2Builder_.clear();
+      if (stringMsgBuilder_ != null) {
+        stringMsgBuilder_.clear();
+      }
+      if (numberMsgBuilder_ != null) {
+        numberMsgBuilder_.clear();
       }
       payloadCase_ = 0;
       payload_ = null;
@@ -409,13 +484,17 @@ private static final long serialVersionUID = 0L;
     private void buildPartialOneofs(org.matrix.game.proto.c2s.GameReq result) {
       result.payloadCase_ = payloadCase_;
       result.payload_ = this.payload_;
-      if (payloadCase_ == 3 &&
-          testBuilder_ != null) {
-        result.payload_ = testBuilder_.build();
+      if (payloadCase_ == 1001 &&
+          enterGameBuilder_ != null) {
+        result.payload_ = enterGameBuilder_.build();
       }
-      if (payloadCase_ == 4 &&
-          test2Builder_ != null) {
-        result.payload_ = test2Builder_.build();
+      if (payloadCase_ == 2001 &&
+          stringMsgBuilder_ != null) {
+        result.payload_ = stringMsgBuilder_.build();
+      }
+      if (payloadCase_ == 2002 &&
+          numberMsgBuilder_ != null) {
+        result.payload_ = numberMsgBuilder_.build();
       }
     }
 
@@ -464,12 +543,16 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(org.matrix.game.proto.c2s.GameReq other) {
       if (other == org.matrix.game.proto.c2s.GameReq.getDefaultInstance()) return this;
       switch (other.getPayloadCase()) {
-        case TEST: {
-          mergeTest(other.getTest());
+        case ENTERGAME: {
+          mergeEnterGame(other.getEnterGame());
           break;
         }
-        case TEST2: {
-          mergeTest2(other.getTest2());
+        case STRINGMSG: {
+          mergeStringMsg(other.getStringMsg());
+          break;
+        }
+        case NUMBERMSG: {
+          mergeNumberMsg(other.getNumberMsg());
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -502,20 +585,27 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 26: {
+            case 8010: {
               input.readMessage(
-                  getTestFieldBuilder().getBuilder(),
+                  getEnterGameFieldBuilder().getBuilder(),
                   extensionRegistry);
-              payloadCase_ = 3;
+              payloadCase_ = 1001;
               break;
-            } // case 26
-            case 34: {
+            } // case 8010
+            case 16010: {
               input.readMessage(
-                  getTest2FieldBuilder().getBuilder(),
+                  getStringMsgFieldBuilder().getBuilder(),
                   extensionRegistry);
-              payloadCase_ = 4;
+              payloadCase_ = 2001;
               break;
-            } // case 34
+            } // case 16010
+            case 16018: {
+              input.readMessage(
+                  getNumberMsgFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              payloadCase_ = 2002;
+              break;
+            } // case 16018
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -549,287 +639,501 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.Test, org.matrix.game.proto.c2s.Test.Builder, org.matrix.game.proto.c2s.TestOrBuilder> testBuilder_;
+        org.matrix.game.proto.c2s.EnterGame, org.matrix.game.proto.c2s.EnterGame.Builder, org.matrix.game.proto.c2s.EnterGameOrBuilder> enterGameBuilder_;
     /**
-     * <code>.Test test = 3;</code>
-     * @return Whether the test field is set.
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
+     * @return Whether the enterGame field is set.
      */
     @java.lang.Override
-    public boolean hasTest() {
-      return payloadCase_ == 3;
+    public boolean hasEnterGame() {
+      return payloadCase_ == 1001;
     }
     /**
-     * <code>.Test test = 3;</code>
-     * @return The test.
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
+     * @return The enterGame.
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.Test getTest() {
-      if (testBuilder_ == null) {
-        if (payloadCase_ == 3) {
-          return (org.matrix.game.proto.c2s.Test) payload_;
+    public org.matrix.game.proto.c2s.EnterGame getEnterGame() {
+      if (enterGameBuilder_ == null) {
+        if (payloadCase_ == 1001) {
+          return (org.matrix.game.proto.c2s.EnterGame) payload_;
         }
-        return org.matrix.game.proto.c2s.Test.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
       } else {
-        if (payloadCase_ == 3) {
-          return testBuilder_.getMessage();
+        if (payloadCase_ == 1001) {
+          return enterGameBuilder_.getMessage();
         }
-        return org.matrix.game.proto.c2s.Test.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
       }
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
-    public Builder setTest(org.matrix.game.proto.c2s.Test value) {
-      if (testBuilder_ == null) {
+    public Builder setEnterGame(org.matrix.game.proto.c2s.EnterGame value) {
+      if (enterGameBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         payload_ = value;
         onChanged();
       } else {
-        testBuilder_.setMessage(value);
+        enterGameBuilder_.setMessage(value);
       }
-      payloadCase_ = 3;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
-    public Builder setTest(
-        org.matrix.game.proto.c2s.Test.Builder builderForValue) {
-      if (testBuilder_ == null) {
+    public Builder setEnterGame(
+        org.matrix.game.proto.c2s.EnterGame.Builder builderForValue) {
+      if (enterGameBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
       } else {
-        testBuilder_.setMessage(builderForValue.build());
+        enterGameBuilder_.setMessage(builderForValue.build());
       }
-      payloadCase_ = 3;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
-    public Builder mergeTest(org.matrix.game.proto.c2s.Test value) {
-      if (testBuilder_ == null) {
-        if (payloadCase_ == 3 &&
-            payload_ != org.matrix.game.proto.c2s.Test.getDefaultInstance()) {
-          payload_ = org.matrix.game.proto.c2s.Test.newBuilder((org.matrix.game.proto.c2s.Test) payload_)
+    public Builder mergeEnterGame(org.matrix.game.proto.c2s.EnterGame value) {
+      if (enterGameBuilder_ == null) {
+        if (payloadCase_ == 1001 &&
+            payload_ != org.matrix.game.proto.c2s.EnterGame.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.EnterGame.newBuilder((org.matrix.game.proto.c2s.EnterGame) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
         }
         onChanged();
       } else {
-        if (payloadCase_ == 3) {
-          testBuilder_.mergeFrom(value);
+        if (payloadCase_ == 1001) {
+          enterGameBuilder_.mergeFrom(value);
         } else {
-          testBuilder_.setMessage(value);
+          enterGameBuilder_.setMessage(value);
         }
       }
-      payloadCase_ = 3;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
-    public Builder clearTest() {
-      if (testBuilder_ == null) {
-        if (payloadCase_ == 3) {
+    public Builder clearEnterGame() {
+      if (enterGameBuilder_ == null) {
+        if (payloadCase_ == 1001) {
           payloadCase_ = 0;
           payload_ = null;
           onChanged();
         }
       } else {
-        if (payloadCase_ == 3) {
+        if (payloadCase_ == 1001) {
           payloadCase_ = 0;
           payload_ = null;
         }
-        testBuilder_.clear();
+        enterGameBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
-    public org.matrix.game.proto.c2s.Test.Builder getTestBuilder() {
-      return getTestFieldBuilder().getBuilder();
+    public org.matrix.game.proto.c2s.EnterGame.Builder getEnterGameBuilder() {
+      return getEnterGameFieldBuilder().getBuilder();
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.TestOrBuilder getTestOrBuilder() {
-      if ((payloadCase_ == 3) && (testBuilder_ != null)) {
-        return testBuilder_.getMessageOrBuilder();
+    public org.matrix.game.proto.c2s.EnterGameOrBuilder getEnterGameOrBuilder() {
+      if ((payloadCase_ == 1001) && (enterGameBuilder_ != null)) {
+        return enterGameBuilder_.getMessageOrBuilder();
       } else {
-        if (payloadCase_ == 3) {
-          return (org.matrix.game.proto.c2s.Test) payload_;
+        if (payloadCase_ == 1001) {
+          return (org.matrix.game.proto.c2s.EnterGame) payload_;
         }
-        return org.matrix.game.proto.c2s.Test.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
       }
     }
     /**
-     * <code>.Test test = 3;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGame enterGame = 1001;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.Test, org.matrix.game.proto.c2s.Test.Builder, org.matrix.game.proto.c2s.TestOrBuilder> 
-        getTestFieldBuilder() {
-      if (testBuilder_ == null) {
-        if (!(payloadCase_ == 3)) {
-          payload_ = org.matrix.game.proto.c2s.Test.getDefaultInstance();
+        org.matrix.game.proto.c2s.EnterGame, org.matrix.game.proto.c2s.EnterGame.Builder, org.matrix.game.proto.c2s.EnterGameOrBuilder> 
+        getEnterGameFieldBuilder() {
+      if (enterGameBuilder_ == null) {
+        if (!(payloadCase_ == 1001)) {
+          payload_ = org.matrix.game.proto.c2s.EnterGame.getDefaultInstance();
         }
-        testBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.matrix.game.proto.c2s.Test, org.matrix.game.proto.c2s.Test.Builder, org.matrix.game.proto.c2s.TestOrBuilder>(
-                (org.matrix.game.proto.c2s.Test) payload_,
+        enterGameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.EnterGame, org.matrix.game.proto.c2s.EnterGame.Builder, org.matrix.game.proto.c2s.EnterGameOrBuilder>(
+                (org.matrix.game.proto.c2s.EnterGame) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
       }
-      payloadCase_ = 3;
+      payloadCase_ = 1001;
       onChanged();
-      return testBuilder_;
+      return enterGameBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.Test2, org.matrix.game.proto.c2s.Test2.Builder, org.matrix.game.proto.c2s.Test2OrBuilder> test2Builder_;
+        org.matrix.game.proto.c2s.StringMsg, org.matrix.game.proto.c2s.StringMsg.Builder, org.matrix.game.proto.c2s.StringMsgOrBuilder> stringMsgBuilder_;
     /**
-     * <code>.Test2 test2 = 4;</code>
-     * @return Whether the test2 field is set.
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
+     * @return Whether the stringMsg field is set.
      */
     @java.lang.Override
-    public boolean hasTest2() {
-      return payloadCase_ == 4;
+    public boolean hasStringMsg() {
+      return payloadCase_ == 2001;
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
-     * @return The test2.
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
+     * @return The stringMsg.
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.Test2 getTest2() {
-      if (test2Builder_ == null) {
-        if (payloadCase_ == 4) {
-          return (org.matrix.game.proto.c2s.Test2) payload_;
+    public org.matrix.game.proto.c2s.StringMsg getStringMsg() {
+      if (stringMsgBuilder_ == null) {
+        if (payloadCase_ == 2001) {
+          return (org.matrix.game.proto.c2s.StringMsg) payload_;
         }
-        return org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+        return org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
       } else {
-        if (payloadCase_ == 4) {
-          return test2Builder_.getMessage();
+        if (payloadCase_ == 2001) {
+          return stringMsgBuilder_.getMessage();
         }
-        return org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+        return org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
       }
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
-    public Builder setTest2(org.matrix.game.proto.c2s.Test2 value) {
-      if (test2Builder_ == null) {
+    public Builder setStringMsg(org.matrix.game.proto.c2s.StringMsg value) {
+      if (stringMsgBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         payload_ = value;
         onChanged();
       } else {
-        test2Builder_.setMessage(value);
+        stringMsgBuilder_.setMessage(value);
       }
-      payloadCase_ = 4;
+      payloadCase_ = 2001;
       return this;
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
-    public Builder setTest2(
-        org.matrix.game.proto.c2s.Test2.Builder builderForValue) {
-      if (test2Builder_ == null) {
+    public Builder setStringMsg(
+        org.matrix.game.proto.c2s.StringMsg.Builder builderForValue) {
+      if (stringMsgBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
       } else {
-        test2Builder_.setMessage(builderForValue.build());
+        stringMsgBuilder_.setMessage(builderForValue.build());
       }
-      payloadCase_ = 4;
+      payloadCase_ = 2001;
       return this;
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
-    public Builder mergeTest2(org.matrix.game.proto.c2s.Test2 value) {
-      if (test2Builder_ == null) {
-        if (payloadCase_ == 4 &&
-            payload_ != org.matrix.game.proto.c2s.Test2.getDefaultInstance()) {
-          payload_ = org.matrix.game.proto.c2s.Test2.newBuilder((org.matrix.game.proto.c2s.Test2) payload_)
+    public Builder mergeStringMsg(org.matrix.game.proto.c2s.StringMsg value) {
+      if (stringMsgBuilder_ == null) {
+        if (payloadCase_ == 2001 &&
+            payload_ != org.matrix.game.proto.c2s.StringMsg.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.StringMsg.newBuilder((org.matrix.game.proto.c2s.StringMsg) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
         }
         onChanged();
       } else {
-        if (payloadCase_ == 4) {
-          test2Builder_.mergeFrom(value);
+        if (payloadCase_ == 2001) {
+          stringMsgBuilder_.mergeFrom(value);
         } else {
-          test2Builder_.setMessage(value);
+          stringMsgBuilder_.setMessage(value);
         }
       }
-      payloadCase_ = 4;
+      payloadCase_ = 2001;
       return this;
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
-    public Builder clearTest2() {
-      if (test2Builder_ == null) {
-        if (payloadCase_ == 4) {
+    public Builder clearStringMsg() {
+      if (stringMsgBuilder_ == null) {
+        if (payloadCase_ == 2001) {
           payloadCase_ = 0;
           payload_ = null;
           onChanged();
         }
       } else {
-        if (payloadCase_ == 4) {
+        if (payloadCase_ == 2001) {
           payloadCase_ = 0;
           payload_ = null;
         }
-        test2Builder_.clear();
+        stringMsgBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
-    public org.matrix.game.proto.c2s.Test2.Builder getTest2Builder() {
-      return getTest2FieldBuilder().getBuilder();
+    public org.matrix.game.proto.c2s.StringMsg.Builder getStringMsgBuilder() {
+      return getStringMsgFieldBuilder().getBuilder();
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.Test2OrBuilder getTest2OrBuilder() {
-      if ((payloadCase_ == 4) && (test2Builder_ != null)) {
-        return test2Builder_.getMessageOrBuilder();
+    public org.matrix.game.proto.c2s.StringMsgOrBuilder getStringMsgOrBuilder() {
+      if ((payloadCase_ == 2001) && (stringMsgBuilder_ != null)) {
+        return stringMsgBuilder_.getMessageOrBuilder();
       } else {
-        if (payloadCase_ == 4) {
-          return (org.matrix.game.proto.c2s.Test2) payload_;
+        if (payloadCase_ == 2001) {
+          return (org.matrix.game.proto.c2s.StringMsg) payload_;
         }
-        return org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+        return org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
       }
     }
     /**
-     * <code>.Test2 test2 = 4;</code>
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsg stringMsg = 2001;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.Test2, org.matrix.game.proto.c2s.Test2.Builder, org.matrix.game.proto.c2s.Test2OrBuilder> 
-        getTest2FieldBuilder() {
-      if (test2Builder_ == null) {
-        if (!(payloadCase_ == 4)) {
-          payload_ = org.matrix.game.proto.c2s.Test2.getDefaultInstance();
+        org.matrix.game.proto.c2s.StringMsg, org.matrix.game.proto.c2s.StringMsg.Builder, org.matrix.game.proto.c2s.StringMsgOrBuilder> 
+        getStringMsgFieldBuilder() {
+      if (stringMsgBuilder_ == null) {
+        if (!(payloadCase_ == 2001)) {
+          payload_ = org.matrix.game.proto.c2s.StringMsg.getDefaultInstance();
         }
-        test2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.matrix.game.proto.c2s.Test2, org.matrix.game.proto.c2s.Test2.Builder, org.matrix.game.proto.c2s.Test2OrBuilder>(
-                (org.matrix.game.proto.c2s.Test2) payload_,
+        stringMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.StringMsg, org.matrix.game.proto.c2s.StringMsg.Builder, org.matrix.game.proto.c2s.StringMsgOrBuilder>(
+                (org.matrix.game.proto.c2s.StringMsg) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
       }
-      payloadCase_ = 4;
+      payloadCase_ = 2001;
       onChanged();
-      return test2Builder_;
+      return stringMsgBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.NumberMsg, org.matrix.game.proto.c2s.NumberMsg.Builder, org.matrix.game.proto.c2s.NumberMsgOrBuilder> numberMsgBuilder_;
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     * @return Whether the numberMsg field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumberMsg() {
+      return payloadCase_ == 2002;
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     * @return The numberMsg.
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.NumberMsg getNumberMsg() {
+      if (numberMsgBuilder_ == null) {
+        if (payloadCase_ == 2002) {
+          return (org.matrix.game.proto.c2s.NumberMsg) payload_;
+        }
+        return org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 2002) {
+          return numberMsgBuilder_.getMessage();
+        }
+        return org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    public Builder setNumberMsg(org.matrix.game.proto.c2s.NumberMsg value) {
+      if (numberMsgBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        numberMsgBuilder_.setMessage(value);
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    public Builder setNumberMsg(
+        org.matrix.game.proto.c2s.NumberMsg.Builder builderForValue) {
+      if (numberMsgBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        numberMsgBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    public Builder mergeNumberMsg(org.matrix.game.proto.c2s.NumberMsg value) {
+      if (numberMsgBuilder_ == null) {
+        if (payloadCase_ == 2002 &&
+            payload_ != org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.NumberMsg.newBuilder((org.matrix.game.proto.c2s.NumberMsg) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 2002) {
+          numberMsgBuilder_.mergeFrom(value);
+        } else {
+          numberMsgBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    public Builder clearNumberMsg() {
+      if (numberMsgBuilder_ == null) {
+        if (payloadCase_ == 2002) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 2002) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        numberMsgBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    public org.matrix.game.proto.c2s.NumberMsg.Builder getNumberMsgBuilder() {
+      return getNumberMsgFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.NumberMsgOrBuilder getNumberMsgOrBuilder() {
+      if ((payloadCase_ == 2002) && (numberMsgBuilder_ != null)) {
+        return numberMsgBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 2002) {
+          return (org.matrix.game.proto.c2s.NumberMsg) payload_;
+        }
+        return org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.NumberMsg numberMsg = 2002;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.NumberMsg, org.matrix.game.proto.c2s.NumberMsg.Builder, org.matrix.game.proto.c2s.NumberMsgOrBuilder> 
+        getNumberMsgFieldBuilder() {
+      if (numberMsgBuilder_ == null) {
+        if (!(payloadCase_ == 2002)) {
+          payload_ = org.matrix.game.proto.c2s.NumberMsg.getDefaultInstance();
+        }
+        numberMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.NumberMsg, org.matrix.game.proto.c2s.NumberMsg.Builder, org.matrix.game.proto.c2s.NumberMsgOrBuilder>(
+                (org.matrix.game.proto.c2s.NumberMsg) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 2002;
+      onChanged();
+      return numberMsgBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -9,34 +9,73 @@ public interface GameReqOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.Test test = 3;</code>
-   * @return Whether the test field is set.
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
+   * @return Whether the enterGame field is set.
    */
-  boolean hasTest();
+  boolean hasEnterGame();
   /**
-   * <code>.Test test = 3;</code>
-   * @return The test.
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
+   * @return The enterGame.
    */
-  org.matrix.game.proto.c2s.Test getTest();
+  org.matrix.game.proto.c2s.EnterGame getEnterGame();
   /**
-   * <code>.Test test = 3;</code>
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGame enterGame = 1001;</code>
    */
-  org.matrix.game.proto.c2s.TestOrBuilder getTestOrBuilder();
+  org.matrix.game.proto.c2s.EnterGameOrBuilder getEnterGameOrBuilder();
 
   /**
-   * <code>.Test2 test2 = 4;</code>
-   * @return Whether the test2 field is set.
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
+   * @return Whether the stringMsg field is set.
    */
-  boolean hasTest2();
+  boolean hasStringMsg();
   /**
-   * <code>.Test2 test2 = 4;</code>
-   * @return The test2.
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
+   * @return The stringMsg.
    */
-  org.matrix.game.proto.c2s.Test2 getTest2();
+  org.matrix.game.proto.c2s.StringMsg getStringMsg();
   /**
-   * <code>.Test2 test2 = 4;</code>
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsg stringMsg = 2001;</code>
    */
-  org.matrix.game.proto.c2s.Test2OrBuilder getTest2OrBuilder();
+  org.matrix.game.proto.c2s.StringMsgOrBuilder getStringMsgOrBuilder();
+
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   * @return Whether the numberMsg field is set.
+   */
+  boolean hasNumberMsg();
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   * @return The numberMsg.
+   */
+  org.matrix.game.proto.c2s.NumberMsg getNumberMsg();
+  /**
+   * <code>.NumberMsg numberMsg = 2002;</code>
+   */
+  org.matrix.game.proto.c2s.NumberMsgOrBuilder getNumberMsgOrBuilder();
 
   org.matrix.game.proto.c2s.GameReq.PayloadCase getPayloadCase();
 }

@@ -45,7 +45,9 @@ private static final long serialVersionUID = 0L;
   public enum PayloadCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    TESTRT(1),
+    ENTERGAMERT(1001),
+    STRINGMSGRT(2001),
+    NUMBERMSGRT(2002),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -63,7 +65,9 @@ private static final long serialVersionUID = 0L;
 
     public static PayloadCase forNumber(int value) {
       switch (value) {
-        case 1: return TESTRT;
+        case 1001: return ENTERGAMERT;
+        case 2001: return STRINGMSGRT;
+        case 2002: return NUMBERMSGRT;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -79,35 +83,132 @@ private static final long serialVersionUID = 0L;
         payloadCase_);
   }
 
-  public static final int TESTRT_FIELD_NUMBER = 1;
+  public static final int CODE_FIELD_NUMBER = 1;
+  private int code_ = 0;
   /**
-   * <code>.TestRt testRt = 1;</code>
-   * @return Whether the testRt field is set.
+   * <code>int32 code = 1;</code>
+   * @return The code.
    */
   @java.lang.Override
-  public boolean hasTestRt() {
-    return payloadCase_ == 1;
+  public int getCode() {
+    return code_;
+  }
+
+  public static final int ENTERGAMERT_FIELD_NUMBER = 1001;
+  /**
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGameRt enterGameRt = 1001;</code>
+   * @return Whether the enterGameRt field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnterGameRt() {
+    return payloadCase_ == 1001;
   }
   /**
-   * <code>.TestRt testRt = 1;</code>
-   * @return The testRt.
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGameRt enterGameRt = 1001;</code>
+   * @return The enterGameRt.
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.TestRt getTestRt() {
-    if (payloadCase_ == 1) {
-       return (org.matrix.game.proto.c2s.TestRt) payload_;
+  public org.matrix.game.proto.c2s.EnterGameRt getEnterGameRt() {
+    if (payloadCase_ == 1001) {
+       return (org.matrix.game.proto.c2s.EnterGameRt) payload_;
     }
-    return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+    return org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
   }
   /**
-   * <code>.TestRt testRt = 1;</code>
+   * <pre>
+   * 登录
+   * </pre>
+   *
+   * <code>.EnterGameRt enterGameRt = 1001;</code>
    */
   @java.lang.Override
-  public org.matrix.game.proto.c2s.TestRtOrBuilder getTestRtOrBuilder() {
-    if (payloadCase_ == 1) {
-       return (org.matrix.game.proto.c2s.TestRt) payload_;
+  public org.matrix.game.proto.c2s.EnterGameRtOrBuilder getEnterGameRtOrBuilder() {
+    if (payloadCase_ == 1001) {
+       return (org.matrix.game.proto.c2s.EnterGameRt) payload_;
     }
-    return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+    return org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
+  }
+
+  public static final int STRINGMSGRT_FIELD_NUMBER = 2001;
+  /**
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsgRt stringMsgRt = 2001;</code>
+   * @return Whether the stringMsgRt field is set.
+   */
+  @java.lang.Override
+  public boolean hasStringMsgRt() {
+    return payloadCase_ == 2001;
+  }
+  /**
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsgRt stringMsgRt = 2001;</code>
+   * @return The stringMsgRt.
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.StringMsgRt getStringMsgRt() {
+    if (payloadCase_ == 2001) {
+       return (org.matrix.game.proto.c2s.StringMsgRt) payload_;
+    }
+    return org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * 测试
+   * </pre>
+   *
+   * <code>.StringMsgRt stringMsgRt = 2001;</code>
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.StringMsgRtOrBuilder getStringMsgRtOrBuilder() {
+    if (payloadCase_ == 2001) {
+       return (org.matrix.game.proto.c2s.StringMsgRt) payload_;
+    }
+    return org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+  }
+
+  public static final int NUMBERMSGRT_FIELD_NUMBER = 2002;
+  /**
+   * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+   * @return Whether the numberMsgRt field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumberMsgRt() {
+    return payloadCase_ == 2002;
+  }
+  /**
+   * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+   * @return The numberMsgRt.
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.NumberMsgRt getNumberMsgRt() {
+    if (payloadCase_ == 2002) {
+       return (org.matrix.game.proto.c2s.NumberMsgRt) payload_;
+    }
+    return org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
+  }
+  /**
+   * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+   */
+  @java.lang.Override
+  public org.matrix.game.proto.c2s.NumberMsgRtOrBuilder getNumberMsgRtOrBuilder() {
+    if (payloadCase_ == 2002) {
+       return (org.matrix.game.proto.c2s.NumberMsgRt) payload_;
+    }
+    return org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -124,8 +225,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (payloadCase_ == 1) {
-      output.writeMessage(1, (org.matrix.game.proto.c2s.TestRt) payload_);
+    if (code_ != 0) {
+      output.writeInt32(1, code_);
+    }
+    if (payloadCase_ == 1001) {
+      output.writeMessage(1001, (org.matrix.game.proto.c2s.EnterGameRt) payload_);
+    }
+    if (payloadCase_ == 2001) {
+      output.writeMessage(2001, (org.matrix.game.proto.c2s.StringMsgRt) payload_);
+    }
+    if (payloadCase_ == 2002) {
+      output.writeMessage(2002, (org.matrix.game.proto.c2s.NumberMsgRt) payload_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -136,9 +246,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (payloadCase_ == 1) {
+    if (code_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (org.matrix.game.proto.c2s.TestRt) payload_);
+        .computeInt32Size(1, code_);
+    }
+    if (payloadCase_ == 1001) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1001, (org.matrix.game.proto.c2s.EnterGameRt) payload_);
+    }
+    if (payloadCase_ == 2001) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2001, (org.matrix.game.proto.c2s.StringMsgRt) payload_);
+    }
+    if (payloadCase_ == 2002) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2002, (org.matrix.game.proto.c2s.NumberMsgRt) payload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -155,11 +277,21 @@ private static final long serialVersionUID = 0L;
     }
     org.matrix.game.proto.c2s.GameResp other = (org.matrix.game.proto.c2s.GameResp) obj;
 
+    if (getCode()
+        != other.getCode()) return false;
     if (!getPayloadCase().equals(other.getPayloadCase())) return false;
     switch (payloadCase_) {
-      case 1:
-        if (!getTestRt()
-            .equals(other.getTestRt())) return false;
+      case 1001:
+        if (!getEnterGameRt()
+            .equals(other.getEnterGameRt())) return false;
+        break;
+      case 2001:
+        if (!getStringMsgRt()
+            .equals(other.getStringMsgRt())) return false;
+        break;
+      case 2002:
+        if (!getNumberMsgRt()
+            .equals(other.getNumberMsgRt())) return false;
         break;
       case 0:
       default:
@@ -175,10 +307,20 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCode();
     switch (payloadCase_) {
-      case 1:
-        hash = (37 * hash) + TESTRT_FIELD_NUMBER;
-        hash = (53 * hash) + getTestRt().hashCode();
+      case 1001:
+        hash = (37 * hash) + ENTERGAMERT_FIELD_NUMBER;
+        hash = (53 * hash) + getEnterGameRt().hashCode();
+        break;
+      case 2001:
+        hash = (37 * hash) + STRINGMSGRT_FIELD_NUMBER;
+        hash = (53 * hash) + getStringMsgRt().hashCode();
+        break;
+      case 2002:
+        hash = (37 * hash) + NUMBERMSGRT_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberMsgRt().hashCode();
         break;
       case 0:
       default:
@@ -314,8 +456,15 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (testRtBuilder_ != null) {
-        testRtBuilder_.clear();
+      code_ = 0;
+      if (enterGameRtBuilder_ != null) {
+        enterGameRtBuilder_.clear();
+      }
+      if (stringMsgRtBuilder_ != null) {
+        stringMsgRtBuilder_.clear();
+      }
+      if (numberMsgRtBuilder_ != null) {
+        numberMsgRtBuilder_.clear();
       }
       payloadCase_ = 0;
       payload_ = null;
@@ -353,14 +502,25 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(org.matrix.game.proto.c2s.GameResp result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     private void buildPartialOneofs(org.matrix.game.proto.c2s.GameResp result) {
       result.payloadCase_ = payloadCase_;
       result.payload_ = this.payload_;
-      if (payloadCase_ == 1 &&
-          testRtBuilder_ != null) {
-        result.payload_ = testRtBuilder_.build();
+      if (payloadCase_ == 1001 &&
+          enterGameRtBuilder_ != null) {
+        result.payload_ = enterGameRtBuilder_.build();
+      }
+      if (payloadCase_ == 2001 &&
+          stringMsgRtBuilder_ != null) {
+        result.payload_ = stringMsgRtBuilder_.build();
+      }
+      if (payloadCase_ == 2002 &&
+          numberMsgRtBuilder_ != null) {
+        result.payload_ = numberMsgRtBuilder_.build();
       }
     }
 
@@ -408,9 +568,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.matrix.game.proto.c2s.GameResp other) {
       if (other == org.matrix.game.proto.c2s.GameResp.getDefaultInstance()) return this;
+      if (other.getCode() != 0) {
+        setCode(other.getCode());
+      }
       switch (other.getPayloadCase()) {
-        case TESTRT: {
-          mergeTestRt(other.getTestRt());
+        case ENTERGAMERT: {
+          mergeEnterGameRt(other.getEnterGameRt());
+          break;
+        }
+        case STRINGMSGRT: {
+          mergeStringMsgRt(other.getStringMsgRt());
+          break;
+        }
+        case NUMBERMSGRT: {
+          mergeNumberMsgRt(other.getNumberMsgRt());
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -443,13 +614,32 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getTestRtFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              payloadCase_ = 1;
+            case 8: {
+              code_ = input.readInt32();
+              bitField0_ |= 0x00000001;
               break;
-            } // case 10
+            } // case 8
+            case 8010: {
+              input.readMessage(
+                  getEnterGameRtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              payloadCase_ = 1001;
+              break;
+            } // case 8010
+            case 16010: {
+              input.readMessage(
+                  getStringMsgRtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              payloadCase_ = 2001;
+              break;
+            } // case 16010
+            case 16018: {
+              input.readMessage(
+                  getNumberMsgRtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              payloadCase_ = 2002;
+              break;
+            } // case 16018
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -482,146 +672,534 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.TestRt, org.matrix.game.proto.c2s.TestRt.Builder, org.matrix.game.proto.c2s.TestRtOrBuilder> testRtBuilder_;
+    private int code_ ;
     /**
-     * <code>.TestRt testRt = 1;</code>
-     * @return Whether the testRt field is set.
+     * <code>int32 code = 1;</code>
+     * @return The code.
      */
     @java.lang.Override
-    public boolean hasTestRt() {
-      return payloadCase_ == 1;
+    public int getCode() {
+      return code_;
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
-     * @return The testRt.
+     * <code>int32 code = 1;</code>
+     * @param value The code to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCode(int value) {
+
+      code_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 code = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      code_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.EnterGameRt, org.matrix.game.proto.c2s.EnterGameRt.Builder, org.matrix.game.proto.c2s.EnterGameRtOrBuilder> enterGameRtBuilder_;
+    /**
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
+     * @return Whether the enterGameRt field is set.
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.TestRt getTestRt() {
-      if (testRtBuilder_ == null) {
-        if (payloadCase_ == 1) {
-          return (org.matrix.game.proto.c2s.TestRt) payload_;
+    public boolean hasEnterGameRt() {
+      return payloadCase_ == 1001;
+    }
+    /**
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
+     * @return The enterGameRt.
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.EnterGameRt getEnterGameRt() {
+      if (enterGameRtBuilder_ == null) {
+        if (payloadCase_ == 1001) {
+          return (org.matrix.game.proto.c2s.EnterGameRt) payload_;
         }
-        return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
       } else {
-        if (payloadCase_ == 1) {
-          return testRtBuilder_.getMessage();
+        if (payloadCase_ == 1001) {
+          return enterGameRtBuilder_.getMessage();
         }
-        return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
       }
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
-    public Builder setTestRt(org.matrix.game.proto.c2s.TestRt value) {
-      if (testRtBuilder_ == null) {
+    public Builder setEnterGameRt(org.matrix.game.proto.c2s.EnterGameRt value) {
+      if (enterGameRtBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         payload_ = value;
         onChanged();
       } else {
-        testRtBuilder_.setMessage(value);
+        enterGameRtBuilder_.setMessage(value);
       }
-      payloadCase_ = 1;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
-    public Builder setTestRt(
-        org.matrix.game.proto.c2s.TestRt.Builder builderForValue) {
-      if (testRtBuilder_ == null) {
+    public Builder setEnterGameRt(
+        org.matrix.game.proto.c2s.EnterGameRt.Builder builderForValue) {
+      if (enterGameRtBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
       } else {
-        testRtBuilder_.setMessage(builderForValue.build());
+        enterGameRtBuilder_.setMessage(builderForValue.build());
       }
-      payloadCase_ = 1;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
-    public Builder mergeTestRt(org.matrix.game.proto.c2s.TestRt value) {
-      if (testRtBuilder_ == null) {
-        if (payloadCase_ == 1 &&
-            payload_ != org.matrix.game.proto.c2s.TestRt.getDefaultInstance()) {
-          payload_ = org.matrix.game.proto.c2s.TestRt.newBuilder((org.matrix.game.proto.c2s.TestRt) payload_)
+    public Builder mergeEnterGameRt(org.matrix.game.proto.c2s.EnterGameRt value) {
+      if (enterGameRtBuilder_ == null) {
+        if (payloadCase_ == 1001 &&
+            payload_ != org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.EnterGameRt.newBuilder((org.matrix.game.proto.c2s.EnterGameRt) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
         }
         onChanged();
       } else {
-        if (payloadCase_ == 1) {
-          testRtBuilder_.mergeFrom(value);
+        if (payloadCase_ == 1001) {
+          enterGameRtBuilder_.mergeFrom(value);
         } else {
-          testRtBuilder_.setMessage(value);
+          enterGameRtBuilder_.setMessage(value);
         }
       }
-      payloadCase_ = 1;
+      payloadCase_ = 1001;
       return this;
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
-    public Builder clearTestRt() {
-      if (testRtBuilder_ == null) {
-        if (payloadCase_ == 1) {
+    public Builder clearEnterGameRt() {
+      if (enterGameRtBuilder_ == null) {
+        if (payloadCase_ == 1001) {
           payloadCase_ = 0;
           payload_ = null;
           onChanged();
         }
       } else {
-        if (payloadCase_ == 1) {
+        if (payloadCase_ == 1001) {
           payloadCase_ = 0;
           payload_ = null;
         }
-        testRtBuilder_.clear();
+        enterGameRtBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
-    public org.matrix.game.proto.c2s.TestRt.Builder getTestRtBuilder() {
-      return getTestRtFieldBuilder().getBuilder();
+    public org.matrix.game.proto.c2s.EnterGameRt.Builder getEnterGameRtBuilder() {
+      return getEnterGameRtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
     @java.lang.Override
-    public org.matrix.game.proto.c2s.TestRtOrBuilder getTestRtOrBuilder() {
-      if ((payloadCase_ == 1) && (testRtBuilder_ != null)) {
-        return testRtBuilder_.getMessageOrBuilder();
+    public org.matrix.game.proto.c2s.EnterGameRtOrBuilder getEnterGameRtOrBuilder() {
+      if ((payloadCase_ == 1001) && (enterGameRtBuilder_ != null)) {
+        return enterGameRtBuilder_.getMessageOrBuilder();
       } else {
-        if (payloadCase_ == 1) {
-          return (org.matrix.game.proto.c2s.TestRt) payload_;
+        if (payloadCase_ == 1001) {
+          return (org.matrix.game.proto.c2s.EnterGameRt) payload_;
         }
-        return org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+        return org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
       }
     }
     /**
-     * <code>.TestRt testRt = 1;</code>
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>.EnterGameRt enterGameRt = 1001;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.matrix.game.proto.c2s.TestRt, org.matrix.game.proto.c2s.TestRt.Builder, org.matrix.game.proto.c2s.TestRtOrBuilder> 
-        getTestRtFieldBuilder() {
-      if (testRtBuilder_ == null) {
-        if (!(payloadCase_ == 1)) {
-          payload_ = org.matrix.game.proto.c2s.TestRt.getDefaultInstance();
+        org.matrix.game.proto.c2s.EnterGameRt, org.matrix.game.proto.c2s.EnterGameRt.Builder, org.matrix.game.proto.c2s.EnterGameRtOrBuilder> 
+        getEnterGameRtFieldBuilder() {
+      if (enterGameRtBuilder_ == null) {
+        if (!(payloadCase_ == 1001)) {
+          payload_ = org.matrix.game.proto.c2s.EnterGameRt.getDefaultInstance();
         }
-        testRtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.matrix.game.proto.c2s.TestRt, org.matrix.game.proto.c2s.TestRt.Builder, org.matrix.game.proto.c2s.TestRtOrBuilder>(
-                (org.matrix.game.proto.c2s.TestRt) payload_,
+        enterGameRtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.EnterGameRt, org.matrix.game.proto.c2s.EnterGameRt.Builder, org.matrix.game.proto.c2s.EnterGameRtOrBuilder>(
+                (org.matrix.game.proto.c2s.EnterGameRt) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
       }
-      payloadCase_ = 1;
+      payloadCase_ = 1001;
       onChanged();
-      return testRtBuilder_;
+      return enterGameRtBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.StringMsgRt, org.matrix.game.proto.c2s.StringMsgRt.Builder, org.matrix.game.proto.c2s.StringMsgRtOrBuilder> stringMsgRtBuilder_;
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     * @return Whether the stringMsgRt field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringMsgRt() {
+      return payloadCase_ == 2001;
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     * @return The stringMsgRt.
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.StringMsgRt getStringMsgRt() {
+      if (stringMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2001) {
+          return (org.matrix.game.proto.c2s.StringMsgRt) payload_;
+        }
+        return org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 2001) {
+          return stringMsgRtBuilder_.getMessage();
+        }
+        return org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    public Builder setStringMsgRt(org.matrix.game.proto.c2s.StringMsgRt value) {
+      if (stringMsgRtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        stringMsgRtBuilder_.setMessage(value);
+      }
+      payloadCase_ = 2001;
+      return this;
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    public Builder setStringMsgRt(
+        org.matrix.game.proto.c2s.StringMsgRt.Builder builderForValue) {
+      if (stringMsgRtBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        stringMsgRtBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 2001;
+      return this;
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    public Builder mergeStringMsgRt(org.matrix.game.proto.c2s.StringMsgRt value) {
+      if (stringMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2001 &&
+            payload_ != org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.StringMsgRt.newBuilder((org.matrix.game.proto.c2s.StringMsgRt) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 2001) {
+          stringMsgRtBuilder_.mergeFrom(value);
+        } else {
+          stringMsgRtBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 2001;
+      return this;
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    public Builder clearStringMsgRt() {
+      if (stringMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2001) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 2001) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        stringMsgRtBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    public org.matrix.game.proto.c2s.StringMsgRt.Builder getStringMsgRtBuilder() {
+      return getStringMsgRtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.StringMsgRtOrBuilder getStringMsgRtOrBuilder() {
+      if ((payloadCase_ == 2001) && (stringMsgRtBuilder_ != null)) {
+        return stringMsgRtBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 2001) {
+          return (org.matrix.game.proto.c2s.StringMsgRt) payload_;
+        }
+        return org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * 测试
+     * </pre>
+     *
+     * <code>.StringMsgRt stringMsgRt = 2001;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.StringMsgRt, org.matrix.game.proto.c2s.StringMsgRt.Builder, org.matrix.game.proto.c2s.StringMsgRtOrBuilder> 
+        getStringMsgRtFieldBuilder() {
+      if (stringMsgRtBuilder_ == null) {
+        if (!(payloadCase_ == 2001)) {
+          payload_ = org.matrix.game.proto.c2s.StringMsgRt.getDefaultInstance();
+        }
+        stringMsgRtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.StringMsgRt, org.matrix.game.proto.c2s.StringMsgRt.Builder, org.matrix.game.proto.c2s.StringMsgRtOrBuilder>(
+                (org.matrix.game.proto.c2s.StringMsgRt) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 2001;
+      onChanged();
+      return stringMsgRtBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.NumberMsgRt, org.matrix.game.proto.c2s.NumberMsgRt.Builder, org.matrix.game.proto.c2s.NumberMsgRtOrBuilder> numberMsgRtBuilder_;
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     * @return Whether the numberMsgRt field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumberMsgRt() {
+      return payloadCase_ == 2002;
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     * @return The numberMsgRt.
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.NumberMsgRt getNumberMsgRt() {
+      if (numberMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2002) {
+          return (org.matrix.game.proto.c2s.NumberMsgRt) payload_;
+        }
+        return org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 2002) {
+          return numberMsgRtBuilder_.getMessage();
+        }
+        return org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    public Builder setNumberMsgRt(org.matrix.game.proto.c2s.NumberMsgRt value) {
+      if (numberMsgRtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        numberMsgRtBuilder_.setMessage(value);
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    public Builder setNumberMsgRt(
+        org.matrix.game.proto.c2s.NumberMsgRt.Builder builderForValue) {
+      if (numberMsgRtBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        numberMsgRtBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    public Builder mergeNumberMsgRt(org.matrix.game.proto.c2s.NumberMsgRt value) {
+      if (numberMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2002 &&
+            payload_ != org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance()) {
+          payload_ = org.matrix.game.proto.c2s.NumberMsgRt.newBuilder((org.matrix.game.proto.c2s.NumberMsgRt) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 2002) {
+          numberMsgRtBuilder_.mergeFrom(value);
+        } else {
+          numberMsgRtBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 2002;
+      return this;
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    public Builder clearNumberMsgRt() {
+      if (numberMsgRtBuilder_ == null) {
+        if (payloadCase_ == 2002) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 2002) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        numberMsgRtBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    public org.matrix.game.proto.c2s.NumberMsgRt.Builder getNumberMsgRtBuilder() {
+      return getNumberMsgRtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    @java.lang.Override
+    public org.matrix.game.proto.c2s.NumberMsgRtOrBuilder getNumberMsgRtOrBuilder() {
+      if ((payloadCase_ == 2002) && (numberMsgRtBuilder_ != null)) {
+        return numberMsgRtBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 2002) {
+          return (org.matrix.game.proto.c2s.NumberMsgRt) payload_;
+        }
+        return org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.NumberMsgRt numberMsgRt = 2002;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.matrix.game.proto.c2s.NumberMsgRt, org.matrix.game.proto.c2s.NumberMsgRt.Builder, org.matrix.game.proto.c2s.NumberMsgRtOrBuilder> 
+        getNumberMsgRtFieldBuilder() {
+      if (numberMsgRtBuilder_ == null) {
+        if (!(payloadCase_ == 2002)) {
+          payload_ = org.matrix.game.proto.c2s.NumberMsgRt.getDefaultInstance();
+        }
+        numberMsgRtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.matrix.game.proto.c2s.NumberMsgRt, org.matrix.game.proto.c2s.NumberMsgRt.Builder, org.matrix.game.proto.c2s.NumberMsgRtOrBuilder>(
+                (org.matrix.game.proto.c2s.NumberMsgRt) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 2002;
+      onChanged();
+      return numberMsgRtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

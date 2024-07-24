@@ -5,33 +5,49 @@ option java_multiple_files = true;
 
 message GameReq {
   oneof payload {
-      Test test = 3;
-      Test2 test2 = 4;
+    // 登录
+    EnterGame enterGame = 1001;
+
+    // 测试
+    StringMsg stringMsg = 2001;
+    NumberMsg numberMsg = 2002;
   }
 }
 
 message GameResp {
+  int32 code = 1;
   oneof payload {
-    TestRt testRt = 1;
+    // 登录
+    EnterGameRt enterGameRt = 1001;
+
+    // 测试
+    StringMsgRt stringMsgRt = 2001;
+    NumberMsgRt numberMsgRt = 2002;
   }
 }
 
-message Test {
-  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
-  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+// 1001
+message EnterGame {
+  int64 playerId = 1;
 }
 
-message TestRt {
-  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
-  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+message EnterGameRt {
 }
 
-message Test2 {
-  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
-  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+// 2001
+message StringMsg {
+  int64 playerId = 1;
+  string content = 2;
 }
 
-message Test2Rt {
-  int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
-  string content = 2;//Message类的一个属性，属性名称是content，序号为2
+message StringMsgRt {
+}
+
+// 2002
+message NumberMsg {
+  int64 playerId = 1;
+  int32 count = 2;
+}
+
+message NumberMsgRt {
 }

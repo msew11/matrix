@@ -26,25 +26,35 @@ public final class C2SMsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GameResp_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Test_descriptor;
+    internal_static_EnterGame_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Test_fieldAccessorTable;
+      internal_static_EnterGame_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TestRt_descriptor;
+    internal_static_EnterGameRt_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TestRt_fieldAccessorTable;
+      internal_static_EnterGameRt_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Test2_descriptor;
+    internal_static_StringMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Test2_fieldAccessorTable;
+      internal_static_StringMsg_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Test2Rt_descriptor;
+    internal_static_StringMsgRt_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Test2Rt_fieldAccessorTable;
+      internal_static_StringMsgRt_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NumberMsg_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NumberMsg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_NumberMsgRt_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_NumberMsgRt_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -54,15 +64,19 @@ public final class C2SMsg {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ntest.proto\"D\n\007GameReq\022\025\n\004test\030\003 \001(\0132\005." +
-      "TestH\000\022\027\n\005test2\030\004 \001(\0132\006.Test2H\000B\t\n\007paylo" +
-      "ad\"0\n\010GameResp\022\031\n\006testRt\030\001 \001(\0132\007.TestRtH" +
-      "\000B\t\n\007payload\"#\n\004Test\022\n\n\002id\030\001 \001(\005\022\017\n\007cont" +
-      "ent\030\002 \001(\t\"%\n\006TestRt\022\n\n\002id\030\001 \001(\005\022\017\n\007conte" +
-      "nt\030\002 \001(\t\"$\n\005Test2\022\n\n\002id\030\001 \001(\005\022\017\n\007content" +
-      "\030\002 \001(\t\"&\n\007Test2Rt\022\n\n\002id\030\001 \001(\005\022\017\n\007content" +
-      "\030\002 \001(\tB%\n\031org.matrix.game.proto.c2sB\006C2S" +
-      "MsgP\001b\006proto3"
+      "\n\ntest.proto\"z\n\007GameReq\022 \n\tenterGame\030\351\007 " +
+      "\001(\0132\n.EnterGameH\000\022 \n\tstringMsg\030\321\017 \001(\0132\n." +
+      "StringMsgH\000\022 \n\tnumberMsg\030\322\017 \001(\0132\n.Number" +
+      "MsgH\000B\t\n\007payload\"\225\001\n\010GameResp\022\014\n\004code\030\001 " +
+      "\001(\005\022$\n\013enterGameRt\030\351\007 \001(\0132\014.EnterGameRtH" +
+      "\000\022$\n\013stringMsgRt\030\321\017 \001(\0132\014.StringMsgRtH\000\022" +
+      "$\n\013numberMsgRt\030\322\017 \001(\0132\014.NumberMsgRtH\000B\t\n" +
+      "\007payload\"\035\n\tEnterGame\022\020\n\010playerId\030\001 \001(\003\"" +
+      "\r\n\013EnterGameRt\".\n\tStringMsg\022\020\n\010playerId\030" +
+      "\001 \001(\003\022\017\n\007content\030\002 \001(\t\"\r\n\013StringMsgRt\",\n" +
+      "\tNumberMsg\022\020\n\010playerId\030\001 \001(\003\022\r\n\005count\030\002 " +
+      "\001(\005\"\r\n\013NumberMsgRtB%\n\031org.matrix.game.pr" +
+      "oto.c2sB\006C2SMsgP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -73,37 +87,49 @@ public final class C2SMsg {
     internal_static_GameReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GameReq_descriptor,
-        new java.lang.String[] { "Test", "Test2", "Payload", });
+        new java.lang.String[] { "EnterGame", "StringMsg", "NumberMsg", "Payload", });
     internal_static_GameResp_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_GameResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GameResp_descriptor,
-        new java.lang.String[] { "TestRt", "Payload", });
-    internal_static_Test_descriptor =
+        new java.lang.String[] { "Code", "EnterGameRt", "StringMsgRt", "NumberMsgRt", "Payload", });
+    internal_static_EnterGame_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_Test_fieldAccessorTable = new
+    internal_static_EnterGame_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Test_descriptor,
-        new java.lang.String[] { "Id", "Content", });
-    internal_static_TestRt_descriptor =
+        internal_static_EnterGame_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_EnterGameRt_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_TestRt_fieldAccessorTable = new
+    internal_static_EnterGameRt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TestRt_descriptor,
-        new java.lang.String[] { "Id", "Content", });
-    internal_static_Test2_descriptor =
+        internal_static_EnterGameRt_descriptor,
+        new java.lang.String[] { });
+    internal_static_StringMsg_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Test2_fieldAccessorTable = new
+    internal_static_StringMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Test2_descriptor,
-        new java.lang.String[] { "Id", "Content", });
-    internal_static_Test2Rt_descriptor =
+        internal_static_StringMsg_descriptor,
+        new java.lang.String[] { "PlayerId", "Content", });
+    internal_static_StringMsgRt_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_Test2Rt_fieldAccessorTable = new
+    internal_static_StringMsgRt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Test2Rt_descriptor,
-        new java.lang.String[] { "Id", "Content", });
+        internal_static_StringMsgRt_descriptor,
+        new java.lang.String[] { });
+    internal_static_NumberMsg_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_NumberMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NumberMsg_descriptor,
+        new java.lang.String[] { "PlayerId", "Count", });
+    internal_static_NumberMsgRt_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_NumberMsgRt_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_NumberMsgRt_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

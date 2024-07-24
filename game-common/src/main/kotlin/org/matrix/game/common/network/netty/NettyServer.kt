@@ -52,7 +52,7 @@ class NettyServer(
         closeThread.start()
 
         channel = bindFuture.sync().channel()
-        logInfo { "NettyServer STARTED" }
+        logInfo { "NettyServer started" }
     }
 
     override fun shutdown() {

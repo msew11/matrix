@@ -4,27 +4,18 @@ import io.netty.buffer.ByteBuf
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
 import io.netty.util.CharsetUtil
+import org.matrix.game.proto.c2s.EnterGame
 import org.matrix.game.proto.c2s.GameReq
-import org.matrix.game.proto.c2s.Test
-import org.matrix.game.proto.c2s.Test2
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
     override fun channelActive(ctx: ChannelHandlerContext) {
-        for (i in 1..5) {
-            val test2 = Test2.newBuilder()
-                .setId(i)
-                .setContent("Test2")
-            val test = Test.newBuilder()
-                .setId(i)
-                .setContent("Test")
+        val enterGame = EnterGame.newBuilder()
+            .setPlayerId(123)
 
-            val req = GameReq.newBuilder()
-                .setTest2(test2)
-                .setTest(test)
-                .build()
-
-            ctx.writeAndFlush(req)
-        }
+        val req = GameReq.newBuilder()
+            .setEnterGame(enterGame)
+            .build()
+        ctx.writeAndFlush(req)
     }
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
