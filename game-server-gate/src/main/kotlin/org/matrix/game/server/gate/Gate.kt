@@ -27,4 +27,4 @@ class Gateway : Process(ProcessType.GATEWAY) {
 
 }
 
-lateinit var gateway: Gateway
+lateinit var gate: Gateway

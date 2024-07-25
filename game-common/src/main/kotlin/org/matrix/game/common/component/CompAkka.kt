@@ -6,22 +6,21 @@ import akka.actor.Props
 import com.typesafe.config.ConfigFactory
 import org.matrix.game.common.base.Process
 
+/**
+ * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#cluster-api-extension">akka集群</a>
+ * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#joining-to-seed-nodes">加入种子节点</a>
+ * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#configuration">配置</a>
+ */
 class CompAkka(
     val process: Process,
     val akkaHost: String,
     val akkaPort: Int,
     val seedNodes: List<String>
-) : AbstractComponent() {
+): AbstractComponent() {
 
-    lateinit var actorSystem: ActorSystem
+    val actorSystem: ActorSystem
 
-    /**
-     * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#cluster-api-extension">akka集群</a>
-     * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#joining-to-seed-nodes">加入种子节点</a>
-     * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#configuration">配置</a>
-     */
-    override fun doInit() {
-
+    init {
         val actorSystemName = "MATRIX"
 
         val configMap = mutableMapOf(
@@ -37,7 +36,7 @@ class CompAkka(
         actorSystem = ActorSystem.create(actorSystemName, config)
     }
 
-    override fun doClose() {
+    override fun close() {
     }
 
     fun actorOf(props: Props): ActorRef {

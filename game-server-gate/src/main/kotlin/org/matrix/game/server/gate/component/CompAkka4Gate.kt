@@ -12,18 +12,15 @@ import java.util.*
 class CompAkka4Gate(
     val process: Process,
     val compAkka: CompAkka
-) : AbstractComponent(compAkka) {
+) : AbstractComponent() {
 
-    lateinit var actorSystem: ActorSystem
+    private val actorSystem: ActorSystem = compAkka.actorSystem
 
-    override fun doInit() {
-        actorSystem = compAkka.actorSystem
-
+    init {
         ClusterSharding.get(actorSystem)
             .startProxy(AkkaShardType.player.name, Optional.empty(), HomeMessageExtractor())
-
     }
 
-    override fun doClose() {
+    override fun close() {
     }
 }

@@ -6,18 +6,16 @@ import org.matrix.game.common.network.netty.NettyClient
 
 class CompClient : AbstractComponent() {
 
-    private lateinit var client: IClient
+    private var client: IClient
 
-    override fun doInit() {
+    init {
         val client = NettyClient()
         client.start()
 
         this.client = client
-
-
     }
 
-    override fun doClose() {
+    override fun close() {
         client.shutdown()
     }
 }

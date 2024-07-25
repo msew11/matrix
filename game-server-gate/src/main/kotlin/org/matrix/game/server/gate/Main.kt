@@ -17,11 +17,11 @@ fun main(args: Array<String>) {
 class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
 
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        gateway = Gateway()
-        gateway.boot()
+        gate = Gateway()
+        gate.boot()
 
         Runtime.getRuntime().addShutdownHook(Thread({
-            gateway.shutdown()
+            gate.shutdown()
         }, "shutdown-hook"))
     }
 }

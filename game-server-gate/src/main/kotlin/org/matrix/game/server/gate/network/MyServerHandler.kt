@@ -8,8 +8,11 @@ import io.netty.util.AttributeKey
 import io.netty.util.CharsetUtil
 import org.matrix.game.proto.c2s.GameReq
 import org.matrix.game.server.gate.actor.ChannelActor
-import org.matrix.game.server.gate.gateway
+import org.matrix.game.server.gate.gate
 
+/**
+ * @see <a href="https://cloud.tencent.com/developer/article/2182854">Netty·Handler 对比</a>
+ */
 class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
 
     data class ClientInfo(
@@ -22,7 +25,7 @@ class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
 
     override fun channelActive(ctx: ChannelHandlerContext) {
         val channel = ctx.channel()
-        val channelActor = gateway.compAkka.actorOf(ChannelActor.props(ctx))
+        val channelActor = gate.compAkka.actorOf(ChannelActor.props(ctx))
         channel.attr(CHANNEL_ACTOR).set(channelActor)
     }
 

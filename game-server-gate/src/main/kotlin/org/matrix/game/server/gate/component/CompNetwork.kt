@@ -12,9 +12,9 @@ import org.matrix.game.server.gate.network.MyServerHandler
 
 class CompNetwork : AbstractComponent() {
 
-    private lateinit var server: IServer
+    private val server: IServer
 
-    override fun doInit() {
+    init {
         val server = NettyServer(
             6666,
             object : ChannelInitializer<SocketChannel>() {
@@ -35,7 +35,7 @@ class CompNetwork : AbstractComponent() {
         this.server = server
     }
 
-    override fun doClose() {
+    override fun close() {
         server.shutdown()
     }
 }
