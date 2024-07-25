@@ -5,7 +5,7 @@ import org.matrix.game.common.component.CompAkka
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.server.home.component.CompAkka4Home
 
-class Home : Process(ProcessType.HOME) {
+class Home : Process(ProcessType.home) {
 
     lateinit var compAkka: CompAkka
     lateinit var compAkka4Home: CompAkka4Home

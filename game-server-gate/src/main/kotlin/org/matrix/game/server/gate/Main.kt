@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
 
     override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        gate = Gateway()
+        gate = Gate()
         gate.boot()
 
         Runtime.getRuntime().addShutdownHook(Thread({

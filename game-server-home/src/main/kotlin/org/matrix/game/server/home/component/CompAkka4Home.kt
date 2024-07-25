@@ -23,13 +23,14 @@ class CompAkka4Home(
 
     init {
         val settings = ClusterShardingSettings.create(actorSystem)
+            .withRole(process.processType.name)
 
         ClusterSharding.get(actorSystem)
             .start(
                 AkkaShardType.player.name,
                 PlayerActor.props(),
                 settings,
-                HomeMessageExtractor()
+                HomeMessageExtractor(1000)
             )
     }
 

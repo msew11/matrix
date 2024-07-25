@@ -1,16 +1,19 @@
 package org.matrix.game.server.gate
 
+import akka.actor.ActorRef
+import akka.actor.Props
+import org.matrix.game.common.akka.ClientMessage2Home
 import org.matrix.game.common.base.Process
 import org.matrix.game.common.component.CompAkka
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.server.gate.component.CompAkka4Gate
 import org.matrix.game.server.gate.component.CompNetwork
 
-class Gateway : Process(ProcessType.GATEWAY) {
+class Gate : Process(ProcessType.gate) {
 
-    lateinit var compAkka: CompAkka
-    lateinit var compAkka4Gate: CompAkka4Gate
-    lateinit var compNetwork: CompNetwork
+    private lateinit var compAkka: CompAkka
+    private lateinit var compAkka4Gate: CompAkka4Gate
+    private lateinit var compNetwork: CompNetwork
 
     override fun prepare() {
         compAkka = regComponent(
@@ -25,6 +28,14 @@ class Gateway : Process(ProcessType.GATEWAY) {
         compNetwork = regComponent(CompNetwork())
     }
 
+    fun actorOf(props: Props): ActorRef {
+        return compAkka.actorSystem.actorOf(props)
+    }
+
+    fun tellHome(msg: ClientMessage2Home, sender: ActorRef) {
+        compAkka4Gate.homeShardProxy.tell(msg, sender)
+    }
+
 }
 
-lateinit var gate: Gateway
+lateinit var gate: Gate

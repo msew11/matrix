@@ -3,10 +3,13 @@ package org.matrix.game.server.gate.actor
 import akka.actor.AbstractActor
 import akka.actor.Props
 import io.netty.channel.ChannelHandlerContext
+import org.matrix.game.common.akka.ClientMessage2Home
+import org.matrix.game.common.log.logInfo
 import org.matrix.game.proto.c2s.EnterGame
 import org.matrix.game.proto.c2s.GameReq
 import org.matrix.game.proto.c2s.NumberMsg
 import org.matrix.game.proto.c2s.StringMsg
+import org.matrix.game.server.gate.gate
 
 class ChannelActor(
     val ctx: ChannelHandlerContext
@@ -35,19 +38,21 @@ class ChannelActor(
             GameReq.PayloadCase.ENTERGAME -> {
                 val payload =
                     msg.getField(GameReq.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as EnterGame
-                println("收到消息：[${msg.payloadCase}]：${payload.playerId}")
+                logInfo { "ChannelActor收到消息：[${msg.payloadCase}]：${payload.playerId}" }
+                gate.tellHome(ClientMessage2Home(payload.playerId, payload.toByteArray()), self)
+                logInfo { "ChannelActor msg ==> playerActor" }
             }
 
             GameReq.PayloadCase.STRINGMSG -> {
                 val payload =
                     msg.getField(GameReq.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as StringMsg
-                println("收到消息：[${msg.payloadCase}]：${payload.content}")
+                logInfo { "ChannelActor收到消息：[${msg.payloadCase}]：${payload.content}" }
             }
 
             GameReq.PayloadCase.NUMBERMSG -> {
                 val payload =
                     msg.getField(GameReq.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as NumberMsg
-                println("收到消息：[${msg.payloadCase}]：${payload.count}")
+                logInfo { "ChannelActor收到消息：[${msg.payloadCase}]：${payload.count}" }
             }
 
             else -> {
