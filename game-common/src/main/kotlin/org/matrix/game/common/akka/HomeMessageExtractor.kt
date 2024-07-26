@@ -18,7 +18,7 @@ class HomeMessageExtractor(private val numberOfShards: Int) : ShardRegion.Messag
 
     override fun shardId(message: Any): String {
         return when (message) {
-            is ClientMessage2Home -> message.playerId.toString()
+            is ClientMessage2Home -> Math.ceilMod(message.playerId, numberOfShards).toString()
             else -> {
                 throw IllegalArgumentException()
             }
