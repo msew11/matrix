@@ -7,16 +7,20 @@ plugins {
 
 dependencies {
     api(project(":game-protocol"))
+
     api("io.netty:netty-all:${Versions.NETTY_VERSION}")
-    testImplementation(kotlin("test"))
 
     api(platform("com.typesafe.akka:akka-bom_${Versions.SCALA_BINARY}:${Versions.AKKA_VERSION}"))
     api("com.typesafe.akka:akka-actor_${Versions.SCALA_BINARY}")
     api("com.typesafe.akka:akka-cluster-sharding_${Versions.SCALA_BINARY}")
     api("com.typesafe.akka:akka-serialization-jackson_${Versions.SCALA_BINARY}")
+    implementation("com.typesafe.akka:akka-slf4j_${Versions.SCALA_BINARY}")
     testImplementation("com.typesafe.akka:akka-actor-testkit-typed_${Versions.SCALA_BINARY}")
 
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
+
+    testImplementation(kotlin("test"))
 }
 
 noArg {

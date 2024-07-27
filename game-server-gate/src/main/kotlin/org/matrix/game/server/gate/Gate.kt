@@ -17,11 +17,12 @@ class Gate : Process(ProcessType.gate) {
 
     override fun prepare() {
         compAkka = regComponent(
+            // 显示保留的端口 netsh interface ipv4 show excludedportrange protocol=tcp
             CompAkka(
                 this,
                 "127.0.0.1",
-                2551,
-                listOf("127.0.0.1:2551")
+                3551,
+                listOf("127.0.0.1:3551")
             )
         )
         compAkka4Gate = regComponent(CompAkka4Gate(this, compAkka))

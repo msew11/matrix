@@ -4,6 +4,7 @@ import akka.actor.ActorSystem
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
 import org.matrix.game.common.base.Process
+import org.matrix.game.common.log.logInfo
 
 /**
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#cluster-api-extension">akka集群</a>
@@ -31,11 +32,13 @@ class CompAkka(
             "akka.cluster.seed-nodes" to seedNodes.map {
                 "akka://${actorSystemName}@${it}"
             },
-            "akka.cluster.roles" to listOf(process.processType.name) ,
+            "akka.cluster.roles" to listOf(process.processType.name),
             "akka.cluster.downing-provider-class" to "akka.cluster.sbr.SplitBrainResolverProvider",
         )
         val config = ConfigFactory.parseMap(configMap).withFallback(loadCfg)
         actorSystem = ActorSystem.create(actorSystemName, config)
+
+        logInfo { "AKKA组件初始化" }
     }
 
     override fun close() {

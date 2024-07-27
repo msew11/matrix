@@ -9,9 +9,7 @@ plugins {
 
 dependencies {
     implementation(project(":game-common"))
-
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.springframework.boot:spring-boot-starter")
+    api("org.springframework.boot:spring-boot-starter")
 }
 
 tasks.test {

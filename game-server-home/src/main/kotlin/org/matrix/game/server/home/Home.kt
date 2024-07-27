@@ -15,8 +15,8 @@ class Home : Process(ProcessType.home) {
             CompAkka(
                 this,
                 "127.0.0.1",
-                2552,
-                listOf("127.0.0.1:2551")
+                3552,
+                listOf("127.0.0.1:3551")
             )
         )
         compAkka4Home = regComponent(CompAkka4Home(this, compAkka))

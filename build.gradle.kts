@@ -23,7 +23,7 @@ allprojects {
 
     dependencies {
         implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
-        implementation("ch.qos.logback:logback-classic:1.5.3")
+        implementation("ch.qos.logback:logback-classic:1.5.6")
     }
 
     tasks.withType<KotlinCompile> {
