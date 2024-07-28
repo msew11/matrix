@@ -1,8 +1,7 @@
 import config.Versions
 
 plugins {
-    kotlin("jvm")
-    id("org.jetbrains.kotlin.plugin.noarg") version "2.0.0"
+    kotlin("plugin.noarg")
 }
 
 dependencies {
@@ -15,9 +14,7 @@ dependencies {
     api("com.typesafe.akka:akka-cluster-sharding_${Versions.SCALA_BINARY}")
     api("com.typesafe.akka:akka-serialization-jackson_${Versions.SCALA_BINARY}")
     implementation("com.typesafe.akka:akka-slf4j_${Versions.SCALA_BINARY}")
-    testImplementation("com.typesafe.akka:akka-actor-testkit-typed_${Versions.SCALA_BINARY}")
 
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
     testImplementation(kotlin("test"))

@@ -3,9 +3,7 @@ import config.Versions
 
 // https://github.com/google/protobuf-gradle-plugin/blob/master/examples/exampleProject/build.gradle
 plugins {
-    java
-    `java-library`
-    id("com.google.protobuf") version "0.9.4"
+    id("com.google.protobuf")
 }
 
 dependencies {

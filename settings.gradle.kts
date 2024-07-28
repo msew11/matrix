@@ -1,7 +1,10 @@
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
+pluginManagement {
+    repositories {
+        maven("https://maven.aliyun.com/repository/gradle-plugin")
+        gradlePluginPortal()
+    }
 }
-rootProject.name = "ReBorn"
+rootProject.name = "Matrix"
 include("game-protocol")
 include("game-common")
 include("game-server-gate")
