@@ -1,4 +1,6 @@
+import config.Versions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.lang.Runtime.Version
 
 plugins {
     java
@@ -31,8 +33,8 @@ subprojects {
     }
 
     dependencies {
-        implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
-        implementation("ch.qos.logback:logback-classic:1.5.6")
+        implementation("ch.qos.logback:logback-classic:${Versions.LOGBACK_VERSION}")
+        implementation("io.github.oshai:kotlin-logging-jvm:${Versions.KT_LOGGING_VERSION}")
 
         implementation("org.jetbrains.kotlin:kotlin-reflect")
     }

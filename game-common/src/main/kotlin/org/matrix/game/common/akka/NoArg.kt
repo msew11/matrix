@@ -1,4 +1,4 @@
-package org.matrix.game.common.base
+package org.matrix.game.common.akka
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)

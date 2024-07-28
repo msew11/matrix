@@ -2,7 +2,6 @@ package org.matrix.game.common.akka
 
 import akka.cluster.sharding.ShardRegion
 import akka.serialization.jackson.JsonSerializable
-import org.matrix.game.common.base.NoArg
 
 class HomeMessageExtractor(private val numberOfShards: Int) : ShardRegion.MessageExtractor {
     override fun entityId(message: Any): String {
