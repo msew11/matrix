@@ -4,8 +4,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = "Matrix"
-include("game-protocol")
+rootProject.name = "matrix"
 include("game-common")
 include("game-server-gate")
 include("game-client")

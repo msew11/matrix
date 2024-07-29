@@ -1,6 +1,5 @@
 import config.Versions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.lang.Runtime.Version
 
 plugins {
     java
@@ -12,10 +11,10 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5" apply false
     kotlin("plugin.spring") version "1.9.24" apply false
 
-    id("com.google.protobuf") version "0.9.4" apply false
-
-
 }
+
+group = "org.matrix.game"
+version = "1.0-SNAPSHOT"
 
 subprojects {
     group = "org.matrix.game"
@@ -28,6 +27,14 @@ subprojects {
         maven("https://maven.aliyun.com/repository/google")
         maven("https://maven.aliyun.com/repository/public")
         maven("https://repo.akka.io/maven")
+
+        maven("http://localhost:8081/repository/maven-public") {
+            isAllowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "123456"
+            }
+        }
 
         mavenCentral()
     }

@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":game-protocol"))
+    api("org.matrix.game:game-protocol:1.0-SNAPSHOT")
 
     implementation("org.jetbrains.kotlin:kotlin-noarg")
 
