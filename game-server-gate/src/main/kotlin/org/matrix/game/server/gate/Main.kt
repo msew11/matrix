@@ -1,27 +1,32 @@
 package org.matrix.game.server.gate
 
+import jakarta.annotation.PreDestroy
+import org.springframework.boot.ApplicationArguments
+import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.context.event.ApplicationReadyEvent
-import org.springframework.context.ApplicationListener
+import org.springframework.stereotype.Component
 
 @SpringBootApplication
 class GameServerGateApplication
 
 fun main(args: Array<String>) {
     val application = SpringApplication(GameServerGateApplication::class.java)
-    application.addListeners(ApplicationReadyEventListener())
     application.run(*args)
 }
 
-class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
+@Component
+class GateRunner : ApplicationRunner {
 
-    override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        gate = Gate()
+    override fun run(args: ApplicationArguments) {
         gate.boot()
 
         Runtime.getRuntime().addShutdownHook(Thread({
-            gate.shutdown()
         }, "shutdown-hook"))
+    }
+
+    @PreDestroy
+    fun shutdown() {
+        gate.shutdown()
     }
 }

@@ -34,4 +34,4 @@ class Home : Process(ProcessType.home) {
 
 }
 
-lateinit var home: Home
+var home: Home = Home()

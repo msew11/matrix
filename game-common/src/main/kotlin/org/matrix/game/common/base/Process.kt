@@ -3,6 +3,7 @@ package org.matrix.game.common.base
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.common.log.logInfo
+import kotlin.system.exitProcess
 
 abstract class Process(val processType: ProcessType) {
 
@@ -12,16 +13,28 @@ abstract class Process(val processType: ProcessType) {
     abstract fun prepare()
 
     open fun boot() {
-        prepare()
-        logInfo { "${processType.name} started" }
-        holdProcessor.startAwait()
+        try {
+            prepare()
+            holdProcessor.startAwait()
+            logInfo { "${processType.name} started" }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            exitProcess(1)
+        }
     }
 
     open fun shutdown() {
-        logInfo { "${processType.name} stop ..." }
-        components.reversed().forEach { it.close() }
-        // TimeUnit.SECONDS.sleep(10)
-        holdProcessor.stopAwait()
+        try {
+            logInfo { "${processType.name} stop..." }
+            components.reversed().forEach {
+                it.close()
+                logInfo { ">>> ${it.javaClass.simpleName} stopped" }
+            }
+            logInfo { "${processType.name} stopped" }
+            holdProcessor.stopAwait()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun <T : AbstractComponent> regComponent(component: T): T {

@@ -7,7 +7,6 @@ import io.netty.channel.ChannelOption
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioServerSocketChannel
-import org.matrix.game.common.log.logError
 import org.matrix.game.common.log.logInfo
 import org.matrix.game.common.network.IServer
 
@@ -39,7 +38,7 @@ class NettyServer(
 
         val bindFuture = bootstrap.bind(port)
 
-        closeThread = Thread({
+        /*closeThread = Thread({
             try {
                 bindFuture.channel().closeFuture().sync()
             } catch (e: Exception) {
@@ -49,7 +48,7 @@ class NettyServer(
                 workerGroup.shutdownGracefully().sync()
             }
         }, "netty-close")
-        closeThread.start()
+        closeThread.start()*/
 
         channel = bindFuture.sync().channel()
         logInfo { "NettyServer started" }
@@ -57,12 +56,9 @@ class NettyServer(
 
     override fun shutdown() {
         if (this::channel.isInitialized) {
-            channel.close()
+            bossGroup.shutdownGracefully().sync()
+            workerGroup.shutdownGracefully().sync()
+            channel.closeFuture().sync()
         }
-        bossGroup.shutdownGracefully()
-        workerGroup.shutdownGracefully()
-
-        //bossGroup.shutdownGracefully()
-        //workerGroup.shutdownGracefully()
     }
 }

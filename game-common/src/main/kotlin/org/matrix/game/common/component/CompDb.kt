@@ -20,8 +20,6 @@ class CompDb(
         hibernateCfg.setProperty("hibernate.connection.username", username)
         hibernateCfg.setProperty("hibernate.connection.password", password)
 
-        logInfo { "aaa" + hibernateCfg.getProperty("connection.url") }
-
         sessionFactory = hibernateCfg.buildSessionFactory()
     }
 

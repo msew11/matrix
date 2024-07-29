@@ -4,7 +4,8 @@ import java.util.concurrent.TimeUnit
 
 class HoldProcessor {
     @Volatile
-    private var stopAwait: Boolean = false
+    var stopAwait: Boolean = false
+
     @Volatile
     private var awaitThread: Thread? = null
 

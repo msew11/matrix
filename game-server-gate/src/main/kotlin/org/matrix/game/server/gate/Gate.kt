@@ -39,4 +39,4 @@ class Gate : Process(ProcessType.gate) {
 
 }
 
-lateinit var gate: Gate
+var gate: Gate = Gate()

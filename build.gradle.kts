@@ -25,9 +25,9 @@ subprojects {
     apply(plugin = "kotlin")
 
     repositories {
-        maven { setUrl("https://maven.aliyun.com/repository/google") }
-        maven { setUrl("https://maven.aliyun.com/repository/public") }
-        maven { setUrl("https://repo.akka.io/maven") }
+        maven("https://maven.aliyun.com/repository/google")
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://repo.akka.io/maven")
 
         mavenCentral()
     }

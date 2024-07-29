@@ -25,7 +25,7 @@ dependencies {
 }
 
 noArg {
-    annotation("org.matrix.game.common.base.NoArg")
+    annotation("org.matrix.game.common.akka.NoArg")
     invokeInitializers = true
 }
 

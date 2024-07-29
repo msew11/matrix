@@ -1,27 +1,29 @@
 package org.matrix.game.server.home
 
+import jakarta.annotation.PreDestroy
+import org.springframework.boot.ApplicationArguments
+import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.context.event.ApplicationReadyEvent
-import org.springframework.context.ApplicationListener
+import org.springframework.stereotype.Component
 
 @SpringBootApplication
 class GameServerHomeApplication
 
 fun main(args: Array<String>) {
     val application = SpringApplication(GameServerHomeApplication::class.java)
-    application.addListeners(ApplicationReadyEventListener())
     application.run(*args)
 }
 
-class ApplicationReadyEventListener : ApplicationListener<ApplicationReadyEvent> {
+@Component
+class HomeRunner : ApplicationRunner {
 
-    override fun onApplicationEvent(event: ApplicationReadyEvent) {
-        home = Home()
+    override fun run(args: ApplicationArguments) {
         home.boot()
+    }
 
-        Runtime.getRuntime().addShutdownHook(Thread({
-            home.shutdown()
-        }, "shutdown-hook"))
+    @PreDestroy
+    fun shutdown() {
+        home.shutdown()
     }
 }
