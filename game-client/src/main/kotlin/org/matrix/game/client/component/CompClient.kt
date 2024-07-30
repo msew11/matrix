@@ -1,13 +1,13 @@
-package org.matrix.game.client.org.matrix.game.client.component
+package org.matrix.game.client.component
 
 import io.netty.channel.ChannelInitializer
 import io.netty.channel.socket.SocketChannel
 import io.netty.handler.codec.protobuf.ProtobufEncoder
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender
-import org.matrix.game.client.org.matrix.game.client.network.MyClientHandler
+import org.matrix.game.client.network.MyClientHandler
 import org.matrix.game.common.component.AbstractComponent
-import org.matrix.game.common.network.IClient
-import org.matrix.game.common.network.netty.NettyClient
+import org.matrix.game.core.network.IClient
+import org.matrix.game.core.network.netty.NettyClient
 
 class CompClient : AbstractComponent() {
 

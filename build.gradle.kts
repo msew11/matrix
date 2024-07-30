@@ -1,20 +1,21 @@
-import config.Versions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+/*
+ * 构建相关参考：
+ * @see <a href="https://docs.spring.io/spring-boot/reference/features/kotlin.html">Kotlin Support</a>
+ * @see <a href="https://spring.io/guides/tutorials/spring-boot-kotlin">Guide</a>
+ */
 plugins {
     java
-    kotlin("jvm") version "1.9.24" apply false
-
-    kotlin("plugin.noarg") version "1.9.24" apply false
 
     id("org.springframework.boot") version "3.3.0" apply false
     id("io.spring.dependency-management") version "1.1.5" apply false
+
+    kotlin("jvm") version "1.9.24" apply false
+    kotlin("plugin.noarg") version "1.9.24" apply false
     kotlin("plugin.spring") version "1.9.24" apply false
 
 }
-
-group = "org.matrix.game"
-version = "1.0-SNAPSHOT"
 
 subprojects {
     group = "org.matrix.game"
@@ -40,9 +41,6 @@ subprojects {
     }
 
     dependencies {
-        implementation("ch.qos.logback:logback-classic:${Versions.LOGBACK_VERSION}")
-        implementation("io.github.oshai:kotlin-logging-jvm:${Versions.KT_LOGGING_VERSION}")
-
         implementation("org.jetbrains.kotlin:kotlin-reflect")
     }
 

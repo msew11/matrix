@@ -5,8 +5,8 @@ import io.netty.channel.socket.SocketChannel
 import io.netty.handler.codec.protobuf.ProtobufDecoder
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder
 import org.matrix.game.common.component.AbstractComponent
-import org.matrix.game.common.network.IServer
-import org.matrix.game.common.network.netty.NettyServer
+import org.matrix.game.core.network.IServer
+import org.matrix.game.core.network.netty.NettyServer
 import org.matrix.game.proto.c2s.GameReq
 import org.matrix.game.server.gate.network.MyServerHandler
 

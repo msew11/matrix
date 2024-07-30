@@ -1,4 +1,4 @@
-package org.matrix.game.client.org.matrix.game.client.network
+package org.matrix.game.client.network
 
 import io.netty.buffer.ByteBuf
 import io.netty.channel.ChannelHandlerContext
