@@ -19,7 +19,7 @@ class CompDbTest {
 
         val character = Character()
 
-        session.save(character)
+        session.persist(character)
 
         transaction.commit()
     }
