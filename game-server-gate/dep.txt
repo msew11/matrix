@@ -1,0 +1,1940 @@
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+
+> Task :game-server-gate:dependencies
+
+------------------------------------------------------------
+Project ':game-server-gate'
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+No dependencies
+
+api - API dependencies for null/main (n)
+No dependencies
+
+apiDependenciesMetadata
+\--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+
+apiElements - API elements for the 'main' feature. (n)
+No dependencies
+
+apiElements-published (n)
+No dependencies
+
+bootArchives - Configuration for Spring Boot archive artifacts. (n)
+No dependencies
+
+compileClasspath - Compile classpath for null/main.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    +--- org.jetbrains:annotations:13.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.24 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         \--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+compileOnly - Compile only dependencies for null/main. (n)
+No dependencies
+
+compileOnlyDependenciesMetadata
+No dependencies
+
+default - Configuration for default artifacts. (n)
+No dependencies
+
+developmentOnly - Configuration for development-only dependencies such as Spring Boot's DevTools.
+No dependencies
+
+implementation - Implementation only dependencies for null/main. (n)
++--- org.jetbrains.kotlin:kotlin-reflect (n)
++--- project game-common (n)
+\--- org.springframework.boot:spring-boot-starter (n)
+
+implementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         \--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+intransitiveDependenciesMetadata
+No dependencies
+
+kotlinBuildToolsApiClasspath
+\--- org.jetbrains.kotlin:kotlin-build-tools-impl:1.9.24
+     +--- org.jetbrains.kotlin:kotlin-build-tools-api:1.9.24
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+     |    \--- org.jetbrains:annotations:13.0
+     +--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.24
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+     |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.9.24
+     |    +--- org.jetbrains.kotlin:kotlin-reflect:1.6.10 -> 1.9.24
+     |    +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.24
+     |    \--- org.jetbrains.intellij.deps:trove4j:1.0.20200330
+     \--- org.jetbrains.kotlin:kotlin-compiler-runner:1.9.24
+          +--- org.jetbrains.kotlin:kotlin-build-common:1.9.24
+          +--- org.jetbrains.kotlin:kotlin-daemon-client:1.9.24
+          +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0 -> 1.8.1
+          \--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.24 (*)
+
+kotlinCompilerClasspath
+\--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.24
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+     |    \--- org.jetbrains:annotations:13.0
+     +--- org.jetbrains.kotlin:kotlin-script-runtime:1.9.24
+     +--- org.jetbrains.kotlin:kotlin-reflect:1.6.10 -> 1.9.24
+     +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.24
+     \--- org.jetbrains.intellij.deps:trove4j:1.0.20200330
+
+kotlinCompilerPluginClasspath
+No dependencies
+
+kotlinCompilerPluginClasspathMain - Kotlin compiler plugins for compilation
++--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.24
+|    +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.24
+|    |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.9.24
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    |    |         \--- org.jetbrains:annotations:13.0
+|    |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.24
+|    |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.9.24
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.9.24 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.jetbrains.kotlin:kotlin-allopen-compiler-plugin-embeddable:1.9.24
+
+kotlinCompilerPluginClasspathTest - Kotlin compiler plugins for compilation
++--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.24
+|    +--- org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.9.24
+|    |    +--- org.jetbrains.kotlin:kotlin-scripting-common:1.9.24
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    |    |         \--- org.jetbrains:annotations:13.0
+|    |    +--- org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.24
+|    |    |    +--- org.jetbrains.kotlin:kotlin-script-runtime:1.9.24
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-scripting-common:1.9.24 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.jetbrains.kotlin:kotlin-allopen-compiler-plugin-embeddable:1.9.24
+
+kotlinKlibCommonizerClasspath
+\--- org.jetbrains.kotlin:kotlin-klib-commonizer-embeddable:1.9.24
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+     |    \--- org.jetbrains:annotations:13.0
+     \--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.24
+          +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+          +--- org.jetbrains.kotlin:kotlin-script-runtime:1.9.24
+          +--- org.jetbrains.kotlin:kotlin-reflect:1.6.10 -> 1.9.24
+          +--- org.jetbrains.kotlin:kotlin-daemon-embeddable:1.9.24
+          \--- org.jetbrains.intellij.deps:trove4j:1.0.20200330
+
+kotlinNativeCompilerPluginClasspath
+No dependencies
+
+kotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+kotlinScriptDefExtensions
+No dependencies
+
+mainSourceElements - List of source directories contained in the Main SourceSet. (n)
+No dependencies
+
+productionRuntimeClasspath
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    +--- org.jetbrains:annotations:13.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.24 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         +--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    |         +--- org.jboss.logging:jboss-logging:3.5.0.Final -> 3.5.3.Final
+|    |    |         +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    |    |         +--- io.smallrye:jandex:3.1.2
+|    |    |         +--- com.fasterxml:classmate:1.5.1 -> 1.7.0
+|    |    |         +--- net.bytebuddy:byte-buddy:1.14.15 -> 1.14.18
+|    |    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.0 -> 4.0.2
+|    |    |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         +--- org.glassfish.jaxb:jaxb-runtime:4.0.2 -> 4.0.5
+|    |    |         |    \--- org.glassfish.jaxb:jaxb-core:4.0.5
+|    |    |         |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.2 (*)
+|    |    |         |         +--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.eclipse.angus:angus-activation:2.0.2
+|    |    |         |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.glassfish.jaxb:txw2:4.0.5
+|    |    |         |         \--- com.sun.istack:istack-commons-runtime:4.1.2
+|    |    |         +--- jakarta.inject:jakarta.inject-api:2.0.1
+|    |    |         \--- org.antlr:antlr4-runtime:4.13.0
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    |    +--- io.grpc:grpc-stub:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    |    |    \--- com.google.guava:guava:32.1.3-android
+|    |    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |         +--- org.checkerframework:checker-qual:3.37.0
+|    |    |    |         \--- com.google.errorprone:error_prone_annotations:2.21.1 -> 2.23.0
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    +--- io.grpc:grpc-protobuf:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.29.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- io.grpc:grpc-protobuf-lite:1.62.2
+|    |    |         +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         \--- com.google.guava:guava:32.1.3-android (*)
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-noarg:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-noarg:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24 (c)
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24 (c)
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-util-klib:1.9.24
+|         |    |         \--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-project-model:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+|         \--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24
+|              +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (*)
+|              \--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+runtimeClasspath - Runtime classpath of null/main.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    +--- org.jetbrains:annotations:13.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.24 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         +--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    |         +--- org.jboss.logging:jboss-logging:3.5.0.Final -> 3.5.3.Final
+|    |    |         +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    |    |         +--- io.smallrye:jandex:3.1.2
+|    |    |         +--- com.fasterxml:classmate:1.5.1 -> 1.7.0
+|    |    |         +--- net.bytebuddy:byte-buddy:1.14.15 -> 1.14.18
+|    |    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.0 -> 4.0.2
+|    |    |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         +--- org.glassfish.jaxb:jaxb-runtime:4.0.2 -> 4.0.5
+|    |    |         |    \--- org.glassfish.jaxb:jaxb-core:4.0.5
+|    |    |         |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.2 (*)
+|    |    |         |         +--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.eclipse.angus:angus-activation:2.0.2
+|    |    |         |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.glassfish.jaxb:txw2:4.0.5
+|    |    |         |         \--- com.sun.istack:istack-commons-runtime:4.1.2
+|    |    |         +--- jakarta.inject:jakarta.inject-api:2.0.1
+|    |    |         \--- org.antlr:antlr4-runtime:4.13.0
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    |    +--- io.grpc:grpc-stub:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    |    |    \--- com.google.guava:guava:32.1.3-android
+|    |    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |         +--- org.checkerframework:checker-qual:3.37.0
+|    |    |    |         \--- com.google.errorprone:error_prone_annotations:2.21.1 -> 2.23.0
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    +--- io.grpc:grpc-protobuf:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.29.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- io.grpc:grpc-protobuf-lite:1.62.2
+|    |    |         +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         \--- com.google.guava:guava:32.1.3-android (*)
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-noarg:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-noarg:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24 (c)
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24 (c)
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-util-klib:1.9.24
+|         |    |         \--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-project-model:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+|         \--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24
+|              +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (*)
+|              \--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+runtimeElements - Runtime elements for the 'main' feature. (n)
+No dependencies
+
+runtimeElements-published (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for null/main. (n)
+No dependencies
+
+testAndDevelopmentOnly - Configuration for test and development-only dependencies such as Spring Boot's DevTools.
+No dependencies
+
+testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+No dependencies
+
+testApi - API dependencies for null/test (n)
+No dependencies
+
+testApiDependenciesMetadata
+No dependencies
+
+testCompileClasspath - Compile classpath for null/test.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    +--- org.jetbrains:annotations:13.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.24 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         \--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+testCompileOnly - Compile only dependencies for null/test. (n)
+No dependencies
+
+testCompileOnlyDependenciesMetadata
+No dependencies
+
+testImplementation - Implementation only dependencies for null/test. (n)
+No dependencies
+
+testImplementationDependenciesMetadata
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         \--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+testIntransitiveDependenciesMetadata
+No dependencies
+
+testKotlinScriptDef - Script filename extensions discovery classpath configuration
+No dependencies
+
+testKotlinScriptDefExtensions
+No dependencies
+
+testRuntimeClasspath - Runtime classpath of null/test.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24
+|    +--- org.jetbrains:annotations:13.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.24 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.24 (c)
++--- org.jetbrains.kotlin:kotlin-reflect:1.9.24
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
++--- project :game-common
+|    +--- org.matrix.game:game-core:1.0.6
+|    |    +--- com.typesafe.akka:akka-bom_2.13:2.9.4
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-slf4j_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4 (c)
+|    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4 (c)
+|    |    |    \--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4 (c)
+|    |    +--- com.typesafe.akka:akka-actor_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe:config:1.4.3
+|    |    |    \--- org.scala-lang.modules:scala-java8-compat_2.13:1.0.2
+|    |    |         \--- org.scala-lang:scala-library:2.13.6 -> 2.13.14
+|    |    +--- com.typesafe.akka:akka-cluster-sharding_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-remote_2.13:2.9.4
+|    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    +--- com.typesafe.akka:akka-stream_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-protobuf-v3_2.13:2.9.4
+|    |    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    |    +--- com.typesafe.akka:akka-pki_2.13:2.9.4
+|    |    |    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    |    |    +--- com.hierynomus:asn-one:0.6.0
+|    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    |    |    |    \--- org.agrona:agrona:1.19.2
+|    |    |    |    \--- com.typesafe.akka:akka-coordination_2.13:2.9.4
+|    |    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |         \--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.typesafe.akka:akka-distributed-data_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |    |    \--- org.lmdbjava:lmdbjava:0.8.3
+|    |    |    |         +--- com.github.jnr:jnr-constants:0.10.4
+|    |    |    |         \--- com.github.jnr:jnr-ffi:2.2.13
+|    |    |    |              +--- com.github.jnr:jffi:1.3.10
+|    |    |    |              +--- org.ow2.asm:asm:9.2
+|    |    |    |              +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |              |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |              |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              +--- org.ow2.asm:asm-util:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm:9.2
+|    |    |    |              |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |              |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |              +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |              \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    +--- com.typesafe.akka:akka-persistence_2.13:2.9.4
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    |    \--- com.typesafe.akka:akka-stream_2.13:2.9.4 (*)
+|    |    |    \--- com.typesafe.akka:akka-cluster-tools_2.13:2.9.4
+|    |    |         +--- org.scala-lang:scala-library:2.13.14
+|    |    |         +--- com.typesafe.akka:akka-cluster_2.13:2.9.4 (*)
+|    |    |         \--- com.typesafe.akka:akka-coordination_2.13:2.9.4 (*)
+|    |    +--- com.typesafe.akka:akka-serialization-jackson_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2 (c)
+|    |    |    |         +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.17.2 (c)
+|    |    |    |         \--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.17.2 (c)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.15.4 -> 2.17.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.15.4 -> 2.17.2
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.4 -> 2.17.2
+|    |    |    |    +--- org.scala-lang:scala-library:2.13.13 -> 2.13.14
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    |    \--- com.thoughtworks.paranamer:paranamer:2.8
+|    |    |    \--- org.lz4:lz4-java:1.8.0
+|    |    +--- com.typesafe.akka:akka-slf4j_2.13 -> 2.9.4
+|    |    |    +--- org.scala-lang:scala-library:2.13.14
+|    |    |    +--- com.typesafe.akka:akka-actor_2.13:2.9.4 (*)
+|    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.13
+|    |    +--- io.netty:netty-handler:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final
+|    |    |         +--- io.netty:netty-common:4.1.111.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-haproxy:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-http2:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-handler:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec-http:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.111.Final
+|    |    |    +--- io.netty:netty-common:4.1.111.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.111.Final (*)
+|    |    |    +--- io.netty:netty-transport:4.1.111.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- io.netty:netty-codec:4.1.111.Final (*)
+|    |    +--- com.mysql:mysql-connector-j:8.3.0
+|    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    +--- org.hibernate:hibernate-core:6.5.2.Final
+|    |    |    \--- org.hibernate.orm:hibernate-core:6.5.2.Final
+|    |    |         +--- jakarta.persistence:jakarta.persistence-api:3.1.0
+|    |    |         +--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    |         +--- org.jboss.logging:jboss-logging:3.5.0.Final -> 3.5.3.Final
+|    |    |         +--- org.hibernate.common:hibernate-commons-annotations:6.0.6.Final
+|    |    |         +--- io.smallrye:jandex:3.1.2
+|    |    |         +--- com.fasterxml:classmate:1.5.1 -> 1.7.0
+|    |    |         +--- net.bytebuddy:byte-buddy:1.14.15 -> 1.14.18
+|    |    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.0 -> 4.0.2
+|    |    |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         +--- org.glassfish.jaxb:jaxb-runtime:4.0.2 -> 4.0.5
+|    |    |         |    \--- org.glassfish.jaxb:jaxb-core:4.0.5
+|    |    |         |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.2 (*)
+|    |    |         |         +--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.eclipse.angus:angus-activation:2.0.2
+|    |    |         |         |    \--- jakarta.activation:jakarta.activation-api:2.1.3
+|    |    |         |         +--- org.glassfish.jaxb:txw2:4.0.5
+|    |    |         |         \--- com.sun.istack:istack-commons-runtime:4.1.2
+|    |    |         +--- jakarta.inject:jakarta.inject-api:2.0.1
+|    |    |         \--- org.antlr:antlr4-runtime:4.13.0
+|    |    +--- com.alibaba:druid:1.2.8
+|    |    +--- ch.qos.logback:logback-classic:1.5.6
+|    |    |    +--- ch.qos.logback:logback-core:1.5.6
+|    |    |    \--- org.slf4j:slf4j-api:2.0.13
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.24
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.24
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    |    +--- com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.17.2 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.7.22 -> 1.9.24 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.17.2 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.matrix.game:game-protocol:1.0.1
+|    |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+|    |    +--- io.github.oshai:kotlin-logging-jvm:5.1.0 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    |    +--- io.grpc:grpc-stub:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    |    |    \--- com.google.guava:guava:32.1.3-android
+|    |    |    |         +--- com.google.guava:failureaccess:1.0.1
+|    |    |    |         +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |         +--- org.checkerframework:checker-qual:3.37.0
+|    |    |    |         \--- com.google.errorprone:error_prone_annotations:2.21.1 -> 2.23.0
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- com.google.errorprone:error_prone_annotations:2.23.0
+|    |    +--- io.grpc:grpc-protobuf:1.62.2
+|    |    |    +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.29.0
+|    |    |    |    \--- com.google.protobuf:protobuf-java:3.25.1
+|    |    |    +--- com.google.guava:guava:32.1.3-android (*)
+|    |    |    \--- io.grpc:grpc-protobuf-lite:1.62.2
+|    |    |         +--- io.grpc:grpc-api:1.62.2 (*)
+|    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |         \--- com.google.guava:guava:32.1.3-android (*)
+|    |    +--- com.google.protobuf:protobuf-java:3.25.1
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 (*)
+|    +--- org.jetbrains.kotlin:kotlin-reflect:1.9.24 (*)
+|    \--- org.jetbrains.kotlin:kotlin-noarg:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-noarg:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24 (c)
+|         |    |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24 (c)
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24 (c)
+|         |    +--- org.jetbrains.kotlin:kotlin-gradle-plugin-annotations:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-native-utils:1.9.24
+|         |    |    +--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-util-klib:1.9.24
+|         |    |         \--- org.jetbrains.kotlin:kotlin-util-io:1.9.24
+|         |    +--- org.jetbrains.kotlin:kotlin-project-model:1.9.24
+|         |    |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         |    \--- org.jetbrains.kotlin:kotlin-tooling-core:1.9.24
+|         +--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+|         \--- org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.9.24
+|              +--- org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.24 (*)
+|              \--- org.jetbrains.kotlin:kotlin-gradle-plugins-bom:1.9.24 (*)
+\--- org.springframework.boot:spring-boot-starter -> 3.3.2
+     +--- org.springframework.boot:spring-boot:3.3.2
+     |    +--- org.springframework:spring-core:6.1.11
+     |    |    \--- org.springframework:spring-jcl:6.1.11
+     |    \--- org.springframework:spring-context:6.1.11
+     |         +--- org.springframework:spring-aop:6.1.11
+     |         |    +--- org.springframework:spring-beans:6.1.11
+     |         |    |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-beans:6.1.11 (*)
+     |         +--- org.springframework:spring-core:6.1.11 (*)
+     |         +--- org.springframework:spring-expression:6.1.11
+     |         |    \--- org.springframework:spring-core:6.1.11 (*)
+     |         \--- io.micrometer:micrometer-observation:1.12.8 -> 1.13.2
+     |              \--- io.micrometer:micrometer-commons:1.13.2
+     +--- org.springframework.boot:spring-boot-autoconfigure:3.3.2
+     |    \--- org.springframework.boot:spring-boot:3.3.2 (*)
+     +--- org.springframework.boot:spring-boot-starter-logging:3.3.2
+     |    +--- ch.qos.logback:logback-classic:1.5.6 (*)
+     |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.23.1
+     |    |    +--- org.apache.logging.log4j:log4j-api:2.23.1
+     |    |    \--- org.slf4j:slf4j-api:2.0.9 -> 2.0.13
+     |    \--- org.slf4j:jul-to-slf4j:2.0.13
+     |         \--- org.slf4j:slf4j-api:2.0.13
+     +--- jakarta.annotation:jakarta.annotation-api:2.1.1
+     +--- org.springframework:spring-core:6.1.11 (*)
+     \--- org.yaml:snakeyaml:2.2
+
+testRuntimeOnly - Runtime only dependencies for null/test. (n)
+No dependencies
+
+(c) - A dependency constraint, not a dependency. The dependency affected by the constraint occurs elsewhere in the tree.
+(*) - Indicates repeated occurrences of a transitive dependency subtree. Gradle expands transitive dependency subtrees only once per project; repeat occurrences only display the root of the subtree, followed by this annotation.
+
+(n) - A dependency or dependency configuration that cannot be resolved.
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+BUILD SUCCESSFUL in 935ms
+4 actionable tasks: 2 executed, 2 up-to-date

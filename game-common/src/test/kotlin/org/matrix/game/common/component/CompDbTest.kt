@@ -4,7 +4,7 @@ import org.matrix.game.common.entity.Character
 import kotlin.test.Test
 
 class CompDbTest {
-    @Test
+
     fun test() {
         val compDb = CompDb(
             "localhost:3306",

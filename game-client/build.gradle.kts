@@ -1,9 +1,7 @@
-import config.Versions
-
 plugins {
+    kotlin("plugin.spring")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
-    kotlin("plugin.spring")
 }
 
 dependencies {

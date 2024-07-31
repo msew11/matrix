@@ -8,16 +8,20 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     java
 
-    id("org.springframework.boot") version "3.3.0" apply false
-    id("io.spring.dependency-management") version "1.1.5" apply false
-
     kotlin("jvm") version "1.9.24" apply false
     kotlin("plugin.noarg") version "1.9.24" apply false
     kotlin("plugin.spring") version "1.9.24" apply false
 
+    val versions = config.Versions
+    id("org.springframework.boot") version versions.SPRING_VERSION apply false
+    id("io.spring.dependency-management") version versions.SPRING_DM_VERSION
+
 }
 
 subprojects {
+//    ext.set("netty.version", "4.1.109.Final")
+
+
     group = "org.matrix.game"
     version = "1.0-SNAPSHOT"
 
