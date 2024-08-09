@@ -8,7 +8,6 @@ import akka.cluster.sharding.ShardRegion
 import org.matrix.game.common.akka.ClientMessage2Home
 import org.matrix.game.common.log.logInfo
 
-
 class PlayerActor(
 ) : AbstractActorWithStash() {
 
@@ -29,15 +28,15 @@ class PlayerActor(
     }
 
     private fun handleMsg(msg: ClientMessage2Home) {
-        logInfo { "PlayerActor收到消息 ${msg.playerId}" }
+        logInfo { "$self 收到消息 ${msg.playerId}" }
     }
 
     private fun dealAny(msg: Any) {
-        logInfo { "PlayerActor dealAny" }
+        logInfo { "$self dealAny" }
     }
 
     private fun passivate(msg: Any) {
-        logInfo { "PlayerActor passivate" }
+        logInfo { "$self passivate" }
         context.parent.tell(ShardRegion.Passivate(PoisonPill.getInstance()), self)
     }
 }

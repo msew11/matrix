@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.stereotype.Component
 
 @SpringBootApplication
-class GameServerHomeApplication
+class GameServerHome
 
 fun main(args: Array<String>) {
-    val application = SpringApplication(GameServerHomeApplication::class.java)
+    val application = SpringApplication(GameServerHome::class.java)
     application.run(*args)
 }
 

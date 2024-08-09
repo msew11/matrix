@@ -9,7 +9,15 @@ fun <T : Any> T.logInfo(func: () -> String) {
 }
 
 fun <T : Any> T.logError(e: Throwable) {
-    KotlinLogging.logger(this.javaClass.name).error(e) {}
+    KotlinLogging.logger(this.javaClass.name).error(e) { "" }
+}
+
+fun <T : Any> T.logError(func: () -> String) {
+    KotlinLogging.logger(this.javaClass.name).error(func)
+}
+
+fun <T : Any> T.logError(e: Throwable, func: () -> String) {
+    KotlinLogging.logger(this.javaClass.name).error(e, func)
 }
 
 class GlobalLog
