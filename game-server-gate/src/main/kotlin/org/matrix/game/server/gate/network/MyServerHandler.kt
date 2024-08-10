@@ -6,8 +6,7 @@ import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.util.AttributeKey
 import io.netty.util.CharsetUtil
-import org.matrix.game.common.log.logError
-import org.matrix.game.common.log.logInfo
+import org.matrix.game.common.log.logger
 import org.matrix.game.proto.c2s.GameReq
 import org.matrix.game.server.gate.actor.ChannelActor
 import org.matrix.game.server.gate.actor.NettyChannelInactive
@@ -23,6 +22,7 @@ class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
     )
 
     companion object {
+        val logger by logger()
         val CHANNEL_ACTOR: AttributeKey<ActorRef> = AttributeKey.valueOf("CHANNEL_ACTOR")
     }
 
@@ -31,14 +31,14 @@ class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
         val channelActor = gate.actorOf(ChannelActor.props(ctx))
         channel.attr(CHANNEL_ACTOR).set(channelActor)
 
-        logInfo { "channelActive 绑定actor" }
+        logger.info { "channelActive 绑定actor" }
     }
 
     override fun channelInactive(ctx: ChannelHandlerContext) {
         val channelActor = ctx.channel().attr(CHANNEL_ACTOR).get()
         if (channelActor != null) {
             channelActor.tell(NettyChannelInactive(), ActorRef.noSender())
-            logInfo { "channelInactive 关闭channelActor.." }
+            logger.info { "channelInactive 关闭channelActor.." }
         }
     }
 
@@ -54,7 +54,7 @@ class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
     }
 
     override fun exceptionCaught(ctx: ChannelHandlerContext, cause: Throwable) {
-        logError(cause) { "Netty 关闭" }
+        logger.error(cause) { "Netty 关闭" }
         ctx.close()
     }
 

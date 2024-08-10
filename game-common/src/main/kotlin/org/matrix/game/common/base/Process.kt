@@ -2,10 +2,14 @@ package org.matrix.game.common.base
 
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.common.constg.ProcessType
-import org.matrix.game.common.log.logInfo
+import org.matrix.game.common.log.logger
 import kotlin.system.exitProcess
 
 abstract class Process(val processType: ProcessType) {
+
+    companion object {
+        val logger by logger()
+    }
 
     private val components: MutableList<AbstractComponent> = ArrayList()
     private val holdProcessor: HoldProcessor = HoldProcessor()
@@ -16,7 +20,7 @@ abstract class Process(val processType: ProcessType) {
         try {
             prepare()
             holdProcessor.startAwait()
-            logInfo { "${processType.name} started" }
+            logger.info { "${processType.name} started" }
         } catch (e: Exception) {
             e.printStackTrace()
             exitProcess(1)
@@ -25,12 +29,12 @@ abstract class Process(val processType: ProcessType) {
 
     open fun shutdown() {
         try {
-            logInfo { "${processType.name} stop..." }
+            logger.info { "${processType.name} stop..." }
             components.reversed().forEach {
                 it.close()
-                logInfo { ">>> ${it.javaClass.simpleName} stopped" }
+                logger.info { ">>> ${it.javaClass.simpleName} stopped" }
             }
-            logInfo { "${processType.name} stopped" }
+            logger.info { "${processType.name} stopped" }
             holdProcessor.stopAwait()
         } catch (e: Exception) {
             e.printStackTrace()

@@ -21,8 +21,8 @@ class Gate : Process(ProcessType.gate) {
             CompAkka(
                 this,
                 "127.0.0.1",
-                3551,
-                listOf("127.0.0.1:3551")
+                6551,
+                listOf("127.0.0.1:6551")
             )
         )
         compAkka4Gate = regComponent(CompAkka4Gate(this, compAkka))

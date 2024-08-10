@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
 import org.matrix.game.common.base.Process
-import org.matrix.game.common.log.logInfo
+import org.matrix.game.common.log.logger
 
 /**
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#cluster-api-extension">akka集群</a>
@@ -17,6 +17,10 @@ class CompAkka(
     val akkaPort: Int,
     val seedNodes: List<String>
 ) : AbstractComponent() {
+
+    companion object {
+        val logger by logger()
+    }
 
     val loadCfg: Config
     val actorSystem: ActorSystem
@@ -38,7 +42,7 @@ class CompAkka(
         val config = ConfigFactory.parseMap(configMap).withFallback(loadCfg)
         actorSystem = ActorSystem.create(actorSystemName, config)
 
-        logInfo { "AKKA组件初始化" }
+        logger.info { "AKKA组件初始化" }
     }
 
     override fun close() {

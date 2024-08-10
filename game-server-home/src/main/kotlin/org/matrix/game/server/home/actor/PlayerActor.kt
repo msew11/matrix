@@ -6,12 +6,13 @@ import akka.actor.Props
 import akka.actor.ReceiveTimeout
 import akka.cluster.sharding.ShardRegion
 import org.matrix.game.common.akka.ClientMessage2Home
-import org.matrix.game.common.log.logInfo
+import org.matrix.game.common.log.logger
 
 class PlayerActor(
 ) : AbstractActorWithStash() {
 
     companion object {
+        val logger by logger()
         fun props(): Props {
             return Props.create(PlayerActor::class.java) {
                 PlayerActor()
@@ -28,15 +29,15 @@ class PlayerActor(
     }
 
     private fun handleMsg(msg: ClientMessage2Home) {
-        logInfo { "$self 收到消息 ${msg.playerId}" }
+        logger.info { "$self 收到消息 ${msg.playerId}" }
     }
 
     private fun dealAny(msg: Any) {
-        logInfo { "$self dealAny" }
+        logger.info { "$self dealAny" }
     }
 
     private fun passivate(msg: Any) {
-        logInfo { "$self passivate" }
+        logger.info { "$self passivate" }
         context.parent.tell(ShardRegion.Passivate(PoisonPill.getInstance()), self)
     }
 }
