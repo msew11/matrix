@@ -2,15 +2,26 @@ package org.matrix.game.common.component
 
 import org.hibernate.SessionFactory
 import org.hibernate.cfg.Configuration
+import org.matrix.game.common.base.BaseProcess
 
-class CompDb(
+class CompDb private constructor(
     val host: String,
     val dbName: String,
     val username: String,
     val password: String
-): AbstractComponent() {
+) : AbstractComponent() {
 
     val sessionFactory: SessionFactory
+
+    companion object {
+        fun reg(
+            process: BaseProcess,
+            host: String,
+            dbName: String,
+            username: String,
+            password: String
+        ): BaseProcess.CompAccess<CompDb> = process.regComponent { CompDb(host, dbName, username, password) }
+    }
 
     init {
         sessionFactory = hibernateSessionFactory()

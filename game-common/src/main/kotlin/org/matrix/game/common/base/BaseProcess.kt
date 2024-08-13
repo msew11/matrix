@@ -5,13 +5,14 @@ import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.core.log.logger
 import kotlin.system.exitProcess
 
-abstract class Process(val processType: ProcessType) {
+abstract class BaseProcess(val processType: ProcessType) {
 
     companion object {
         val logger by logger()
     }
 
-    private val components: MutableList<AbstractComponent> = ArrayList()
+    val components: MutableList<AbstractComponent> = ArrayList()
+    val componentsMap: MutableMap<Class<*>, AbstractComponent> = mutableMapOf()
     private val holdProcessor: HoldProcessor = HoldProcessor()
 
     abstract fun prepare()
@@ -41,8 +42,23 @@ abstract class Process(val processType: ProcessType) {
         }
     }
 
-    fun <T : AbstractComponent> regComponent(component: T): T {
+    /*fun <T : AbstractComponent> regComponent(component: T): T {
+        componentsMap[component.javaClass] = component
         components.addLast(component)
         return component
+    }*/
+
+    inline fun <reified T : AbstractComponent> regComponent(build: () -> T): CompAccess<T> {
+        val comp = componentsMap.getOrPut(T::class.java) {
+            val component = build()
+            components.addLast(component)
+            logger.info { "${T::class.java.simpleName} 组件初始化" }
+            component
+        } as T
+        return CompAccess(comp)
+    }
+
+    class CompAccess<T : AbstractComponent>(private val comp: T) {
+        fun access(): T = comp
     }
 }

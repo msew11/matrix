@@ -1,13 +1,13 @@
 package org.matrix.game.common.akka
 
 import akka.cluster.sharding.ShardRegion
-import akka.serialization.jackson.JsonSerializable
-import org.matrix.game.common.base.NoArg
+import org.matrix.game.proto.home.HomeMessage
 
 class HomeMessageExtractor(private val numberOfShards: Int) : ShardRegion.MessageExtractor {
     override fun entityId(message: Any): String {
         return when (message) {
             is ClientReq2Home -> message.playerId.toString()
+            is HomeMessage -> message.playerId.toString()
             else -> {
                 throw IllegalArgumentException()
             }
@@ -19,6 +19,7 @@ class HomeMessageExtractor(private val numberOfShards: Int) : ShardRegion.Messag
     override fun shardId(message: Any): String {
         return when (message) {
             is ClientReq2Home -> Math.ceilMod(message.playerId, numberOfShards).toString()
+            is HomeMessage -> Math.ceilMod(message.playerId, numberOfShards).toString()
             else -> {
                 throw IllegalArgumentException()
             }
@@ -26,8 +27,3 @@ class HomeMessageExtractor(private val numberOfShards: Int) : ShardRegion.Messag
     }
 }
 
-@NoArg
-class ClientReq2Home(
-    val playerId: Long,
-    val msgBin: ByteArray
-) : JsonSerializable

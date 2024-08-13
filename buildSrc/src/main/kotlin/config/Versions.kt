@@ -21,4 +21,6 @@ object Versions {
     const val DRUID_VERSION = "1.2.8"
     const val GUAVA_VERSION = "32.1.2-jre"
 
+    // reflections
+    const val REFLECTIONS_VERSION = "0.9.11"
 }

@@ -3,7 +3,7 @@ package org.matrix.game.common.component
 import akka.actor.ActorSystem
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
-import org.matrix.game.common.base.Process
+import org.matrix.game.common.base.BaseProcess
 import org.matrix.game.core.log.logger
 
 /**
@@ -11,8 +11,8 @@ import org.matrix.game.core.log.logger
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#joining-to-seed-nodes">加入种子节点</a>
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#configuration">配置</a>
  */
-class CompAkka(
-    val process: Process,
+class CompAkka private constructor(
+    val process: BaseProcess,
     val akkaHost: String,
     val akkaPort: Int,
     val seedNodes: List<String>
@@ -20,6 +20,13 @@ class CompAkka(
 
     companion object {
         val logger by logger()
+        fun reg(
+            process: BaseProcess,
+            akkaHost: String,
+            akkaPort: Int,
+            seedNodes: List<String>
+        ): BaseProcess.CompAccess<CompAkka> =
+            process.regComponent { CompAkka(process, akkaHost, akkaPort, seedNodes) }
     }
 
     val loadCfg: Config

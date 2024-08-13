@@ -1,10 +1,10 @@
 package org.matrix.game.common.component
 
-import org.matrix.game.common.base.Process
+import org.matrix.game.common.base.BaseProcess
 
 
-class CompCfg(
-    val process: Process
+class CompCfg private constructor(
+    val process: BaseProcess
 ) : AbstractComponent() {
 
     init {
