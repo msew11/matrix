@@ -16,12 +16,7 @@ class Gate : BaseProcess(ProcessType.gate) {
     private lateinit var compNetwork: CompNetwork
 
     override fun prepare() {
-        compAkka = CompAkka.reg(
-            this,
-            "127.0.0.1",
-            6551,
-            listOf("127.0.0.1:6551")
-        ).access()
+        compAkka = CompAkka.reg(this).access()
         compAkka4Gate = CompAkka4Gate.reg(this, compAkka).access()
         compNetwork = CompNetwork.reg(this).access()
     }

@@ -1,5 +1,6 @@
 package org.matrix.game.common.base
 
+import com.typesafe.config.Config
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.core.log.logger
@@ -11,15 +12,23 @@ abstract class BaseProcess(val processType: ProcessType) {
         val logger by logger()
     }
 
+    lateinit var config: Config
     val components: MutableList<AbstractComponent> = ArrayList()
     val componentsMap: MutableMap<Class<*>, AbstractComponent> = mutableMapOf()
     private val holdProcessor: HoldProcessor = HoldProcessor()
 
     abstract fun prepare()
 
-    open fun boot() {
+    open fun boot(config: Config) {
         try {
+            this.config = config
             prepare()
+            components.forEach {
+                it.loadConfig()
+            }
+            components.forEach {
+                it.init()
+            }
             holdProcessor.startAwait()
             logger.info { "${processType.name} started" }
         } catch (e: Exception) {

@@ -1,5 +1,6 @@
 package org.matrix.game.client
 
+import com.typesafe.config.ConfigFactory
 import jakarta.annotation.PreDestroy
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -18,8 +19,11 @@ fun main(args: Array<String>) {
 @Component
 class ClientRunner : ApplicationRunner {
     override fun run(args: ApplicationArguments) {
+        val configMap = mutableMapOf<String, Any>()
+        val config = ConfigFactory.parseMap(configMap)
+
         client = Client()
-        client.boot()
+        client.boot(config)
     }
 
     @PreDestroy

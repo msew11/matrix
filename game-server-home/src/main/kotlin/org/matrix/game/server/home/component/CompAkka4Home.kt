@@ -19,14 +19,18 @@ class CompAkka4Home private constructor(
     val compAkka: CompAkka
 ) : AbstractComponent() {
 
-    val actorSystem: ActorSystem = compAkka.actorSystem
+    lateinit var actorSystem: ActorSystem
 
     companion object {
         fun reg(process: BaseProcess, compAkka: CompAkka): BaseProcess.CompAccess<CompAkka4Home> =
             process.regComponent { CompAkka4Home(process, compAkka) }
     }
 
-    init {
+    override fun loadConfig() {
+    }
+
+    override fun init() {
+        actorSystem = compAkka.actorSystem
         val settings = ClusterShardingSettings.create(actorSystem)
             .withRole(process.processType.name)
 

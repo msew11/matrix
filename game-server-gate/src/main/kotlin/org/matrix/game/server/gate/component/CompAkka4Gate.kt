@@ -16,16 +16,20 @@ class CompAkka4Gate(
     val compAkka: CompAkka
 ) : AbstractComponent() {
 
-    private val actorSystem: ActorSystem = compAkka.actorSystem
+    lateinit var actorSystem: ActorSystem
 
-    val homeShardProxy: ActorRef
+    lateinit var homeShardProxy: ActorRef
 
     companion object {
         fun reg(process: BaseProcess, compAkka: CompAkka): BaseProcess.CompAccess<CompAkka4Gate> =
             process.regComponent { CompAkka4Gate(process, compAkka) }
     }
 
-    init {
+    override fun loadConfig() {
+    }
+
+    override fun init() {
+        actorSystem = compAkka.actorSystem
         homeShardProxy = ClusterSharding.get(actorSystem)
             .startProxy(
                 AkkaShardType.player.name,

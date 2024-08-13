@@ -12,30 +12,32 @@ import org.matrix.game.core.log.logger
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#configuration">配置</a>
  */
 class CompAkka private constructor(
-    val process: BaseProcess,
-    val akkaHost: String,
-    val akkaPort: Int,
-    val seedNodes: List<String>
+    private val process: BaseProcess
 ) : AbstractComponent() {
 
     companion object {
         val logger by logger()
-        fun reg(
-            process: BaseProcess,
-            akkaHost: String,
-            akkaPort: Int,
-            seedNodes: List<String>
-        ): BaseProcess.CompAccess<CompAkka> =
-            process.regComponent { CompAkka(process, akkaHost, akkaPort, seedNodes) }
+        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompAkka> =
+            process.regComponent { CompAkka(process) }
     }
 
-    val loadCfg: Config
-    val actorSystem: ActorSystem
+    lateinit var actorSystemName: String
+    lateinit var akkaHost: String
+    var akkaPort: Int = 0
+    lateinit var seedNodes: List<String>
 
-    init {
-        val actorSystemName = "MATRIX"
+    lateinit var loadCfg: Config
+    lateinit var actorSystem: ActorSystem
 
-        loadCfg = ConfigFactory.load("${process.processType.name}.conf")
+    override fun loadConfig() {
+        actorSystemName = process.config.getString("game.name")
+        akkaHost = process.config.getString("game.${process.processType.name}.host")
+        akkaPort = process.config.getInt("game.${process.processType.name}.port")
+        seedNodes = process.config.getStringList("game.seeds")
+    }
+
+    override fun init() {
+        loadCfg = ConfigFactory.load("akka-${process.processType.name}.conf")
 
         val configMap = mutableMapOf(
             "akka.remote.artery.canonical.hostname" to akkaHost,

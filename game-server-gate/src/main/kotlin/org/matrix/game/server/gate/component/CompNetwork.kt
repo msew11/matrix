@@ -11,17 +11,22 @@ import org.matrix.game.core.network.netty.NettyServer
 import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.network.MyServerHandler
 
-class CompNetwork private constructor() : AbstractComponent() {
+class CompNetwork private constructor(private val process: BaseProcess) : AbstractComponent() {
 
-    private val server: IServer
+    var nettyPort: Int = 0
+    lateinit var server: IServer
 
     companion object {
-        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompNetwork> = process.regComponent { CompNetwork() }
+        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompNetwork> = process.regComponent { CompNetwork(process) }
     }
 
-    init {
+    override fun loadConfig() {
+        nettyPort = process.config.getInt("game.${process.processType.name}.netty.port")
+    }
+
+    override fun init() {
         val server = NettyServer(
-            6666,
+            nettyPort,
             object : ChannelInitializer<SocketChannel>() {
                 override fun initChannel(ch: SocketChannel) {
                     // 解码

@@ -10,6 +10,13 @@ class CompCfg private constructor(
     init {
     }
 
+    override fun loadConfig() {
+
+    }
+
+    override fun init() {
+    }
+
     override fun close() {
     }
 }

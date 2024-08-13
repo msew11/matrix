@@ -5,36 +5,39 @@ import org.hibernate.cfg.Configuration
 import org.matrix.game.common.base.BaseProcess
 
 class CompDb private constructor(
-    val host: String,
-    val dbName: String,
-    val username: String,
-    val password: String
+    val process: BaseProcess,
 ) : AbstractComponent() {
 
-    val sessionFactory: SessionFactory
+    lateinit var host: String
+    lateinit var dbName: String
+    lateinit var username: String
+    lateinit var password: String
+
+    lateinit var sessionFactory: SessionFactory
 
     companion object {
-        fun reg(
-            process: BaseProcess,
-            host: String,
-            dbName: String,
-            username: String,
-            password: String
-        ): BaseProcess.CompAccess<CompDb> = process.regComponent { CompDb(host, dbName, username, password) }
-    }
-
-    init {
-        sessionFactory = hibernateSessionFactory()
+        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompDb> = process.regComponent { CompDb(process) }
     }
 
     private fun hibernateSessionFactory(): SessionFactory {
-        val url = "jdbc:mysql://localhost:3306/game_matrix?createDatabaseIfNotExist=true"
+        val url = "jdbc:mysql://${host}/${dbName}?createDatabaseIfNotExist=true"
         val hibernateCfg = Configuration().configure("hibernate.cfg.xml")
         hibernateCfg.setProperty("hibernate.connection.url", url)
         hibernateCfg.setProperty("hibernate.connection.username", username)
         hibernateCfg.setProperty("hibernate.connection.password", password)
 
         return hibernateCfg.buildSessionFactory()
+    }
+
+    override fun loadConfig() {
+        host = process.config.getString("game.db.host")
+        dbName = process.config.getString("game.db.name")
+        username = process.config.getString("game.db.username")
+        password = process.config.getString("game.db.password")
+    }
+
+    override fun init() {
+        sessionFactory = hibernateSessionFactory()
     }
 
     override fun close() {

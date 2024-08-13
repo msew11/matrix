@@ -17,20 +17,9 @@ class Home : BaseProcess(ProcessType.home) {
     lateinit var compHomeMessage: CompHomeMessage
 
     override fun prepare() {
-        compAkka = CompAkka.reg(
-            this,
-            "127.0.0.1",
-            6552,
-            listOf("127.0.0.1:6551")
-        ).access()
+        compAkka = CompAkka.reg(this).access()
         compAkka4Home = CompAkka4Home.reg(this, compAkka).access()
-        compDb = CompDb.reg(
-            this,
-            "127.0.0.1:3306",
-            "game_matrix",
-            "root",
-            "123456"
-        ).access()
+        compDb = CompDb.reg(this).access()
         compHomeMessage= CompHomeMessage.reg(this).access()
     }
 

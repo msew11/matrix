@@ -43,10 +43,7 @@ class MyServerHandler : SimpleChannelInboundHandler<ClientReq>() {
     }
 
     override fun channelRead0(ctx: ChannelHandlerContext, msg: ClientReq) {
-        val channelActor = ctx.channel().attr(CHANNEL_ACTOR).get()
-        if (channelActor != null) {
-            channelActor.tell(msg, ActorRef.noSender())
-        }
+        ctx.channel().attr(CHANNEL_ACTOR).get()?.tell(msg, ActorRef.noSender())
     }
 
     override fun channelReadComplete(ctx: ChannelHandlerContext) {

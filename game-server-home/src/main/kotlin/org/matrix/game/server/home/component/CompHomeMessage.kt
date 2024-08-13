@@ -19,11 +19,21 @@ class CompHomeMessage private constructor() : AbstractComponent() {
             process.regComponent { CompHomeMessage() }
     }
 
-    init {
+    fun fetchHandler(msgName: String): BaseHandler<Message>? {
+        @Suppress("unchecked_cast")
+        return handlersMap[msgName] as BaseHandler<Message>?
+    }
+
+    override fun loadConfig() {
+
+    }
+
+    override fun init() {
         val subClazzList = Reflections("org.matrix.game.server.home")
             .getSubTypesOf(BaseHandler::class.java)
         subClazzList.forEach {
             val genericSuperclass = it.genericSuperclass as ParameterizedType
+            @Suppress("unchecked_cast")
             val argumentClass = genericSuperclass.actualTypeArguments.first() as Class<Message>
             val method = argumentClass.getDeclaredMethod("getDescriptor")
             val descriptor = method.invoke(null) as Descriptors.Descriptor
@@ -32,11 +42,6 @@ class CompHomeMessage private constructor() : AbstractComponent() {
             logger.info { "注册消息：${argumentClass.simpleName}" }
             handlersMap[descriptor.fullName] = handler
         }
-    }
-
-    fun fetchHandler(msgName: String): BaseHandler<Message>? {
-        @Suppress("unchecked_cast")
-        return handlersMap[msgName] as BaseHandler<Message>?
     }
 
     override fun close() {

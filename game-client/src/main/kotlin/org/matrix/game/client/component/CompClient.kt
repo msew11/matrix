@@ -31,6 +31,14 @@ class CompClient private constructor() : AbstractComponent() {
         this.client = client
     }
 
+    override fun loadConfig() {
+
+    }
+
+    override fun init() {
+
+    }
+
     override fun close() {
         client.shutdown()
     }
