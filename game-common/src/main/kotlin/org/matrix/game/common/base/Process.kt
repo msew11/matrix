@@ -2,7 +2,7 @@ package org.matrix.game.common.base
 
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.common.constg.ProcessType
-import org.matrix.game.common.log.logger
+import org.matrix.game.core.log.logger
 import kotlin.system.exitProcess
 
 abstract class Process(val processType: ProcessType) {

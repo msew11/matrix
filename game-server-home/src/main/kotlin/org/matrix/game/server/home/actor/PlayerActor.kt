@@ -6,7 +6,7 @@ import akka.actor.Props
 import akka.actor.ReceiveTimeout
 import akka.cluster.sharding.ShardRegion
 import org.matrix.game.common.akka.ClientMessage2Home
-import org.matrix.game.common.log.logger
+import org.matrix.game.core.log.logger
 
 class PlayerActor(
 ) : AbstractActorWithStash() {

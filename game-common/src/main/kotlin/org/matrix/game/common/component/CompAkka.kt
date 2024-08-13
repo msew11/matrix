@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigFactory
 import org.matrix.game.common.base.Process
-import org.matrix.game.common.log.logger
+import org.matrix.game.core.log.logger
 
 /**
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#cluster-api-extension">akka集群</a>

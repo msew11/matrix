@@ -1,7 +1,7 @@
 package org.matrix.game.server.gate.actor.state
 
 import akka.actor.AbstractActor
-import org.matrix.game.common.log.logger
+import org.matrix.game.core.log.logger
 import org.matrix.game.proto.c2s.GameReq
 import org.matrix.game.server.gate.actor.ChannelActor
 import org.matrix.game.server.gate.actor.NettyChannelInactive

@@ -5,7 +5,7 @@ import akka.actor.ActorRef
 import akka.actor.PoisonPill
 import akka.actor.Props
 import io.netty.channel.ChannelHandlerContext
-import org.matrix.game.common.log.logger
+import org.matrix.game.core.log.logger
 import org.matrix.game.server.gate.actor.state.BaseState
 import org.matrix.game.server.gate.actor.state.BeforeLoginState
 
@@ -29,7 +29,7 @@ class ChannelActor(
 
     override fun createReceive(): Receive {
 
-        logger.info { "ChannelActor ${self.path()} createReceive" }
+        logger.info { "${self.path()} createReceive" }
         return currentState.createReceive()
     }
 
@@ -42,7 +42,7 @@ class ChannelActor(
         ctx.disconnect()
         context.self.tell(PoisonPill.getInstance(), ActorRef.noSender())
 
-        logger.info { "ChannelActor ${self.path()} expired" }
+        logger.info { "${self.path()} expired" }
     }
 
     fun savePlayerId(playerId: Long) {
@@ -50,6 +50,6 @@ class ChannelActor(
     }
 
     override fun postStop() {
-        logger.info { "ChannelActor ${self.path()} stop" }
+        logger.info { "${self.path()} stop" }
     }
 }
