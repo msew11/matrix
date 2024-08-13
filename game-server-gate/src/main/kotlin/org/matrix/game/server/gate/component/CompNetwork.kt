@@ -7,7 +7,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.core.network.IServer
 import org.matrix.game.core.network.netty.NettyServer
-import org.matrix.game.proto.c2s.GameReq
+import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.network.MyServerHandler
 
 class CompNetwork : AbstractComponent() {
@@ -21,7 +21,7 @@ class CompNetwork : AbstractComponent() {
                 override fun initChannel(ch: SocketChannel) {
                     // 解码
                     ch.pipeline().addLast(ProtobufVarint32FrameDecoder())
-                    ch.pipeline().addLast(ProtobufDecoder(GameReq.getDefaultInstance()))
+                    ch.pipeline().addLast(ProtobufDecoder(ClientReq.getDefaultInstance()))
                     // 编码
                     //ch.pipeline().addLast(ProtobufEncoder())
                     //ch.pipeline().addLast(ProtobufVarint32LengthFieldPrepender())

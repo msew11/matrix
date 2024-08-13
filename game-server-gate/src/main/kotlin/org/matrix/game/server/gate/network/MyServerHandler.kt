@@ -7,7 +7,7 @@ import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.util.AttributeKey
 import io.netty.util.CharsetUtil
 import org.matrix.game.core.log.logger
-import org.matrix.game.proto.c2s.GameReq
+import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.actor.ChannelActor
 import org.matrix.game.server.gate.actor.NettyChannelInactive
 import org.matrix.game.server.gate.gate
@@ -15,7 +15,7 @@ import org.matrix.game.server.gate.gate
 /**
  * @see <a href="https://cloud.tencent.com/developer/article/2182854">Netty·Handler 对比</a>
  */
-class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
+class MyServerHandler : SimpleChannelInboundHandler<ClientReq>() {
 
     data class ClientInfo(
         val actorRef: ActorRef
@@ -42,7 +42,7 @@ class MyServerHandler : SimpleChannelInboundHandler<GameReq>() {
         }
     }
 
-    override fun channelRead0(ctx: ChannelHandlerContext, msg: GameReq) {
+    override fun channelRead0(ctx: ChannelHandlerContext, msg: ClientReq) {
         val channelActor = ctx.channel().attr(CHANNEL_ACTOR).get()
         if (channelActor != null) {
             channelActor.tell(msg, ActorRef.noSender())

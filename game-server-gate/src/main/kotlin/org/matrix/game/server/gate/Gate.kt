@@ -2,7 +2,7 @@ package org.matrix.game.server.gate
 
 import akka.actor.ActorRef
 import akka.actor.Props
-import org.matrix.game.common.akka.ClientMessage2Home
+import org.matrix.game.common.akka.ClientReq2Home
 import org.matrix.game.common.base.Process
 import org.matrix.game.common.component.CompAkka
 import org.matrix.game.common.constg.ProcessType
@@ -33,7 +33,7 @@ class Gate : Process(ProcessType.gate) {
         return compAkka.actorSystem.actorOf(props)
     }
 
-    fun tellHome(msg: ClientMessage2Home, sender: ActorRef) {
+    fun tellHome(msg: ClientReq2Home, sender: ActorRef) {
         compAkka4Gate.homeShardProxy.tell(msg, sender)
     }
 

@@ -4,9 +4,9 @@ import io.netty.buffer.ByteBuf
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
 import io.netty.util.CharsetUtil
-import org.matrix.game.proto.c2s.DoSomeAction
-import org.matrix.game.proto.c2s.GameReq
-import org.matrix.game.proto.c2s.LoginGame
+import org.matrix.game.proto.client.ClientReq
+import org.matrix.game.proto.client.DoSomeAction
+import org.matrix.game.proto.client.LoginGame
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
 
@@ -32,7 +32,7 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
         val loginGame = LoginGame.newBuilder()
             .setPlayerId(playerId)
 
-        val req = GameReq.newBuilder()
+        val req = ClientReq.newBuilder()
             .setLoginGame(loginGame)
             .build()
         ctx.writeAndFlush(req)
@@ -43,7 +43,7 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
         val doSomeAction = DoSomeAction.newBuilder()
             .setDesc(desc)
 
-        val req = GameReq.newBuilder()
+        val req = ClientReq.newBuilder()
             .setDoSomeAction(doSomeAction)
             .build()
         ctx.writeAndFlush(req)

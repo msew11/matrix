@@ -2,7 +2,7 @@ package org.matrix.game.server.gate.actor.state
 
 import akka.actor.AbstractActor
 import org.matrix.game.core.log.logger
-import org.matrix.game.proto.c2s.GameReq
+import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.actor.ChannelActor
 import org.matrix.game.server.gate.actor.NettyChannelInactive
 
@@ -26,7 +26,7 @@ abstract class BaseState(val actor: ChannelActor) {
     private fun handleMsg(msg: Any) {
         try {
             when (msg) {
-                is GameReq -> handleGameReq(msg)
+                is ClientReq -> handleClientReq(msg)
                 else -> {
                     logger.error { "@${this::class.java.simpleName} 收到${msg::class.java}消息，无法处理！" }
                 }
@@ -37,5 +37,5 @@ abstract class BaseState(val actor: ChannelActor) {
         }
     }
 
-    abstract fun handleGameReq(msg: GameReq)
+    abstract fun handleClientReq(msg: ClientReq)
 }
