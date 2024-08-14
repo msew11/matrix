@@ -12,44 +12,33 @@ import org.matrix.game.core.log.logger
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-usage.html#configuration">配置</a>
  */
 class CompAkka private constructor(
-    private val process: BaseProcess
+    process: BaseProcess,
+    compCfg: CompCfg
 ) : AbstractComponent() {
+
+    var loadCfg: Config
+    var actorSystem: ActorSystem
 
     companion object {
         val logger by logger()
-        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompAkka> =
-            process.regComponent { CompAkka(process) }
+        fun reg(process: BaseProcess, compCfg: CompCfg): BaseProcess.CompAccess<CompAkka> =
+            process.regComponent { CompAkka(process, compCfg) }
     }
 
-    lateinit var actorSystemName: String
-    lateinit var akkaHost: String
-    var akkaPort: Int = 0
-    lateinit var seedNodes: List<String>
-
-    lateinit var loadCfg: Config
-    lateinit var actorSystem: ActorSystem
-
-    override fun loadConfig() {
-        actorSystemName = process.config.getString("game.name")
-        akkaHost = process.config.getString("game.${process.processType.name}.host")
-        akkaPort = process.config.getInt("game.${process.processType.name}.port")
-        seedNodes = process.config.getStringList("game.seeds")
-    }
-
-    override fun init() {
+    init {
         loadCfg = ConfigFactory.load("akka-${process.processType.name}.conf")
 
         val configMap = mutableMapOf(
-            "akka.remote.artery.canonical.hostname" to akkaHost,
-            "akka.remote.artery.canonical.port" to akkaPort,
-            "akka.cluster.seed-nodes" to seedNodes.map {
-                "akka://${actorSystemName}@${it}"
+            "akka.remote.artery.canonical.hostname" to compCfg.akkaHost,
+            "akka.remote.artery.canonical.port" to compCfg.akkaPort,
+            "akka.cluster.seed-nodes" to compCfg.seedNodes.map {
+                "akka://${compCfg.actorSystemName}@${it}"
             },
             "akka.cluster.roles" to listOf(process.processType.name),
             "akka.cluster.downing-provider-class" to "akka.cluster.sbr.SplitBrainResolverProvider",
         )
         val config = ConfigFactory.parseMap(configMap).withFallback(loadCfg)
-        actorSystem = ActorSystem.create(actorSystemName, config)
+        actorSystem = ActorSystem.create(compCfg.actorSystemName, config)
 
         logger.info { "AKKA组件初始化" }
     }

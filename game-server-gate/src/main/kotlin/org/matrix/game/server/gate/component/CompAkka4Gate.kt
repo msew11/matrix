@@ -1,7 +1,6 @@
 package org.matrix.game.server.gate.component
 
 import akka.actor.ActorRef
-import akka.actor.ActorSystem
 import akka.cluster.sharding.ClusterSharding
 import org.matrix.game.common.akka.HomeMessageExtractor
 import org.matrix.game.common.base.BaseProcess
@@ -12,25 +11,18 @@ import org.matrix.game.common.constg.ProcessType
 import java.util.*
 
 class CompAkka4Gate(
-    val process: BaseProcess,
-    val compAkka: CompAkka
+    compAkka: CompAkka
 ) : AbstractComponent() {
 
-    lateinit var actorSystem: ActorSystem
-
-    lateinit var homeShardProxy: ActorRef
+    var homeShardProxy: ActorRef
 
     companion object {
         fun reg(process: BaseProcess, compAkka: CompAkka): BaseProcess.CompAccess<CompAkka4Gate> =
-            process.regComponent { CompAkka4Gate(process, compAkka) }
+            process.regComponent { CompAkka4Gate(compAkka) }
     }
 
-    override fun loadConfig() {
-    }
-
-    override fun init() {
-        actorSystem = compAkka.actorSystem
-        homeShardProxy = ClusterSharding.get(actorSystem)
+    init {
+        homeShardProxy = ClusterSharding.get(compAkka.actorSystem)
             .startProxy(
                 AkkaShardType.player.name,
                 Optional.of(ProcessType.home.name),

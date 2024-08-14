@@ -23,12 +23,6 @@ abstract class BaseProcess(val processType: ProcessType) {
         try {
             this.config = config
             prepare()
-            components.forEach {
-                it.loadConfig()
-            }
-            components.forEach {
-                it.init()
-            }
             holdProcessor.startAwait()
             logger.info { "${processType.name} started" }
         } catch (e: Exception) {

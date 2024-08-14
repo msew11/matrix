@@ -1,6 +1,5 @@
 package org.matrix.game.server.home.component
 
-import akka.actor.ActorSystem
 import akka.cluster.sharding.ClusterSharding
 import akka.cluster.sharding.ClusterShardingSettings
 import org.matrix.game.common.akka.HomeMessageExtractor
@@ -15,26 +14,20 @@ import org.matrix.game.server.home.actor.PlayerActor
  * @see <a href="https://doc.akka.io/docs/akka/current/cluster-sharding.html">集群分片</a>
  */
 class CompAkka4Home private constructor(
-    val process: BaseProcess,
-    val compAkka: CompAkka
+    process: BaseProcess,
+    compAkka: CompAkka
 ) : AbstractComponent() {
-
-    lateinit var actorSystem: ActorSystem
 
     companion object {
         fun reg(process: BaseProcess, compAkka: CompAkka): BaseProcess.CompAccess<CompAkka4Home> =
             process.regComponent { CompAkka4Home(process, compAkka) }
     }
 
-    override fun loadConfig() {
-    }
-
-    override fun init() {
-        actorSystem = compAkka.actorSystem
-        val settings = ClusterShardingSettings.create(actorSystem)
+    init {
+        val settings = ClusterShardingSettings.create(compAkka.actorSystem)
             .withRole(process.processType.name)
 
-        ClusterSharding.get(actorSystem)
+        ClusterSharding.get(compAkka.actorSystem)
             .start(
                 AkkaShardType.player.name,
                 PlayerActor.props(),

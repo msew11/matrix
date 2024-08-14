@@ -1,22 +1,8 @@
 package org.matrix.game.common.component
 
-import org.matrix.game.common.base.BaseProcess
-
-
-class CompCfg private constructor(
-    val process: BaseProcess
-) : AbstractComponent() {
-
-    init {
-    }
-
-    override fun loadConfig() {
-
-    }
-
-    override fun init() {
-    }
-
-    override fun close() {
-    }
+abstract class CompCfg : AbstractComponent() {
+    abstract var actorSystemName: String
+    abstract var akkaHost: String
+    abstract var akkaPort: Int
+    abstract var seedNodes: MutableList<String>
 }

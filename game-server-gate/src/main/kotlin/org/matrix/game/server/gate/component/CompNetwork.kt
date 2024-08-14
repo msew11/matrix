@@ -11,22 +11,19 @@ import org.matrix.game.core.network.netty.NettyServer
 import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.network.MyServerHandler
 
-class CompNetwork private constructor(private val process: BaseProcess) : AbstractComponent() {
+class CompNetwork private constructor(compCfg4Gate: CompCfg4Gate) :
+    AbstractComponent() {
 
-    var nettyPort: Int = 0
-    lateinit var server: IServer
+    var server: IServer
 
     companion object {
-        fun reg(process: BaseProcess): BaseProcess.CompAccess<CompNetwork> = process.regComponent { CompNetwork(process) }
+        fun reg(process: BaseProcess, compCfg4Gate: CompCfg4Gate): BaseProcess.CompAccess<CompNetwork> =
+            process.regComponent { CompNetwork(compCfg4Gate) }
     }
 
-    override fun loadConfig() {
-        nettyPort = process.config.getInt("game.${process.processType.name}.netty.port")
-    }
-
-    override fun init() {
+    init {
         val server = NettyServer(
-            nettyPort,
+            compCfg4Gate.nettyPort,
             object : ChannelInitializer<SocketChannel>() {
                 override fun initChannel(ch: SocketChannel) {
                     // 解码
