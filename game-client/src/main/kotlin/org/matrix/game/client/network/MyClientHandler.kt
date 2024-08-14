@@ -5,6 +5,8 @@ import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.client.*
+import java.util.concurrent.TimeUnit
+import kotlin.concurrent.thread
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
 
@@ -17,12 +19,15 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
     override fun channelActive(ctx: ChannelHandlerContext) {
         this.ctx = ctx
 
-        val playerId: Long = 10000001
+        thread {
+            val playerId: Long = 10000001
 
-        loginGame(playerId)
-        doSomeAction("这是一次行为a")
-        doSomeAction("这是一次行为b")
-        doSomeAction("这是一次行为c")
+            loginGame(playerId)
+            for (i in 1..1000) {
+                doSomeAction("这是一次行为${i}")
+                TimeUnit.SECONDS.sleep(1)
+            }
+        }
     }
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
