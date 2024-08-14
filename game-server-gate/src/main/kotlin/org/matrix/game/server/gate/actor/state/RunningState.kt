@@ -4,6 +4,7 @@ import com.google.protobuf.Any
 import com.google.protobuf.Message
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.client.ClientReq
+import org.matrix.game.proto.client.ClientResp
 import org.matrix.game.proto.home.HomeMessage
 import org.matrix.game.server.gate.actor.ChannelActor
 import org.matrix.game.server.gate.gate
@@ -24,5 +25,10 @@ class RunningState(actor: ChannelActor) : BaseState(actor) {
             .setPayload(Any.pack(payload))
             .build()
         gate.tellHome(homeMsg, actor.self)
+    }
+
+    override fun handleClientResp(msg: ClientResp) {
+        logger.info { "返回消息：playerId=${actor.playerId} code=${msg.code} [${msg.payloadCase}]" }
+        actor.clientResp(msg)
     }
 }

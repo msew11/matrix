@@ -26,7 +26,7 @@ class Home : BaseProcess(ProcessType.home) {
         compHomeMessage = CompHomeMessage.reg(this).access()
     }
 
-    fun fetchMessageHandler(msgName: String): BaseHandler<Message>? {
+    fun fetchMessageHandler(msgName: String): BaseHandler<Message, Message>? {
         return compHomeMessage.fetchHandler(msgName)
     }
 

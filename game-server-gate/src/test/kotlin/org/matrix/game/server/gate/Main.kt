@@ -1,6 +1,5 @@
 package org.matrix.game.server.gate
 
-import com.typesafe.config.ConfigFactory
 import jakarta.annotation.PreDestroy
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner

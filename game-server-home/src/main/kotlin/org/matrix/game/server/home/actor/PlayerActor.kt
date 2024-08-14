@@ -9,7 +9,6 @@ import org.matrix.game.common.akka.ClientReq2Home
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.home.HomeMessage
 import org.matrix.game.server.home.home
-import java.lang.reflect.ParameterizedType
 
 class PlayerActor(
 ) : AbstractActorWithStash() {
@@ -37,12 +36,28 @@ class PlayerActor(
     }
 
     private fun handleHomeMessage(msg: HomeMessage) {
+        val sender = sender
         val handler = home.fetchMessageHandler(msg.msgName)
         if (handler == null) {
             logger.error { "$self 未找到消息处理器 ${msg.playerId} ${msg.msgName}" }
         } else {
-            handler.javaClass.genericSuperclass as ParameterizedType
-            handler.deal(msg.payload.unpack(handler.msgType))
+            try {
+                handler.deal(msg.payload.unpack(handler.msgType))
+                    .whenComplete { resp, err ->
+                        when {
+                            err != null -> {
+                                // TODO 异常处理
+                            }
+                            resp != null -> {
+                                sender.tell(resp, null)
+                            }
+
+                            else -> {}
+                        }
+                    }
+            } catch (e: Exception) {
+                logger.error(e) { "消息处理异常" }
+            }
         }
     }
 

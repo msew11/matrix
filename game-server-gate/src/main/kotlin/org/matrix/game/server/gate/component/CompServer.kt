@@ -3,7 +3,9 @@ package org.matrix.game.server.gate.component
 import io.netty.channel.ChannelInitializer
 import io.netty.channel.socket.SocketChannel
 import io.netty.handler.codec.protobuf.ProtobufDecoder
+import io.netty.handler.codec.protobuf.ProtobufEncoder
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder
+import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender
 import org.matrix.game.common.base.BaseProcess
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.core.network.IServer
@@ -11,14 +13,14 @@ import org.matrix.game.core.network.netty.NettyServer
 import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.network.MyServerHandler
 
-class CompNetwork private constructor(compCfg4Gate: CompCfg4Gate) :
+class CompServer private constructor(compCfg4Gate: CompCfg4Gate) :
     AbstractComponent() {
 
     var server: IServer
 
     companion object {
-        fun reg(process: BaseProcess, compCfg4Gate: CompCfg4Gate): BaseProcess.CompAccess<CompNetwork> =
-            process.regComponent { CompNetwork(compCfg4Gate) }
+        fun reg(process: BaseProcess, compCfg4Gate: CompCfg4Gate): BaseProcess.CompAccess<CompServer> =
+            process.regComponent { CompServer(compCfg4Gate) }
     }
 
     init {
@@ -30,8 +32,8 @@ class CompNetwork private constructor(compCfg4Gate: CompCfg4Gate) :
                     ch.pipeline().addLast(ProtobufVarint32FrameDecoder())
                     ch.pipeline().addLast(ProtobufDecoder(ClientReq.getDefaultInstance()))
                     // 编码
-                    //ch.pipeline().addLast(ProtobufEncoder())
-                    //ch.pipeline().addLast(ProtobufVarint32LengthFieldPrepender())
+                    ch.pipeline().addLast(ProtobufVarint32LengthFieldPrepender())
+                    ch.pipeline().addLast(ProtobufEncoder())
 
                     ch.pipeline().addLast(MyServerHandler())
                 }

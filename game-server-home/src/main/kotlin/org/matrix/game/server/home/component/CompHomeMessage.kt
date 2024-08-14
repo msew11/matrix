@@ -11,7 +11,7 @@ import java.lang.reflect.ParameterizedType
 
 class CompHomeMessage private constructor(process: BaseProcess) : AbstractComponent() {
 
-    val handlersMap = hashMapOf<String, BaseHandler<*>>()
+    val handlersMap = hashMapOf<String, BaseHandler<*, *>>()
 
     companion object {
         val logger by logger()
@@ -36,9 +36,9 @@ class CompHomeMessage private constructor(process: BaseProcess) : AbstractCompon
         }
     }
 
-    fun fetchHandler(msgName: String): BaseHandler<Message>? {
+    fun fetchHandler(msgName: String): BaseHandler<Message, Message>? {
         @Suppress("unchecked_cast")
-        return handlersMap[msgName] as BaseHandler<Message>?
+        return handlersMap[msgName] as BaseHandler<Message, Message>?
     }
 
     override fun close() {

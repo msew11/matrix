@@ -2,6 +2,7 @@ package org.matrix.game.server.gate.actor.state
 
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.client.ClientReq
+import org.matrix.game.proto.client.ClientResp
 import org.matrix.game.proto.client.LoginGame
 import org.matrix.game.server.gate.actor.ChannelActor
 
@@ -19,6 +20,10 @@ class BeforeLoginState(actor: ChannelActor) : BaseState(actor) {
                 logger.error { "登录完成前，不应该收到登录以外的消息：${payload::class.java}" }
             }
         }
+    }
+
+    override fun handleClientResp(msg: ClientResp) {
+        logger.error { "登录完成前，不应该产生返回消息：${msg::class.java}" }
     }
 
     private fun handleLoginGame(payload: LoginGame) {

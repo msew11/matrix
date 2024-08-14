@@ -8,20 +8,20 @@ import org.matrix.game.common.component.CompAkka
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.server.gate.component.CompAkka4Gate
 import org.matrix.game.server.gate.component.CompCfg4Gate
-import org.matrix.game.server.gate.component.CompNetwork
+import org.matrix.game.server.gate.component.CompServer
 
 class Gate : BaseProcess(ProcessType.gate) {
 
     private lateinit var compCfg4Gate: CompCfg4Gate
     private lateinit var compAkka: CompAkka
     private lateinit var compAkka4Gate: CompAkka4Gate
-    private lateinit var compNetwork: CompNetwork
+    private lateinit var compServer: CompServer
 
     override fun prepare() {
         compCfg4Gate = CompCfg4Gate.reg(this).access()
         compAkka = CompAkka.reg(this, compCfg4Gate).access()
         compAkka4Gate = CompAkka4Gate.reg(this, compAkka).access()
-        compNetwork = CompNetwork.reg(this, compCfg4Gate).access()
+        compServer = CompServer.reg(this, compCfg4Gate).access()
     }
 
     fun actorOf(props: Props): ActorRef {

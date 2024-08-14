@@ -1,14 +1,16 @@
 package org.matrix.game.client.network
 
-import io.netty.buffer.ByteBuf
+import com.google.protobuf.Message
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.ChannelInboundHandlerAdapter
-import io.netty.util.CharsetUtil
-import org.matrix.game.proto.client.ClientReq
-import org.matrix.game.proto.client.DoSomeAction
-import org.matrix.game.proto.client.LoginGame
+import org.matrix.game.core.log.logger
+import org.matrix.game.proto.client.*
 
 class MyClientHandler : ChannelInboundHandlerAdapter() {
+
+    companion object {
+        val logger by logger()
+    }
 
     lateinit var ctx: ChannelHandlerContext
 
@@ -20,11 +22,21 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
         loginGame(playerId)
         doSomeAction("这是一次行为a")
         doSomeAction("这是一次行为b")
+        doSomeAction("这是一次行为c")
     }
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
-        val byteBuf = msg as ByteBuf
-        println("收到服务端${ctx.channel().remoteAddress()}的消息：${byteBuf.toString(CharsetUtil.UTF_8)}")
+        msg as ClientResp
+        val payload = msg.getField(ClientResp.getDescriptor().findFieldByNumber(msg.payloadCase.number)) as Message
+        when {
+            payload is DoSomeActionRt -> {
+                logger.info { "收到服务端${ctx.channel().remoteAddress()}的消息：${payload.msg}" }
+            }
+
+            else -> {
+                logger.info { "收到服务端${ctx.channel().remoteAddress()}的消息：${payload.javaClass.simpleName}" }
+            }
+        }
     }
 
     private fun loginGame(playerId: Long) {

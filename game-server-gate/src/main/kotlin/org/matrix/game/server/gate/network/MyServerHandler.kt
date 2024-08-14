@@ -1,11 +1,9 @@
 package org.matrix.game.server.gate.network
 
 import akka.actor.ActorRef
-import io.netty.buffer.Unpooled
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.util.AttributeKey
-import io.netty.util.CharsetUtil
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.client.ClientReq
 import org.matrix.game.server.gate.actor.ChannelActor
@@ -16,10 +14,6 @@ import org.matrix.game.server.gate.gate
  * @see <a href="https://cloud.tencent.com/developer/article/2182854">Netty·Handler 对比</a>
  */
 class MyServerHandler : SimpleChannelInboundHandler<ClientReq>() {
-
-    data class ClientInfo(
-        val actorRef: ActorRef
-    )
 
     companion object {
         val logger by logger()
@@ -44,10 +38,6 @@ class MyServerHandler : SimpleChannelInboundHandler<ClientReq>() {
 
     override fun channelRead0(ctx: ChannelHandlerContext, msg: ClientReq) {
         ctx.channel().attr(CHANNEL_ACTOR).get()?.tell(msg, ActorRef.noSender())
-    }
-
-    override fun channelReadComplete(ctx: ChannelHandlerContext) {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("服务端已收到消息，并给你发送一个问号?", CharsetUtil.UTF_8))
     }
 
     override fun exceptionCaught(ctx: ChannelHandlerContext, cause: Throwable) {

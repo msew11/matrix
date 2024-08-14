@@ -6,6 +6,7 @@ import akka.actor.PoisonPill
 import akka.actor.Props
 import io.netty.channel.ChannelHandlerContext
 import org.matrix.game.core.log.logger
+import org.matrix.game.proto.client.ClientResp
 import org.matrix.game.server.gate.actor.state.BaseState
 import org.matrix.game.server.gate.actor.state.BeforeLoginState
 
@@ -28,9 +29,12 @@ class ChannelActor(
     }
 
     override fun createReceive(): Receive {
-
         logger.info { "${self.path()} createReceive" }
         return currentState.createReceive()
+    }
+
+    override fun postStop() {
+        logger.info { "${self.path()} stop" }
     }
 
     fun changeState(newState: BaseState) {
@@ -49,7 +53,7 @@ class ChannelActor(
         this.playerId = playerId
     }
 
-    override fun postStop() {
-        logger.info { "${self.path()} stop" }
+    fun clientResp(resp: ClientResp) {
+        ctx.writeAndFlush(resp)
     }
 }
