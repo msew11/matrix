@@ -3,6 +3,7 @@ buildscript {
 
 plugins {
     kotlin("plugin.noarg")
+    `java-test-fixtures`
 }
 
 dependencies {

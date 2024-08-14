@@ -27,6 +27,7 @@ subprojects {
 
     apply(plugin = "java")
     apply(plugin = "kotlin")
+    apply(plugin = "java-library")
 
     repositories {
         maven("https://maven.aliyun.com/repository/google")

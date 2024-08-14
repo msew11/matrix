@@ -9,18 +9,18 @@ import org.matrix.game.server.home.handler.BaseHandler
 import org.reflections.Reflections
 import java.lang.reflect.ParameterizedType
 
-class CompHomeMessage private constructor() : AbstractComponent() {
+class CompHomeMessage private constructor(process: BaseProcess) : AbstractComponent() {
 
     val handlersMap = hashMapOf<String, BaseHandler<*>>()
 
     companion object {
         val logger by logger()
         fun reg(process: BaseProcess): BaseProcess.CompAccess<CompHomeMessage> =
-            process.regComponent { CompHomeMessage() }
+            process.regComponent { CompHomeMessage(process) }
     }
 
     init {
-        val subClazzList = Reflections("org.matrix.game.server.home")
+        val subClazzList = Reflections(process.defaultScanPackage)
             .getSubTypesOf(BaseHandler::class.java)
         subClazzList.forEach {
             val genericSuperclass = it.genericSuperclass as ParameterizedType
