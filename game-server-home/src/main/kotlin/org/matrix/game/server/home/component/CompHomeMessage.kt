@@ -8,6 +8,7 @@ import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.client.ClientResp
 import org.matrix.game.server.home.handler.BaseHandler
+import org.matrix.game.server.home.handler.ProtoHandler
 import org.reflections.Reflections
 import java.lang.reflect.ParameterizedType
 
@@ -35,6 +36,7 @@ class CompHomeMessage private constructor(process: BaseProcess) : AbstractCompon
         val subClazzList = Reflections(process.defaultScanPackage)
             .getSubTypesOf(BaseHandler::class.java)
         subClazzList.forEach {
+            it.getAnnotation(ProtoHandler::class.java) ?: return@forEach
             val handler = it.getConstructor().newInstance()
 
             // handler泛型 -> proto Descriptor

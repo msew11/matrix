@@ -6,7 +6,7 @@ import org.matrix.game.common.component.CompAkka
 import org.matrix.game.common.constg.ProcessType
 import org.matrix.game.server.home.component.CompAkka4Home
 import org.matrix.game.server.home.component.CompCfg4Home
-import org.matrix.game.server.home.component.CompDb
+import org.matrix.game.common.component.CompDb
 import org.matrix.game.server.home.component.CompHomeMessage
 import org.matrix.game.server.home.handler.BaseHandler
 

@@ -1,9 +1,9 @@
 package org.matrix.game.server.home.component
 
 import org.matrix.game.common.base.BaseProcess
-import org.matrix.game.common.component.CompCfg
+import org.matrix.game.common.component.CompCfg4Db
 
-class CompCfg4Home private constructor(process: BaseProcess) : CompCfg() {
+class CompCfg4Home private constructor(process: BaseProcess) : CompCfg4Db() {
 
     companion object {
         fun reg(process: BaseProcess): BaseProcess.CompAccess<CompCfg4Home> =
@@ -15,10 +15,10 @@ class CompCfg4Home private constructor(process: BaseProcess) : CompCfg() {
     override var akkaPort: Int
     override var seedNodes: MutableList<String>
 
-    var host: String
-    var dbName: String
-    var username: String
-    var password: String
+    override var host: String
+    override var dbName: String
+    override var username: String
+    override var password: String
 
     init {
         actorSystemName = process.config.getString("game.name")
