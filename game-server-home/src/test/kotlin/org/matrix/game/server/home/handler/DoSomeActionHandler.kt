@@ -11,6 +11,7 @@ class DoSomeActionHandler : BaseHandler<DoSomeAction, DoSomeActionRt>() {
 
         val rt = DoSomeActionRt.newBuilder().setMsg("收到消息:${msg.desc}")
 
-        return CompletableFuture.completedFuture(buildResp(200) { it.setDoSomeActionRt(rt) })
+        // return CompletableFuture.completedFuture(buildResp(200) { it.setDoSomeActionRt(rt) })
+        return CompletableFuture.completedFuture(buildResp(200, rt))
     }
 }
