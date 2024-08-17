@@ -1,4 +1,4 @@
-package org.matrix.game.server.home.db
+package org.matrix.game.server.home.dc
 
 import akka.actor.Actor
 import org.matrix.game.core.db.CommonDao

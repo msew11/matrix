@@ -1,8 +1,7 @@
-package org.matrix.game.server.home.entity
-
 import org.hibernate.cfg.Configuration
 import org.matrix.game.core.db.DaoHibernate
 import org.matrix.game.server.home.dc.CharacterDC
+import org.matrix.game.server.home.entity.CharacterEntity
 
 fun main() {
     TestDb().test()

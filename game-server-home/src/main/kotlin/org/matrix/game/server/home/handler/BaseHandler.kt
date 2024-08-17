@@ -4,7 +4,7 @@ import akka.actor.ActorRef
 import com.google.protobuf.Descriptors.FieldDescriptor
 import com.google.protobuf.Message
 import org.matrix.game.proto.client.ClientResp
-import org.matrix.game.server.home.db.PlayerDbManager
+import org.matrix.game.server.home.actor.PlayerDbManager
 
 abstract class BaseHandler<REQ : Message, RESP : Message> {
 

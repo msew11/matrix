@@ -8,8 +8,8 @@ plugins {
 
 dependencies {
     implementation(project(":game-common"))
+    implementation("org.springframework.boot:spring-boot-starter")
 
-    testImplementation("org.springframework.boot:spring-boot-starter")
     testImplementation(testFixtures(project(":game-common")))
 }
 

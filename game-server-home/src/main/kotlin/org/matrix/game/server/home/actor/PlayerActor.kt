@@ -11,7 +11,6 @@ import org.matrix.game.core.akka.Worker
 import org.matrix.game.core.concurrent.AcsFactory
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.home.HomeMessage
-import org.matrix.game.server.home.db.PlayerDbManager
 import org.matrix.game.server.home.handler.HandlerContext
 import org.matrix.game.server.home.home
 import java.util.concurrent.ScheduledThreadPoolExecutor

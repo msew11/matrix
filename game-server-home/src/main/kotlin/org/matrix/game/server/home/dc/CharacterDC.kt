@@ -1,7 +1,6 @@
 package org.matrix.game.server.home.dc
 
 import org.matrix.game.core.db.CommonDao
-import org.matrix.game.server.home.db.PlayerDataContainer
 import org.matrix.game.server.home.entity.CharacterEntity
 
 class CharacterDC : PlayerDataContainer<CharacterEntity>() {

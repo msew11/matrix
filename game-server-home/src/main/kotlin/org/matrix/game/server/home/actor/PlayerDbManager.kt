@@ -1,11 +1,10 @@
-package org.matrix.game.server.home.db
+package org.matrix.game.server.home.actor
 
 import akka.actor.ActorRef
 import org.matrix.game.core.akka.NamedRunnable
 import org.matrix.game.core.concurrent.AcsFactory
 import org.matrix.game.core.db.CommonDao
 import org.matrix.game.core.db.DbManager
-import org.matrix.game.server.home.actor.PlayerActor
 
 class PlayerDbManager(
     override val owner: PlayerActor,
