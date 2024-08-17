@@ -23,7 +23,7 @@ class MyClientHandler : ChannelInboundHandlerAdapter() {
             val playerId: Long = 10000001
 
             loginGame(playerId)
-            for (i in 1..1000) {
+            for (i in 1..1) {
                 doSomeAction("这是一次行为${i}")
                 TimeUnit.SECONDS.sleep(1)
             }

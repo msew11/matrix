@@ -53,7 +53,7 @@ class CompHomeMessage private constructor(process: BaseProcess) : AbstractCompon
             // 绑定handler的请求和返回类型
             bindHandler(handler, reqClass, respClass)
 
-            logger.info { "注册消息：${descriptor.fullName} -> ${handler.javaClass.simpleName}" }
+            logger.info { "注册消息：${descriptor.fullName} -> ${handler.javaClass.name}" }
             handlersMap[descriptor.fullName] = handler
         }
     }

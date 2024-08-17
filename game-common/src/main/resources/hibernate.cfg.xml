@@ -15,6 +15,6 @@
 
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
-        <mapping class="org.matrix.game.common.entity.Character"/>
+        <!--<mapping class="org.matrix.game.common.entity.CharacterEntity"/>-->
     </session-factory>
 </hibernate-configuration>

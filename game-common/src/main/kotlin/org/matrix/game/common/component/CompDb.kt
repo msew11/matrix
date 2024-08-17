@@ -1,18 +1,24 @@
 package org.matrix.game.common.component
 
-import org.hibernate.SessionFactory
+import jakarta.persistence.Entity
 import org.hibernate.cfg.Configuration
 import org.matrix.game.common.base.BaseProcess
+import org.matrix.game.core.db.CommonDao
+import org.matrix.game.core.db.DaoHibernate
+import org.matrix.game.core.log.logger
+import org.reflections.Reflections
 
 class CompDb private constructor(
+    process: BaseProcess,
     compCfg: CompCfg4Db
 ) : AbstractComponent() {
 
-    var sessionFactory: SessionFactory
+    val dao: CommonDao
 
     companion object {
+        val logger by logger()
         fun reg(process: BaseProcess, compCfg: CompCfg4Db): BaseProcess.CompAccess<CompDb> =
-            process.regComponent { CompDb(compCfg) }
+            process.regComponent { CompDb(process, compCfg) }
     }
 
     init {
@@ -22,7 +28,14 @@ class CompDb private constructor(
         hibernateCfg.setProperty("hibernate.connection.username", compCfg.username)
         hibernateCfg.setProperty("hibernate.connection.password", compCfg.password)
 
-        sessionFactory = hibernateCfg.buildSessionFactory()
+        val scanClass = Reflections(process.defaultScanPackage)
+            .getTypesAnnotatedWith(Entity::class.java)
+        scanClass.forEach {
+            hibernateCfg.addAnnotatedClass(it)
+            logger.info { "hibernate mapping: ${it.name}" }
+        }
+
+        dao = DaoHibernate(hibernateCfg.buildSessionFactory())
     }
 
     override fun close() {
