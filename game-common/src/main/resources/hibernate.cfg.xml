@@ -13,7 +13,7 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
 
         <!--<mapping class="org.matrix.game.common.entity.CharacterEntity"/>-->
     </session-factory>

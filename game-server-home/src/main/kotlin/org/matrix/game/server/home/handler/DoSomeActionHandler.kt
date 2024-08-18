@@ -19,7 +19,9 @@ class DoSomeActionHandler : BaseHandler<DoSomeAction, DoSomeActionRt>() {
 
         context.dbm.load(CharacterDC::class.java) { characterDC ->
 
-            logger.info { "查看角色名：${characterDC.player.name}" }
+            val player = characterDC.player
+            logger.info { "查看角色名：${player.name}" }
+            player.name = "test2"
 
             context.send2Client(buildResp(200, rt))
         }

@@ -15,7 +15,7 @@ object Versions {
     const val HIBERNATE_VERSION = "6.5.2.Final"
 
     // log
-    const val KT_LOGGING_VERSION = "5.1.0"
+    // const val KT_LOGGING_VERSION = "5.1.0"
 
     // db
     const val DRUID_VERSION = "1.2.8"

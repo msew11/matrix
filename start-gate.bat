@@ -1,0 +1,1 @@
+C:\Users\matrix\.jdks\azul-21.0.3\bin\java.exe -jar D:\ProjIdea\matrix\game-server-gate\build\libs\game-server-gate-1.0-SNAPSHOT.jar

@@ -1,9 +1,10 @@
 <included>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
-            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p -&#45;&#45; [%15.15t] %cyan(%-40.40logger{39}) : %m%n</pattern>-->
+            <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern>-->
+            <!--https://logback.qos.ch/manual/layouts.html#conversionWord-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%5p) - [%-15.15t] %cyan(%-40.40logger{39}) : %m%n</pattern>
             <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p -&#45;&#45; [%15.15t] %cyan(\(%file:%line\)) : %m%n</pattern>-->
         </encoder>
     </appender>

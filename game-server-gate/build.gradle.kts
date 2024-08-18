@@ -13,13 +13,13 @@ dependencies {
     testImplementation(testFixtures(project(":game-common")))
 }
 
-tasks.getByName<BootJar>("bootJar") {
+/*tasks.getByName<BootJar>("bootJar") {
     enabled = false
 }
 
 tasks.getByName<Jar>("jar") {
     enabled = true
-}
+}*/
 
 tasks.test {
     useJUnitPlatform()

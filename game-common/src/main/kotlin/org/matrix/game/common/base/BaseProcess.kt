@@ -29,6 +29,7 @@ abstract class BaseProcess(val processType: ProcessType) {
             prepare()
             holdProcessor.startAwait()
             logger.info { "${processType.name} started" }
+            logger.info { "日志级别：${logger.level}" }
         } catch (e: Exception) {
             e.printStackTrace()
             exitProcess(1)
