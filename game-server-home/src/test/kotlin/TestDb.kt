@@ -1,5 +1,5 @@
 import org.hibernate.cfg.Configuration
-import org.matrix.game.core.db.DaoHibernate
+import org.matrix.game.core.db.HibernateDao
 import org.matrix.game.server.home.dc.CharacterDC
 import org.matrix.game.server.home.entity.CharacterEntity
 
@@ -19,7 +19,7 @@ class TestDb {
         hibernateCfg.setProperty("hibernate.connection.username", compCfg.username)
         hibernateCfg.setProperty("hibernate.connection.password", compCfg.password)
 
-        val dao = DaoHibernate(hibernateCfg.buildSessionFactory())
+        val dao = HibernateDao(hibernateCfg.buildSessionFactory())
 
         //
         val container = CharacterDC::class.java.getDeclaredConstructor().newInstance()

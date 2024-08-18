@@ -17,9 +17,9 @@ class DoSomeActionHandler : BaseHandler<DoSomeAction, DoSomeActionRt>() {
         val rt = DoSomeActionRt.newBuilder().setMsg("收到消息:${msg.desc}").build()
         logger.info { "收到消息:${msg.desc}" }
 
-        context.dbm.load(CharacterDC::class.java) { characterDC ->
+        context.dcm.load(CharacterDC::class.java) { characterDC ->
 
-            val player = characterDC.player
+            val player = characterDC.character.e
             logger.info { "查看角色名：${player.name}" }
             player.name = "test2"
 

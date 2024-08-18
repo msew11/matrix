@@ -3,21 +3,21 @@ package org.matrix.game.common.component
 import jakarta.persistence.Entity
 import org.hibernate.cfg.Configuration
 import org.matrix.game.common.base.BaseProcess
-import org.matrix.game.core.db.CommonDao
-import org.matrix.game.core.db.DaoHibernate
+import org.matrix.game.core.db.IDao
+import org.matrix.game.core.db.HibernateDao
 import org.matrix.game.core.log.logger
 import org.reflections.Reflections
 
 class CompDb private constructor(
     process: BaseProcess,
-    compCfg: CompCfg4Db
+    compCfg: ICfg4Db
 ) : AbstractComponent() {
 
-    val dao: CommonDao
+    val dao: IDao
 
     companion object {
         val logger by logger()
-        fun reg(process: BaseProcess, compCfg: CompCfg4Db): BaseProcess.CompAccess<CompDb> =
+        fun reg(process: BaseProcess, compCfg: ICfg4Db): BaseProcess.CompAccess<CompDb> =
             process.regComponent { CompDb(process, compCfg) }
     }
 
@@ -35,10 +35,10 @@ class CompDb private constructor(
             logger.info { "hibernate mapping: ${it.name}" }
         }
 
-        dao = DaoHibernate(hibernateCfg.buildSessionFactory())
+        dao = HibernateDao(hibernateCfg.buildSessionFactory())
     }
 
     override fun close() {
-
+        dao.close()
     }
 }

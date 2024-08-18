@@ -4,7 +4,7 @@ import akka.actor.ActorRef
 import com.google.protobuf.Descriptors.FieldDescriptor
 import com.google.protobuf.Message
 import org.matrix.game.proto.client.ClientResp
-import org.matrix.game.server.home.actor.PlayerDbManager
+import org.matrix.game.server.home.actor.PlayerDcManager
 
 abstract class BaseHandler<REQ : Message, RESP : Message> {
 
@@ -24,7 +24,7 @@ abstract class BaseHandler<REQ : Message, RESP : Message> {
 }
 
 class HandlerContext(
-    val dbm: PlayerDbManager,
+    val dcm: PlayerDcManager,
     val sender: ActorRef,
 ) {
     fun send2Client(resp: ClientResp) {
