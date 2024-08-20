@@ -5,6 +5,7 @@ import akka.actor.Cancellable
 import akka.actor.PoisonPill
 import akka.actor.Props
 import akka.cluster.sharding.ShardRegion
+import org.matrix.game.common.component.CompDb
 import org.matrix.game.common.constg.AKKA_MAILBOX_SMALL
 import org.matrix.game.common.heart.HeartEvent
 import org.matrix.game.core.akka.ShardFuncActor
@@ -12,8 +13,8 @@ import org.matrix.game.core.akka.Worker
 import org.matrix.game.core.concurrent.AcsFactory
 import org.matrix.game.core.log.logger
 import org.matrix.game.proto.home.HomeMessage
+import org.matrix.game.server.home.component.CompHomeMessage
 import org.matrix.game.server.home.handler.HandlerContext
-import org.matrix.game.server.home.home
 import scala.concurrent.duration.FiniteDuration
 import java.util.concurrent.ScheduledThreadPoolExecutor
 import java.util.concurrent.TimeUnit
@@ -22,7 +23,7 @@ const val H_ACTOR_DISPATCHER = "akka.actor.h-shard"
 const val H_COMPUTE_DISPATCHER = "akka.actor.h-compute"
 const val H_DEFAULT_IO_DISPATCHER = "akka.actor.h-default-io"
 
-class PlayerActor : ShardFuncActor() {
+class PlayerActor(val compDb: CompDb, val compHomeMessage: CompHomeMessage) : ShardFuncActor() {
 
     /** 用于发起异步请求，不要直接在外部使用这个[acsFactory]创建acs！**/
     lateinit var acsFactory: AcsFactory
@@ -32,7 +33,7 @@ class PlayerActor : ShardFuncActor() {
     var playerId: Long = 0
 
     val dcm = PlayerDcManager(this) {
-        home.compDb.dao
+        compDb.dao
     }
 
     object WorkerName {
@@ -43,9 +44,9 @@ class PlayerActor : ShardFuncActor() {
 
     companion object {
         val logger by logger()
-        fun props(): Props {
+        fun props(compDb: CompDb, compHomeMessage: CompHomeMessage): Props {
             return Props.create(PlayerActor::class.java) {
-                PlayerActor()
+                PlayerActor(compDb, compHomeMessage)
             }.withDispatcher(H_ACTOR_DISPATCHER)
         }
     }
@@ -105,7 +106,7 @@ class PlayerActor : ShardFuncActor() {
         try {
             val sender = sender
             playerId = msg.playerId
-            val handler = home.fetchMessageHandler(msg.msgName)
+            val handler = compHomeMessage.fetchHandler(msg.msgName)
             if (handler == null) {
                 logger.error { "$self 未找到消息处理器 ${msg.playerId} ${msg.msgName}" }
             } else {

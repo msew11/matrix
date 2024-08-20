@@ -18,12 +18,17 @@ fun main(args: Array<String>) {
 @Component
 class HomeRunner : ApplicationRunner {
 
+    lateinit var home: Home
+
     override fun run(args: ApplicationArguments) {
+        home = Home()
         home.boot()
     }
 
     @PreDestroy
     fun shutdown() {
-        home.shutdown()
+        if (this::home.isInitialized) {
+            home.shutdown()
+        }
     }
 }

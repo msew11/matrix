@@ -6,6 +6,7 @@ import org.matrix.game.common.akka.HomeMessageExtractor
 import org.matrix.game.common.base.BaseProcess
 import org.matrix.game.common.component.AbstractComponent
 import org.matrix.game.common.component.CompAkka
+import org.matrix.game.common.component.CompDb
 import org.matrix.game.common.constg.AkkaShardType
 import org.matrix.game.server.home.actor.PlayerActor
 
@@ -15,12 +16,19 @@ import org.matrix.game.server.home.actor.PlayerActor
  */
 class CompAkka4Home private constructor(
     process: BaseProcess,
-    compAkka: CompAkka
+    compAkka: CompAkka,
+    compDb: CompDb,
+    compHomeMessage: CompHomeMessage
 ) : AbstractComponent() {
 
     companion object {
-        fun reg(process: BaseProcess, compAkka: CompAkka): BaseProcess.CompAccess<CompAkka4Home> =
-            process.regComponent { CompAkka4Home(process, compAkka) }
+        fun reg(
+            process: BaseProcess,
+            compAkka: CompAkka,
+            compDb: CompDb,
+            compHomeMessage: CompHomeMessage
+        ): BaseProcess.CompAccess<CompAkka4Home> =
+            process.regComponent { CompAkka4Home(process, compAkka, compDb, compHomeMessage) }
     }
 
     init {
@@ -30,7 +38,7 @@ class CompAkka4Home private constructor(
         ClusterSharding.get(compAkka.actorSystem)
             .start(
                 AkkaShardType.player.name,
-                PlayerActor.props(),
+                PlayerActor.props(compDb, compHomeMessage),
                 settings,
                 HomeMessageExtractor(1000)
             )
