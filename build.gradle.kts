@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.noarg.gradle.NoArgExtension
 
 /*
  * 构建相关参考：
@@ -16,7 +17,9 @@ plugins {
     id("org.springframework.boot") version versions.SPRING_VERSION apply false
     id("io.spring.dependency-management") version versions.SPRING_DM_VERSION
 
+    //println("打印下名字" + kotlin("plugin.noarg"))
 }
+
 
 subprojects {
 //    ext.set("netty.version", "4.1.109.Final")
@@ -28,6 +31,7 @@ subprojects {
     apply(plugin = "java")
     apply(plugin = "kotlin")
     apply(plugin = "java-library")
+    apply(plugin = "org.jetbrains.kotlin.plugin.noarg")
 
     repositories {
         maven("https://maven.aliyun.com/repository/google")
@@ -56,5 +60,10 @@ subprojects {
             freeCompilerArgs += "-Xjsr305=strict"
             jvmTarget = "21"
         }
+    }
+
+    configure<NoArgExtension> {
+        annotation("org.matrix.game.common.base.NoArg")
+        invokeInitializers = true
     }
 }

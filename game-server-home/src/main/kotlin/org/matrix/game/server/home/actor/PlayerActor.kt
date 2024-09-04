@@ -16,6 +16,7 @@ import org.matrix.game.proto.home.HomeMessage
 import org.matrix.game.server.home.component.CompHomeMessage
 import org.matrix.game.server.home.handler.HandlerContext
 import scala.concurrent.duration.FiniteDuration
+import java.time.Clock
 import java.util.concurrent.ScheduledThreadPoolExecutor
 import java.util.concurrent.TimeUnit
 
@@ -25,6 +26,8 @@ const val H_DEFAULT_IO_DISPATCHER = "akka.actor.h-default-io"
 
 class PlayerActor(val compDb: CompDb, val compHomeMessage: CompHomeMessage) : ShardFuncActor() {
 
+    var clock: Clock = Clock.systemDefaultZone()
+
     /** 用于发起异步请求，不要直接在外部使用这个[acsFactory]创建acs！**/
     lateinit var acsFactory: AcsFactory
 
@@ -32,12 +35,11 @@ class PlayerActor(val compDb: CompDb, val compHomeMessage: CompHomeMessage) : Sh
 
     var playerId: Long = 0
 
-    val dcm = PlayerDcManager(this) {
+    var dcm = PlayerDcManager(this, compDb.kryoUtil) {
         compDb.dao
     }
 
     object WorkerName {
-
         @JvmStatic
         val dbRead = "dbRead"
     }
@@ -119,7 +121,8 @@ class PlayerActor(val compDb: CompDb, val compHomeMessage: CompHomeMessage) : Sh
 
     private fun handleHeartEvent(event: HeartEvent) {
         try {
-
+            val now = clock.instant()
+            dcm.tick(now)
         } catch (e: Exception) {
             logger.error(e) { "心跳处理异常" }
         }

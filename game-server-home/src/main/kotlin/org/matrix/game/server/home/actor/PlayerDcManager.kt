@@ -5,12 +5,18 @@ import org.matrix.game.core.akka.NamedRunnable
 import org.matrix.game.core.concurrent.AcsFactory
 import org.matrix.game.core.db.IDao
 import org.matrix.game.core.db.DataContainerManager
+import org.matrix.game.core.util.KryoUtil
 
 class PlayerDcManager(
     override val owner: PlayerActor,
-    override val dao: () -> IDao,
+    kryoUtil: KryoUtil,
+    fetchDao: () -> IDao,
 ) : DataContainerManager(
-    readWorkerName = PlayerActor.WorkerName.dbRead
+    kryoUtil = kryoUtil,
+    clock = owner.clock,
+    readWorkerName = PlayerActor.WorkerName.dbRead,
+    wpTickCycle = 2,
+    fetchDao = fetchDao
 ) {
     override val ownerId: Any get() = owner.playerId
 

@@ -3,9 +3,10 @@ package org.matrix.game.common.component
 import jakarta.persistence.Entity
 import org.hibernate.cfg.Configuration
 import org.matrix.game.common.base.BaseProcess
-import org.matrix.game.core.db.IDao
 import org.matrix.game.core.db.HibernateDao
+import org.matrix.game.core.db.IDao
 import org.matrix.game.core.log.logger
+import org.matrix.game.core.util.KryoUtil
 import org.reflections.Reflections
 
 class CompDb private constructor(
@@ -13,7 +14,9 @@ class CompDb private constructor(
     compCfg: ICfg4Db
 ) : AbstractComponent() {
 
-    val dao: IDao
+    var dao: IDao
+
+    var kryoUtil: KryoUtil
 
     companion object {
         val logger by logger()
@@ -36,6 +39,12 @@ class CompDb private constructor(
         }
 
         dao = HibernateDao(hibernateCfg.buildSessionFactory())
+
+        kryoUtil = KryoUtil { kryo ->
+//            kryoRegisters.forEach { kryoCheckReg ->
+//                kryoCheckReg.register(kryo)
+//            }
+        }
     }
 
     override fun close() {

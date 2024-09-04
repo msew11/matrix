@@ -14,6 +14,9 @@ object Versions {
     const val MYSQL_CONNECTOR_VERSION = "8.3.0"
     const val HIBERNATE_VERSION = "6.5.2.Final"
 
+    // kryo
+    const val KRYO_VERSION = "5.6.0"
+
     // log
     // const val KT_LOGGING_VERSION = "5.1.0"
 

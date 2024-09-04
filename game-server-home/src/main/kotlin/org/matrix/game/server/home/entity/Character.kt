@@ -6,10 +6,19 @@ import org.matrix.game.core.json.toObj
 import java.io.Serializable
 import java.util.*
 
-class Character() : AbstractEntityWrapper<CharacterEntity>() {
-    override lateinit var e: CharacterEntity
+open class Sup {
+    var s: String = ""
+}
 
-    var test: LinkedList<String> = LinkedList()
+class TestClass(
+    val a: String = "",
+    val b: Int = 0
+): Sup()
+
+class Character(
+) : AbstractEntityWrapper<CharacterEntity>() {
+    override lateinit var e: CharacterEntity
+    var test: LinkedList<TestClass> = LinkedList()
 
     override fun fetchPrimaryKey(): Serializable {
         return e.id
