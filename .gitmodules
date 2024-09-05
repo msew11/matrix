@@ -1,0 +1,3 @@
+[submodule "game-protocol"]
+	path = game-protocol
+	url = git@github.com:msew11/game-protocol.git
