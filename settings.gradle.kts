@@ -5,9 +5,12 @@ pluginManagement {
     }
 }
 rootProject.name = "matrix"
+
 include("game-core")
 include("game-common")
-include("game-server-gate")
+include("game-protocol")
+
 include("game-client")
+
+include("game-server-gate")
 include("game-server-home")
-include("game-core")

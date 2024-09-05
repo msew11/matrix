@@ -26,4 +26,7 @@ object Versions {
 
     // reflections
     const val REFLECTIONS_VERSION = "0.9.11"
+
+    const val PROTOBUF_VERSION = "3.25.1"
+    const val GRPC_VERSION = "1.62.2"
 }

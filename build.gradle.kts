@@ -17,6 +17,8 @@ plugins {
     id("org.springframework.boot") version versions.SPRING_VERSION apply false
     id("io.spring.dependency-management") version versions.SPRING_DM_VERSION
 
+    id("com.google.protobuf") version "0.9.4" apply false
+
     //println("打印下名字" + kotlin("plugin.noarg"))
 }
 
