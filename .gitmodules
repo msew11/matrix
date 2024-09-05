@@ -1,3 +1,6 @@
 [submodule "game-protocol"]
 	path = game-protocol
 	url = git@github.com:msew11/game-protocol.git
+[submodule "game-core"]
+	path = game-core
+	url = git@github.com:msew11/game-core.git
